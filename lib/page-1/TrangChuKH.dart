@@ -1,0 +1,509 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'dart:ui';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/model/admin.dart';
+import 'package:myapp/model/user.dart';
+import 'package:myapp/page-1/DanhMucDonHang.dart';
+import 'package:myapp/page-1/DanhMucSanPhamKH.dart';
+import 'package:myapp/page-1/DoiMatKhau.dart';
+import 'package:myapp/page-1/QuanLyKH.dart';
+import 'package:myapp/page-1/LichSuMuaHang.dart';
+import 'package:myapp/page-1/thongtinungdung.dart';
+import 'package:myapp/utils.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'DangNhap.dart';
+import 'TaiKhoanKH.dart';
+import 'Thongbao.dart';
+import 'lienhe.dart';
+
+class TrangChuKH extends StatefulWidget{
+  @override
+  TrangChuKHState createState() => TrangChuKHState();
+
+}
+
+class TrangChuKHState extends State<TrangChuKH> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final CollectionReference usersCollection = FirebaseFirestore.instance.collection('Users');
+
+  Future<Admin?> getUserDataByUid(String uid) async {
+    try {
+      QuerySnapshot userQuery = await usersCollection.where('uid', isEqualTo: uid).get();
+
+      if (userQuery.docs.isNotEmpty) {
+        // Chỉ lấy dữ liệu của user đầu tiên vì uid nên là duy nhất
+        return Admin.fromFirestore(userQuery.docs.first);
+      } else {
+        print('User document does not exist for uid: $uid');
+        return null;
+      }
+    } catch (e) {
+      print('Error fetching user data: $e');
+      return null;
+    }
+  }
+  Admin? khachhang;
+  void fetchData() async {
+    String? currentUserUid = FirebaseAuth.instance.currentUser?.uid;
+    khachhang = await getUserDataByUid(currentUserUid!);
+
+    // Now you can use the userData
+    if (khachhang != null) {
+      print('User data: $khachhang');
+      setState(() {});
+    } else {
+      print('User data not found.');
+    }
+  }
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+  Future<bool?> _showExitConfirmationDialog(BuildContext context) {
+    return showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Xác nhận thoát ứng dụng'),
+          content: const Text('Bạn có chắc chắn muốn thoát ứng dụng không?'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Không'),
+              onPressed: () {
+                Navigator.of(context)
+                    .pop(false); // Người dùng không đồng ý thoát
+              },
+            ),
+            TextButton(
+              child: const Text('Có'),
+              onPressed: () {
+                Navigator.of(context).pop(true); // Người dùng đồng ý thoát
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+
+    double baseWidth = 360;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double ffem = fem * 0.97;
+
+    final myImages = [
+      Image.asset('assets/page-1/images/banner1.png',
+          width: 800, scale: 0.85),
+      Image.asset('assets/page-1/images/banner2.png',
+          width: 800, scale: 0.85),
+      Image.asset('assets/page-1/images/banner3.png',
+          width: 800, scale: 0.85)
+    ];
+    int currentIndex = 0;
+
+    return
+      WillPopScope(
+        onWillPop: () async {
+          final shouldExit = await _showExitConfirmationDialog(context);
+          if (shouldExit == true) {
+            SystemNavigator.pop();
+          }
+          return false; // Ngăn chặn xử lý "Back" mặc định khác
+        },
+        child:
+        Scaffold(
+          key:_scaffoldKey,
+          endDrawer:
+          ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30.0),
+                bottomLeft: Radius.circular(30.0),
+              ),
+              child: Container(
+                width: 220,
+                child: Drawer(
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 240,
+                        child: DrawerHeader(
+                          decoration: BoxDecoration(
+                            color: Color(0xff993300),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                                child: Container(
+                                  height: 70,
+                                  width: 70,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: khachhang?.hinhanh != null && khachhang!.hinhanh.isNotEmpty
+                                      ? Image.network(
+                                    khachhang!.hinhanh,
+                                    fit: BoxFit.cover,
+                                  )
+                                      : Image.asset(
+                                    "assets/page-1/images/image-16.png",
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                child: Text(
+                                  '${khachhang?.displayName}',
+                                  style: TextStyle(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 15,
+                                      color: Colors.white
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                child: Text(
+                                  '${khachhang?.email}',
+                                  style: TextStyle(
+                                      fontFamily: 'Readex Pro',
+                                      fontSize: 8.8,
+                                      color: Colors.white
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Image.asset("assets/page-1/images/octicon_person-16.png"),
+                        title: Text('Tài Khoản'),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> TaiKhoanKH(khachhang: khachhang, id: khachhang!.id)));
+                        },
+                      ),
+                      ListTile(
+                        leading: Image.asset("assets/page-1/images/lsdonhang.png"),
+                        title: Text('Lịch sử đơn hàng'),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucDonHangKH()));
+                        },
+                      ),
+
+                      ListTile(
+                        leading: Image.asset("assets/page-1/images/ph_phone-fill.png"),
+                        title: Text('Liên hệ'),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> LienHe()));
+                        },
+                      ),
+                      ListTile(
+                        leading: Image.asset("assets/page-1/images/memory_alpha-i.png"),
+                        title: Text('Thông tin phần mềm'),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ThongTinPhanMem()));
+                        },
+                      ),
+                      ListTile(
+                        leading: Image.asset("assets/page-1/images/ri_logout-box-r-line.png"),
+                        title: Text('Đăng xuất'),
+                        onTap: () {
+                          FirebaseAuth.instance.signOut();
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> const DangNhap()));
+                          Fluttertoast.showToast(msg: 'Đăng xuất thành công!');
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              )
+
+          ),
+          body:Container(
+            width: double.infinity,
+            child: Container(
+              // trangchukhe5o (385:1231)
+              width: double.infinity,
+              height: 800*fem,
+              decoration: BoxDecoration (
+                color: Color(0xfff5dab1),
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    // autogroupr6xs7X7 (JzUcbg71G5dZUoWWbaR6Xs)
+                    left: 0*fem,
+                    top: 0*fem,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(19*fem, 32*fem, 14*fem, 0*fem),
+                      width: 360*fem,
+                      height: 736*fem,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [                          Container(
+                          // group42oeq (385:1247)
+                          margin: EdgeInsets.fromLTRB(250*fem, 0*fem, 0*fem, 15*fem),
+                          padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 1.88*fem, 0*fem),
+
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                onTap:(){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Thongbao()));
+                                },
+                                child: Container(
+                                  // vectorthongbao7fX (385:1248)
+                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0.1*fem, 1*fem),
+                                  width: 30*fem,
+                                  height: 30*fem,
+                                  child: Image.asset(
+                                    'assets/page-1/images/vectorthongbao.png',
+                                    width: 30*fem,
+                                    height: 30*fem,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                // frameCcH (301:109)
+                                child: IconButton(
+                                  onPressed: ()=>_scaffoldKey.currentState?.openEndDrawer()
+                                  ,
+                                  padding: EdgeInsets.zero,
+                                  icon: Container(
+                                    margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0*fem),
+                                    width: 26.25*fem,
+                                    height: 20.63*fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/frame.png',
+                                      width: 26.25*fem,
+                                      height: 20.63*fem,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                          CarouselSlider(
+                              items: myImages,
+                              options: CarouselOptions(
+                                viewportFraction: 1,
+                                enlargeCenterPage: false,
+                                autoPlay: true,
+                                autoPlayInterval: const Duration(seconds: 2),
+                                autoPlayCurve: Curves.fastOutSlowIn,
+
+                              )),
+                          Container(
+                            // topitemVT7 (385:1237)
+                            margin: EdgeInsets.fromLTRB(0*fem, 20*fem, 6*fem, 22*fem),
+                            padding: EdgeInsets.fromLTRB(26*fem, 17*fem, 31.4*fem, 23*fem),
+                            width: double.infinity,
+                            decoration: BoxDecoration (
+                              color: Color(0xff993300),
+                              borderRadius: BorderRadius.circular(20*fem),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color(0x3f834d1e),
+                                  offset: Offset(0*fem, 4*fem),
+                                  blurRadius: 2*fem,
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  // autogroup49ffZhs (JzUcr5rfMU4f8E3TJi49FF)
+                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 32*fem, 11*fem),
+                                  width: 150*fem,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        // textspbanchayHtm (385:1240)
+                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
+                                        child: Text(
+                                          'Sản phẩm bán chạy',
+                                          style: SafeGoogleFont (
+                                            'Quicksand',
+                                            fontSize: 16*ffem,
+                                            fontWeight: FontWeight.w400,
+                                            height: 1.25*ffem/fem,
+                                            color: Color(0xfffcf2d9),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        // textbacxiuzHP (385:1239)
+                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 47*fem),
+                                        child: Text(
+                                          'Sữa lắc Hi',
+                                          style: SafeGoogleFont (
+                                            'Quicksand',
+                                            fontSize: 20*ffem,
+                                            fontWeight: FontWeight.w700,
+                                            height: 1.25*ffem/fem,
+                                            color: Color(0xfffcf2d9),
+                                          ),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap:(){
+                                          Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) => QuanLyKH()
+                                            ),
+                                          );
+                                      },
+                                        child: Container(
+                                          // autogroupfhcmhhb (JzUcwLCvENpfWEbWTzFHcM)
+                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 68.83*fem, 0*fem),
+                                          width: double.infinity,
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                // textxemthemthongtinsp3Ff (385:1241)
+                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7.5*fem, 0*fem),
+                                                child: Text(
+                                                  'Xem thêm',
+                                                  style: SafeGoogleFont (
+                                                    'Quicksand',
+                                                    fontSize: 12*ffem,
+                                                    fontWeight: FontWeight.w400,
+                                                    height: 1.25*ffem/fem,
+                                                    color: Color(0xfffcf2d9),
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                // akariconsarrowrightmBf (385:1243)
+                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
+                                                width: 11.33*fem,
+                                                height: 9.33*fem,
+                                                child: Image.asset(
+                                                  'assets/page-1/images/akar-icons-arrow-right.png',
+                                                  width: 11.33*fem,
+                                                  height: 9.33*fem,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  // image224Am (385:1242)
+                                  width: 81.6*fem,
+                                  height: 122*fem,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10*fem),
+                                    child: Image.asset(
+                                      'assets/page-1/images/image-22.png',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            // iucbittiqunnsT (385:1266)
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 155*fem, 18*fem),
+                            child: Text(
+                              'Điều đặc biệt tại quán',
+                              style: SafeGoogleFont (
+                                'Dancing Script',
+                                fontSize: 18*ffem,
+                                fontWeight: FontWeight.w600,
+                                height: 1.2*ffem/fem,
+                                color: Color(0xff993300),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            // frame88VWy (385:1267)
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 6*fem, 0*fem),
+                            width: 321*fem,
+                            height: 162*fem,
+
+                            child: Stack(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(20*fem),
+                                  child: Positioned(
+                                    // image23mjP (385:1268)
+                                    left: 0*fem,
+                                    top: -9*fem,
+                                    child: Align(
+                                      child: SizedBox(
+                                        width: 316*fem,
+                                        height: 180.81*fem,
+                                        child: Image.asset(
+                                          'assets/page-1/images/KhongGian.png',
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Positioned(
+                    // textchaomungjQd (385:1273)
+                    left: 27*fem,
+                    top: 34*fem,
+                    child: Align(
+                      child: SizedBox(
+                        width: 55*fem,
+                        height: 24*fem,
+                        child: Text(
+                          'Hi ní!',
+                          style: SafeGoogleFont (
+                            'Dancing Script',
+                            fontSize: 23*ffem,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2*ffem/fem,
+                            color: Color(0xff007373),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+        ),
+      );
+  }
+}
