@@ -8,8 +8,6 @@ import 'package:myapp/page-1/TrangChuKH.dart';
 import 'package:myapp/page-1/TrangChuNVNew.dart';
 import 'package:myapp/page-1/dangki.dart';
 import 'package:myapp/page-1/dangnhap.dart';
-// import 'package:myapp/page-1/danhmucsanpham.dart';
-// import 'package:myapp/page-1/themsanpham.dart';
 // import 'package:myapp/utils.dart';
 // import 'package:myapp/page-1/.dart';
 // import 'package:myapp/page-1/-bxm.dart';
