@@ -10,12 +10,12 @@ import 'package:myapp/page-1/TrangChuNVNew.dart';
 // import 'dart:ui';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:myapp/page-1/GioiThieu1.dart';
-// import 'package:myapp/page-1/capnhatsanpham.dart';
-// import 'package:myapp/page-1/chitietnguyenlieu.dart';
+// import 'package:myapp/page-1/CapNhatSanPham.dart';
+// import 'package:myapp/page-1/ChiTietNguyenLieu.dart';
 import 'package:myapp/page-1/dangki.dart';
 import 'package:myapp/page-1/dangnhap.dart';
-// import 'package:myapp/page-1/danhmucsanpham.dart';
-// import 'package:myapp/page-1/themsanpham.dart';
+// import 'package:myapp/page-1/DanhMucSanPham.dart';
+// import 'package:myapp/page-1/ThemSanPham.dart';
 // import 'package:myapp/utils.dart';
 // import 'package:myapp/page-1/.dart';
 // import 'package:myapp/page-1/-bxm.dart';
@@ -65,7 +65,7 @@ import 'package:myapp/page-1/dangnhap.dart';
 // import 'package:myapp/page-1/payment-success-mbo.dart';
 import 'package:myapp/page-1/chaomung.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:myapp/page-1/thanhtoanthanhcong.dart';
+import 'package:myapp/page-1/ThanhToanThanhCong.dart';
 import 'package:myapp/user_auth/services/UserManagement.dart';
 // import 'firebase_options.dart';
 import 'firebase_options.dart';
@@ -118,7 +118,7 @@ class MyApp extends StatelessWidget {
 				'/admin': (context) => TrangChuNew(),
 				'/nhanvien': (context) => TrangChuNVNew(),
 				'/khachhang': (context) => QuanLyKH(),
-				'/notification_screen': (context)=> const successScreen(),
+				'/notification_screen': (context)=> const SuccessScreen(),
 
 			},
 			// theme: ThemeData(

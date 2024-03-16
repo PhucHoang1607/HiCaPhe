@@ -1,13 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/danhsachnhanvien.dart';
 import 'package:myapp/utils.dart';
 
-import 'capnhatnhanvien.dart';
+import 'CapNhatNhanVien.dart';
 
 class ChiTietNhanVien extends StatefulWidget {
   final String NhanVienID;

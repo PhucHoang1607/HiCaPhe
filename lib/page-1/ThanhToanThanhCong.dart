@@ -1,20 +1,16 @@
-
-import 'dart:convert';
-
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:myapp/page-1/QuanLyKH.dart';
-import 'package:myapp/page-1/TrangChuKH.dart';
-class successScreen extends StatefulWidget {
-  const successScreen({super.key});
+
+class SuccessScreen extends StatefulWidget {
+  const SuccessScreen({super.key});
 
   @override
-  State<successScreen> createState() => _successScreenState();
+  State<SuccessScreen> createState() => _successScreenState();
 }
 
-class _successScreenState extends State<successScreen> {
+class _successScreenState extends State<SuccessScreen> {
   Map payload = {};
   @override
   Widget build(BuildContext context) {

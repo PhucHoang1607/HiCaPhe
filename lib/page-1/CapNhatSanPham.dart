@@ -3,12 +3,9 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/model/danhmuccaphe.dart';
+import 'package:myapp/model/DanhMucCaPhe.dart';
 import 'package:myapp/page-1/danhmucsanpham.dart';
 import 'package:myapp/utils.dart';
 
@@ -29,7 +26,7 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
   String size = ""; // Giá trị ban đầu
   String imageURL = "";
 
-  Future updateCaPhe(Caphe caphe, String id) async
+  Future updateCaPhe(CaPhe caphe, String id) async
   {
     Map<String, dynamic> dulieucf = {
       'donGia' : caphe.donGia,
@@ -374,7 +371,7 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                                     if(formKey.currentState!.validate()){
                                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
                                       double donGia = double.parse(price.text);
-                                      final edit = Caphe(donGia, quantity.text, imageURL, idCate.text, size, descrip.text, name.text);
+                                      final edit = CaPhe(donGia, quantity.text, imageURL, idCate.text, size, descrip.text, name.text);
                                       updateCaPhe(edit, widget.id);
                                     }
 

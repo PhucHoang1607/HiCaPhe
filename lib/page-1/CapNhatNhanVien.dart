@@ -3,13 +3,11 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/model/nhanvien.dart';
-import 'package:myapp/page-1/danhsachnhanvien.dart';
+import 'package:myapp/model/NhanVien.dart';
+import 'package:myapp/page-1/DanhSachNhanVien.dart';
 import 'package:myapp/utils.dart';
 
 class SuaNhanVien extends StatefulWidget {
@@ -45,7 +43,7 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
   String gentle = "Khác";
   String calam = "Sáng"; // Giá trị ban đầu
   String imageURLNV = "";
-  Future updateNhanvien(Nhanvien nhanvien, String id) async
+  Future updateNhanvien(NhanVien nhanvien, String id) async
   {
     Map<String, dynamic> dulieuNV = {
       'caLam' : nhanvien.caLam,
@@ -398,7 +396,7 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                     onPressed: (){
                                       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
                                       double Luong = double.parse(luong.text);
-                                      final UpdateNV = Nhanvien(
+                                      final UpdateNV = NhanVien(
                                         calam,
                                         imageURLNV,
                                         Luong,

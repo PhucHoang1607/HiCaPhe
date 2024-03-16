@@ -1,14 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/GioiThieu1.dart';
-import 'package:myapp/page-1/TrangChuNew.dart';
-// import 'package:myapp/page-1/GioiThieu2.dart';
-// import 'package:myapp/page-1/GioiThieu3.dart';
-// import 'package:myapp/page-1/GioiThieu4.dart';
 import 'package:myapp/utils.dart';
 import 'package:page_transition/page_transition.dart';
 

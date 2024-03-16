@@ -1,26 +1,9 @@
-import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:intl/intl.dart';
-import 'package:myapp/model/giohang.dart';
-import 'package:myapp/page-1/DanhMucSanPhamKH.dart';
-import 'package:myapp/page-1/GioHang.dart';
-import 'package:myapp/page-1/QuanLyKH.dart';
-import 'package:myapp/page-1/TrangChuKH.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:myapp/danhmuccaphe.dart';
-import 'package:myapp/page-1/thanhtoanthanhcong.dart';
-import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
-import 'package:pay/pay.dart';
-import '../method/google_api.dart';
 import 'ChiTietSanPham.dart';
-import 'ChiTietSanPhamKH.dart';
 
 class ChiTetDonHang extends StatefulWidget {
   final String id, displayName, ngayDH, tinhTrang;

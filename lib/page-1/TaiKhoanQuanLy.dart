@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/model/user.dart';
-import 'package:myapp/page-1/capnhattaikhoanquanly.dart';
+import 'package:myapp/model/User.dart';
+import 'package:myapp/page-1/CapNhatTaiKhoanQuanLy.dart';
 import 'package:myapp/utils.dart';
 
-class Taikhoanquanly extends StatelessWidget {
+class TaiKhoanQuanLy extends StatelessWidget {
 
-  Taikhoanquanly({super.key, required this.users});
+  TaiKhoanQuanLy({super.key, required this.users});
   Users? users;
   @override
   Widget build(BuildContext context) {

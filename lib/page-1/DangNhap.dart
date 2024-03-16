@@ -2,18 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:myapp/page-1/TrangChuKH.dart';
-// import 'package:flutter/gestures.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/DangKi.dart';
-import 'package:myapp/page-1/doimatkhau.dart';
-import 'package:myapp/page-1/quenmatkhau.dart';
-// import 'package:myapp/page-1/trangchu.dart';
+import 'package:myapp/page-1/QuenMatKhau.dart';
 import 'package:myapp/utils.dart';
 
 import '../user_auth/firebase_auth_implementation/firebase_auth_services.dart';
-import '../widgets/form_container_widget.dart';
 
 class DangNhap extends StatefulWidget {
   const DangNhap({super.key});

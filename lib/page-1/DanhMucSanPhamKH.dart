@@ -2,22 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:myapp/model/user.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:myapp/danhmuccaphe.dart';
-import 'package:myapp/page-1/CapNhatSanPham.dart';
-import 'package:myapp/page-1/ChiTietSanPham.dart';
 import 'package:myapp/page-1/QuanLyKH.dart';
-import 'package:myapp/page-1/ThemSanPham.dart';
-import 'package:myapp/page-1/TrangChuKH.dart';
-import 'package:myapp/page-1/danhmucsanpham.dart';
-import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
 
-import '../model/yeuthich.dart';
+import '../model/YeuThich.dart';
 import 'ChiTietSanPhamKH.dart';
 
 class DanhMucSanPhamKH extends StatefulWidget {
@@ -28,7 +17,7 @@ class DanhMucSanPhamKH extends StatefulWidget {
 }
 
 class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
-  Future addnewFavorite( Capheyeuthich capheyeuthich) async {
+  Future addnewFavorite( CaPheYeuThich capheyeuthich) async {
     final String newId = DateTime.now().millisecondsSinceEpoch.toString(); // Ham lien ket vao cloud firebase
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
     User? user = FirebaseAuth.instance.currentUser;
@@ -467,7 +456,7 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                                 print('In ID product ${favoriteProducts}');
 
                                                 if (favoriteProducts.docs.isEmpty) {
-                                                  Capheyeuthich yeuthich = Capheyeuthich(id, idCate);
+                                                  CaPheYeuThich yeuthich = CaPheYeuThich(id, idCate);
                                                   // Nếu sản phẩm chưa tồn tại, thêm vào danh sách yêu thích
                                                   addnewFavorite(yeuthich);
                                                 }

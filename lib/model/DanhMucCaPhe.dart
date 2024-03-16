@@ -1,4 +1,4 @@
-class Caphe {
+class CaPhe {
   double donGia;
   String donviTinh;
   String hinhAnh;
@@ -8,7 +8,7 @@ class Caphe {
   String tenCaphe;
 
 
-  Caphe(this.donGia, this.donviTinh, this.hinhAnh, this.idCate, this.kichThuoc,
+  CaPhe(this.donGia, this.donviTinh, this.hinhAnh, this.idCate, this.kichThuoc,
       this.motaCaphe, this.tenCaphe);
 
 

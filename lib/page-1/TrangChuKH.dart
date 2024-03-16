@@ -1,21 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/model/admin.dart';
-import 'package:myapp/model/user.dart';
-import 'package:myapp/page-1/DanhMucDonHang.dart';
-import 'package:myapp/page-1/DanhMucSanPhamKH.dart';
-import 'package:myapp/page-1/DoiMatKhau.dart';
+import 'package:myapp/model/Admin.dart';
 import 'package:myapp/page-1/QuanLyKH.dart';
 import 'package:myapp/page-1/LichSuMuaHang.dart';
 import 'package:myapp/page-1/thongtinungdung.dart';
@@ -24,7 +14,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'DangNhap.dart';
 import 'TaiKhoanKH.dart';
 import 'Thongbao.dart';
-import 'lienhe.dart';
+import 'LienHe.dart';
 
 class TrangChuKH extends StatefulWidget{
   @override
@@ -268,7 +258,7 @@ class TrangChuKHState extends State<TrangChuKH> {
                             children: [
                               GestureDetector(
                                 onTap:(){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Thongbao()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ThongBao()));
                                 },
                                 child: Container(
                                   // vectorthongbao7fX (385:1248)

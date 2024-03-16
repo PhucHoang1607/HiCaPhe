@@ -3,16 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/capnhatnguyenlieu.dart';
-// import 'package:flutter/gestures.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/capnhatnhanvien.dart';
-import 'package:myapp/page-1/chitietnguyenlieu.dart';
-import 'package:myapp/page-1/chitietnhanvien.dart';
-import 'package:myapp/page-1/danhsachnhanvien.dart';
-import 'package:myapp/page-1/themnguyenlieu.dart';
-import 'package:myapp/page-1/themnhanvien.dart';
-import 'package:myapp/page-1/TrangChuNew.dart';
+import 'package:myapp/page-1/ChiTietNguyenLieu.dart';
+import 'package:myapp/page-1/ThemNguyenLieu.dart';
 import 'package:myapp/utils.dart';
 
 class QuanLyNguyenLieu extends StatefulWidget {

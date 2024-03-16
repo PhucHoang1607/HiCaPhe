@@ -1,4 +1,4 @@
-class Nhanvien{
+class NhanVien{
   String caLam;
   String hinhAnh;
   double luong;
@@ -8,7 +8,7 @@ class Nhanvien{
   String gioiTinh;
 
 
-  Nhanvien(this.caLam, this.hinhAnh, this.luong, this.ngaySinh, this.sdt,
+  NhanVien(this.caLam, this.hinhAnh, this.luong, this.ngaySinh, this.sdt,
       this.tenNV, this.gioiTinh);
 
   @override

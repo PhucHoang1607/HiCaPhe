@@ -3,18 +3,11 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/model/user.dart';
 import 'package:myapp/page-1/QuanLyKH.dart';
-import 'package:myapp/page-1/TaiKhoanKH.dart';
-import 'package:myapp/page-1/TrangChuKH.dart';
 import 'package:myapp/utils.dart';
-
-import '../model/admin.dart';
 
 class CapNhatTaiKhoanKhachHang extends StatefulWidget {
   const CapNhatTaiKhoanKhachHang({super.key, required this.diaChi, required this.displayName, required this.email, required this.hinhanh, required this.sdt, required this.id, required this.uid});

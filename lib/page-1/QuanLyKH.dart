@@ -3,7 +3,6 @@ import 'package:myapp/page-1/DanhMucSanPhamKH.dart';
 import 'package:myapp/page-1/GioHang.dart';
 import 'package:myapp/page-1/TrangChuKH.dart';
 import 'package:myapp/page-1/YeuThich.dart';
-import 'package:myapp/page-1/danhmucsanpham.dart';
 
 class QuanLyKH extends StatefulWidget {
   @override

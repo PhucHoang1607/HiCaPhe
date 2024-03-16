@@ -1,17 +1,12 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:myapp/model/danhmuccaphe.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/page-1/danhmucsanpham.dart';
+import 'package:myapp/model/DanhMucCaPhe.dart';
+import 'package:myapp/page-1/DanhMucSanPham.dart';
 import 'package:myapp/utils.dart';
 import 'package:image_picker/image_picker.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class ThemSanPham extends StatefulWidget {
@@ -56,7 +51,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
     }
   }
 
-  Future addnewCaphes( Caphe caphe) async {
+  Future addnewCaphes( CaPhe caphe) async {
     final String newId = DateTime.now().millisecondsSinceEpoch.toString(); // Ham lien ket vao cloud firebase
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
     String imageURL = await uploadImage(newId);
@@ -396,7 +391,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                       widget.updateProductStream();
                                       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DanhMucSanPham()));
                                       double gia = double.parse(dongia.text);
-                                      Caphe caphe = Caphe(
+                                      CaPhe caphe = CaPhe(
                                         gia,
                                         soluong.text,
                                         hinhanh,

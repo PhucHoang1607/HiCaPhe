@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/DangNhap.dart';
-// import 'package:myapp/page-1/TrangChu.dart';
-// import 'package:myapp/page-1/TrangChuNV.dart';
 import 'package:myapp/utils.dart';
 
 class GioiThieu4 extends StatelessWidget {

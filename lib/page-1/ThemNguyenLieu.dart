@@ -3,16 +3,13 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:myapp/page-1/DanhMucNguyenLieu.dart';
 import 'package:myapp/utils.dart';
 
-import '../model/quanlynguyenlieu.dart';
+import '../model/QuanLyNguyenLieu.dart';
 
 class ThemNguyenLieu extends StatefulWidget {
   final void Function() updateProductStreamNL;

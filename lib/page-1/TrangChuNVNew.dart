@@ -1,23 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/DanhMucDonHang.dart';
-import 'package:myapp/page-1/danhmucsanpham.dart';
-import 'package:myapp/page-1/taikhoangnhanvien.dart';
-import 'package:myapp/page-1/taikhoanquanly.dart';
+import 'package:myapp/page-1/DanhMucSanPham.dart';
+import 'package:myapp/page-1/TaiKhoanNhanVien.dart';
 import 'package:myapp/page-1/DanhMucNguyenLieu.dart';
-import 'package:myapp/page-1/thongtinungdung.dart';
+import 'package:myapp/page-1/ThongTinUngDung.dart';
 import 'package:myapp/utils.dart';
-import '../model/user.dart';
+import '../model/User.dart';
 import 'DangNhap.dart';
-import 'TaiKhoanKH.dart';
 import 'Thongbao.dart';
-import 'lienhe.dart';
+import 'LienHe.dart';
+
 class TrangChuNVNew extends StatefulWidget{
   @override
   TrangChuNVNewState createState() => TrangChuNVNewState();
@@ -250,7 +247,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                               children: [
                                 GestureDetector(
                                   onTap:(){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Thongbao()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ThongBao()));
                                   },
                                   child: Container(
                                     // vectorthongbaoVFn (180:63)

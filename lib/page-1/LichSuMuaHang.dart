@@ -1,14 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/model/giohang.dart';
-import 'package:myapp/page-1/ChiTietDonHang.dart';
 import 'package:myapp/page-1/ChiTietSPDH.dart';
-import 'package:myapp/page-1/ChiTietSanPhamKH.dart';
-import 'package:myapp/page-1/DanhMucSanPhamKH.dart';
-import 'package:myapp/page-1/DatHang.dart';
 import 'package:myapp/utils.dart';
 
 class DanhMucDonHangKH extends StatefulWidget {

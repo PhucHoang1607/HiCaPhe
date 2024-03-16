@@ -4,11 +4,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:myapp/model/nhanvien.dart';
+import 'package:myapp/model/NhanVien.dart';
 import 'package:myapp/page-1/danhsachnhanvien.dart';
-// import 'package:flutter/gestures.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:intl/intl.dart';
 
@@ -81,7 +78,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
     }
   }
 
-  Future addnewStaff(Nhanvien nhanvien) async {
+  Future addnewStaff(NhanVien nhanvien) async {
     final String newId = DateTime.now().millisecondsSinceEpoch.toString(); // Ham lien ket vao cloud firebase
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
     String imageURLNV = await uploadImageNV(newId);
@@ -447,7 +444,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                                 widget.updateProductStreamNV();
                                                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
                                                 double Luong = double.parse(luong.text);
-                                                Nhanvien NV = Nhanvien(
+                                                NhanVien NV = NhanVien(
                                                     Calam,
                                                     hinhanh,
                                                     Luong,

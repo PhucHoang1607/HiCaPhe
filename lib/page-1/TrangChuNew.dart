@@ -1,26 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:ui';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/page-1/DanhMucDonHang.dart';
-import 'package:myapp/page-1/TaiKhoanKH.dart';
-// import 'package:myapp/page-1/ThongKeDoanhThu.dart';
-import 'package:myapp/page-1/danhsachnhanvien.dart';
-import 'package:myapp/page-1/guithongbao.dart';
-import 'package:myapp/page-1/taikhoanquanly.dart';
+import 'package:myapp/page-1/DanhSachNhanVien.dart';
+import 'package:myapp/page-1/GuiThongBao.dart';
+import 'package:myapp/page-1/TaiKhoanQuanLy.dart';
 import 'package:myapp/page-1/DanhMucNguyenLieu.dart';
-import 'package:myapp/page-1/thongtinungdung.dart';
+import 'package:myapp/page-1/ThongTinUngDung.dart';
 import 'package:myapp/utils.dart';
-import 'package:flutter/services.dart';
-import '../model/user.dart';
+import '../model/User.dart';
 import 'DangNhap.dart';
 import 'ThongKeDanhThu.dart';
 import 'danhmucsanpham.dart';
-import 'lienhe.dart';
+import 'LienHe.dart';
 
 
 class TrangChuNew extends StatefulWidget {
@@ -194,7 +189,7 @@ class _TrangChuNewState extends State<TrangChuNew> {
                             leading: Image.asset("assets/page-1/images/octicon_person-16.png"),
                             title: Text('Tài Khoản'),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Taikhoanquanly(users: users)));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> TaiKhoanQuanLy(users: users)));
                             },
                           ),
                           ListTile(

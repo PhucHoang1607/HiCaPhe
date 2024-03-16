@@ -1,18 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/gestures.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-// import 'dart:ui';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:myapp/danhmuccaphe.dart';
-import 'package:myapp/page-1/CapNhatSanPham.dart';
-import 'package:myapp/page-1/ChiTietSanPham.dart';
-import 'package:myapp/page-1/ThemSanPham.dart';
-import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
 
-class Thongbao extends StatelessWidget {
+class ThongBao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;

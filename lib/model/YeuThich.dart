@@ -1,8 +1,8 @@
-class Capheyeuthich {
+class CaPheYeuThich {
   String idSP;
   String idCate;
 
-  Capheyeuthich(this.idSP, this.idCate);
+  CaPheYeuThich(this.idSP, this.idCate);
 
   @override
   String toString() {

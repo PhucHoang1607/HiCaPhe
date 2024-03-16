@@ -382,7 +382,7 @@ flutter:
     - assets/page-1/images/KhongGian.png
     - assets/page-1/images/AddFavorite.png
     - assets/page-1/images/AddCart.png
-    - lib/page-1/lienhe.dart
+    - lib/page-1/LienHe.dart
     - assets/
     - assets/page-1/
     - assets/page-1/images/
