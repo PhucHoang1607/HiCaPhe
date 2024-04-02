@@ -12,7 +12,9 @@ class GioHang extends StatefulWidget {
   @override
   State<GioHang> createState() => _GioHangState();
 }
-final CollectionReference updataGioHang =FirebaseFirestore.instance.collection('Cart');
+
+final CollectionReference updataGioHang =
+    FirebaseFirestore.instance.collection('Cart');
 
 Future<double> calculateTotalAmount() async {
   final QuerySnapshot snapshot = await updataGioHang.get();
@@ -20,15 +22,15 @@ Future<double> calculateTotalAmount() async {
 
   for (final QueryDocumentSnapshot doc in snapshot.docs) {
     final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-    final  thanhTien = data['thanhTien'];
+    final thanhTien = data['thanhTien'];
     total += thanhTien;
   }
 
   return total;
 }
+
 class _GioHangState extends State<GioHang> {
   double tonghoadon = 0.0;
-
 
   // Gọi hàm để lấy ID của Cart
   bool sapXepNguyenLieu = true;
@@ -38,12 +40,14 @@ class _GioHangState extends State<GioHang> {
       productStreamgiohang = updataGioHang.orderBy('tenSP').snapshots();
     });
   }
+
   @override
   void initState() {
     super.initState();
     // Khởi tạo productStream với dữ liệu ban đầu
     productStreamgiohang = updataGioHang.snapshots();
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -56,7 +60,7 @@ class _GioHangState extends State<GioHang> {
           child: Container(
             // giohangnqn (180:274)
             width: double.infinity,
-            decoration: BoxDecoration (
+            decoration: BoxDecoration(
               color: Color(0xfff5dab1),
             ),
             child: Column(
@@ -64,54 +68,56 @@ class _GioHangState extends State<GioHang> {
               children: [
                 Container(
                   // autogroupto4cvSC (3GhWLCmRP8As9nJbVoTo4c)
-                  padding: EdgeInsets.fromLTRB(10*fem, 16*fem, 17.06*fem, 29*fem),
+                  padding: EdgeInsets.fromLTRB(
+                      10 * fem, 16 * fem, 17.06 * fem, 29 * fem),
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         // autogroupza161Te (3GhQt7M7TfREV1xw3tZA16)
-                        margin: EdgeInsets.fromLTRB(6*fem, 0*fem, 0*fem, 23*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            6 * fem, 0 * fem, 0 * fem, 23 * fem),
                         width: double.infinity,
-                        height: 32*fem,
+                        height: 32 * fem,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             GestureDetector(
-                              onTap: (){
+                              onTap: () {
                                 Navigator.pop(context);
                               },
                               child: Container(
                                 // vector7ma (180:352)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
-                                width: 32*fem,
-                                height: 32*fem,
-                                child:
-                                Image.asset(
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 30 * fem, 0 * fem),
+                                width: 32 * fem,
+                                height: 32 * fem,
+                                child: Image.asset(
                                   'assets/page-1/images/vector-QPr.png',
-                                  width: 32*fem,
-                                  height: 32*fem,
+                                  width: 32 * fem,
+                                  height: 32 * fem,
                                 ),
                               ),
                             ),
                             Container(
                               // opt4cyE (180:275)
-                              width: 223.05*fem,
+                              width: 223.05 * fem,
                               height: double.infinity,
-                              decoration: BoxDecoration (
+                              decoration: BoxDecoration(
                                 color: Color(0xff993300),
-                                borderRadius: BorderRadius.circular(30*fem),
+                                borderRadius: BorderRadius.circular(30 * fem),
                               ),
                               child: Center(
                                 child: Center(
                                   child: Text(
                                     'Giỏ hàng ',
                                     textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
+                                    style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 15*ffem,
+                                      fontSize: 15 * ffem,
                                       fontWeight: FontWeight.w700,
-                                      height: 1.3333333333*ffem/fem,
+                                      height: 1.3333333333 * ffem / fem,
                                       color: Color(0xfffcf2d9),
                                     ),
                                   ),
@@ -123,21 +129,23 @@ class _GioHangState extends State<GioHang> {
                       ),
                       Container(
                         // autogroup6gk2s8U (3GhR2gw9gvnYbYL38w6GK2)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1.94*fem, 7*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 1.94 * fem, 7 * fem),
                         width: double.infinity,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               // tngtinthanhtonc64 (180:356)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                              margin: EdgeInsets.fromLTRB(
+                                  0 * fem, 0 * fem, 20 * fem, 0 * fem),
                               child: Text(
                                 'Tổng tiền thanh toán',
-                                style: SafeGoogleFont (
+                                style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 16*ffem,
+                                  fontSize: 16 * ffem,
                                   fontWeight: FontWeight.w700,
-                                  height: 1.25*ffem/fem,
+                                  height: 1.25 * ffem / fem,
                                   color: Color(0xff000000),
                                 ),
                               ),
@@ -145,11 +153,11 @@ class _GioHangState extends State<GioHang> {
                             Text(
                               // UPA (180:357)
                               ' ${tonghoadon.toStringAsFixed(0)} \t VND',
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 16*ffem,
+                                fontSize: 16 * ffem,
                                 fontWeight: FontWeight.w700,
-                                height: 1.25*ffem/fem,
+                                height: 1.25 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
                             ),
@@ -158,44 +166,48 @@ class _GioHangState extends State<GioHang> {
                       ),
                       Container(
                         // autogroupx1gcckG (3GhR8GcBhg1HMCfPzPX1Gc)
-                        margin: EdgeInsets.fromLTRB(2*fem, 0*fem, 0*fem, 0*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            2 * fem, 0 * fem, 0 * fem, 0 * fem),
                         width: double.infinity,
-                        height: 32*fem,
+                        height: 32 * fem,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               // autogroupey1ekrU (3GhRErFZ7vcDDpLfvNeY1e)
-                              padding: EdgeInsets.fromLTRB(0*fem, 6*fem, 38*fem, 4*fem),
+                              padding: EdgeInsets.fromLTRB(
+                                  0 * fem, 6 * fem, 38 * fem, 4 * fem),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                ],
+                                children: [],
                               ),
                             ),
                             Container(
                               // opt56or (180:278)
-                              width: 195*fem,
+                              width: 195 * fem,
                               height: double.infinity,
-                              decoration: BoxDecoration (
+                              decoration: BoxDecoration(
                                 color: Color(0xff993300),
-                                borderRadius: BorderRadius.circular(30*fem),
+                                borderRadius: BorderRadius.circular(30 * fem),
                               ),
                               child: Center(
                                 child: Center(
                                   child: TextButton(
-                                    onPressed: (){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> DatHang()));
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => DatHang()));
                                     },
                                     child: Text(
                                       'Đặt hàng ',
                                       textAlign: TextAlign.center,
-                                      style: SafeGoogleFont (
+                                      style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 15*ffem,
+                                        fontSize: 15 * ffem,
                                         fontWeight: FontWeight.w700,
-                                        height: 1*ffem/fem,
+                                        height: 1 * ffem / fem,
                                         color: Color(0xfffcf2d9),
                                       ),
                                     ),
@@ -211,8 +223,8 @@ class _GioHangState extends State<GioHang> {
                 ),
                 Expanded(
                   child: StreamBuilder<QuerySnapshot>(
-                      stream:  updataGioHang.snapshots(),
-                      builder: (context,snapshot) {
+                      stream: updataGioHang.snapshots(),
+                      builder: (context, snapshot) {
                         final giohang = snapshot.data!.docs;
                         // Tính tổng tiền từ dữ liệu Firebase
                         calculateTotalAmount().then((double total) {
@@ -221,29 +233,34 @@ class _GioHangState extends State<GioHang> {
                           });
                         });
                         return ListView.builder(
-                          // đưa dữ liệu hiển thị lên màn hình
+                            // đưa dữ liệu hiển thị lên màn hình
                             itemCount: giohang.length,
-                            itemBuilder: (context, document){
-                              print("Number of filtered items: ${giohang.length}"); // Add this lin
-                              for (var item in giohang) {
-                                // print('Item ID: ${item.id}, idSP: ${item['id']}');
-                              }
-                              final DocumentSnapshot documentSnapshotGioHang = giohang[document];
-                              final thanhTien = documentSnapshotGioHang['thanhTien'];
+                            itemBuilder: (context, document) {
+                              final DocumentSnapshot documentSnapshotGioHang =
+                                  giohang[document];
+                              final dongia = documentSnapshotGioHang['donGia'];
                               final id = documentSnapshotGioHang.id;
                               final idSP = documentSnapshotGioHang['id'];
-                              final soluong = documentSnapshotGioHang['soluong'];
+                              final soluong =
+                                  documentSnapshotGioHang['soluong'];
                               return StreamBuilder<DocumentSnapshot>(
-                                  stream: FirebaseFirestore.instance.collection('Product').doc(idSP).snapshots(),
-                                  builder: (context, index){
+                                  stream: FirebaseFirestore.instance
+                                      .collection('Product')
+                                      .doc(idSP)
+                                      .snapshots(),
+                                  builder: (context, index) {
                                     if (!index.hasData || index.data == null) {
                                       // Handle the case where no data is available for the given idSP
-                                      return Text('Không có dữ liệu cho idSP: $idSP');
+                                      return Text(
+                                          'Không có dữ liệu cho idSP: $idSP');
                                     }
-                                    final productData = index.data?.data() as Map<String, dynamic>? ?? {};
+                                    final productData = index.data?.data()
+                                            as Map<String, dynamic>? ??
+                                        {};
                                     if (productData.isEmpty) {
                                       // Handle the case where the product data is empty
-                                      return Text('Dữ liệu sản phẩm trống cho idSP: $idSP');
+                                      return Text(
+                                          'Dữ liệu sản phẩm trống cho idSP: $idSP');
                                     }
                                     final tensp = productData['tenSP'];
                                     final hinhanh = productData['hinhAnh'];
@@ -253,9 +270,16 @@ class _GioHangState extends State<GioHang> {
                                         height: 105,
                                         child: ListTile(
                                           tileColor: Color(0xfff5dab2),
-                                          visualDensity: VisualDensity(vertical: 4),
-                                          onTap: (){
-                                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ChiTietSanPhamKH(idspKH: idSP),),);
+                                          visualDensity:
+                                              VisualDensity(vertical: 4),
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ChiTietSanPhamKH(
+                                                        idspKH: idSP),
+                                              ),
+                                            );
                                           },
                                           leading: ConstrainedBox(
                                             constraints: const BoxConstraints(
@@ -265,44 +289,51 @@ class _GioHangState extends State<GioHang> {
                                               maxHeight: 64,
                                             ),
                                             child: ClipRRect(
-                                                borderRadius:BorderRadius.circular(10),
-                                                child: Image.network(hinhanh, fit: BoxFit.cover)
-                                            ),
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                child: Image.network(hinhanh,
+                                                    fit: BoxFit.cover)),
                                           ),
-                                          title: Text(tensp,
+                                          title: Text(
+                                            tensp,
                                             style: const TextStyle(
                                                 fontFamily: 'Quicksand',
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 26,
-                                                color: Colors.black
-
-                                            ),),
+                                                color: Colors.black),
+                                          ),
                                           subtitle: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text("Kích thước : " + kichthuoc),
-                                              Text(thanhTien.toString() + ' VND'),
+                                              Text(dongia.toString() +
+                                                  ' VND'),
                                             ],
                                           ),
-                                          trailing:
-                                          SingleChildScrollView(
+                                          trailing: SingleChildScrollView(
                                             child: Column(
-                                               // crossAxisAlignment: CrossAxisAlignment.center,
+                                              // crossAxisAlignment: CrossAxisAlignment.center,
                                               children: [
-                                                _tanggiamsoluong(id),
+                                                _tanggiamsoluong(id,soluong,dongia),
                                                 Container(
                                                   // btxoaWL1 (5:462)
-                                                  margin: EdgeInsets.only(bottom:0*fem, top:0*fem),
-                                                  width: 29*fem,
-                                                  height: 29*fem,
+                                                  margin: EdgeInsets.only(
+                                                      bottom: 0 * fem,
+                                                      top: 0 * fem),
+                                                  width: 29 * fem,
+                                                  height: 29 * fem,
                                                   child: TextButton(
-                                                    onPressed: (){
-                                                      confirmDeleteDialoggiohang(updataGioHang.doc(documentSnapshotGioHang.id));
+                                                    onPressed: () {
+                                                      confirmDeleteDialoggiohang(
+                                                          updataGioHang.doc(
+                                                              documentSnapshotGioHang
+                                                                  .id));
                                                     },
                                                     child: Image.asset(
                                                       'assets/page-1/images/btxoa.png',
-                                                      width: 32*fem,
-                                                      height: 32*fem,
+                                                      width: 32 * fem,
+                                                      height: 32 * fem,
                                                     ),
                                                   ),
                                                 ),
@@ -313,10 +344,8 @@ class _GioHangState extends State<GioHang> {
                                       ),
                                     );
                                   });
-                            }
-                        );
-                      }
-                  ),
+                            });
+                      }),
                 ),
               ],
             ),
@@ -325,56 +354,63 @@ class _GioHangState extends State<GioHang> {
       ),
     );
   }
-  Widget _tanggiamsoluong(String documentId) {
-    final CollectionReference doc = FirebaseFirestore.instance.collection('Cart');
 
-    return StreamBuilder<DocumentSnapshot>(
-      stream: doc.doc(documentId).snapshots(),
-      builder: (context, snapshot) {
-        final Map<String, dynamic> data = snapshot.data?.data() as Map<String, dynamic>;
-        final int quantity = data['soluong'];
-        final dongia = data['donGia'];
-        return FittedBox(
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  // Tăng số lượng
-                  if (quantity > 1) {
-                    doc.doc(documentId).update({'soluong': quantity - 1, 'thanhTien':   doc.doc(documentId).update({'soluong': quantity - 1, 'thanhTien': (dongia * (quantity - 1))})});
-                    calculateTotalAmount();
-                  }
-                },
-                icon: Icon(Icons.remove),
-              ),
-              Text(quantity.toString()),
-              IconButton(
-                onPressed: () {
-                  doc.doc(documentId).update({'soluong': quantity + 1, 'thanhTien':   doc.doc(documentId).update({'soluong': quantity + 1, 'thanhTien': (dongia * (quantity + 1))})});
-                  // Giảm số lượng, đảm bảo số lượng không nhỏ hơn 0.
+  Widget _tanggiamsoluong(String documentId, int quantity, int dongia) {
+    return FittedBox(
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {
+              // Tăng số lượng
+              if (quantity > 1) {
+                FirebaseFirestore.instance
+                    .collection('Cart')
+                    .doc(documentId)
+                    .update({
+                  'soluong': quantity - 1,
+                  'thanhTien': dongia * (quantity - 1),
+                });
+                setState(() {
                   calculateTotalAmount();
-
-                },
-                icon: Icon(Icons.add),
-              ),
-            ],
+                });
+              }
+            },
+            icon: Icon(Icons.remove),
           ),
-        );
-      },
+          Text(quantity.toString()),
+          IconButton(
+            onPressed: () {
+              FirebaseFirestore.instance
+                  .collection('Cart')
+                  .doc(documentId)
+                  .update({
+                'soluong': quantity + 1,
+                'thanhTien': dongia * (quantity + 1),
+              });
+              setState(() {
+                calculateTotalAmount();
+              });
+            },
+            icon: Icon(Icons.add),
+          ),
+        ],
+      ),
     );
   }
 
   Future confirmDeleteDialoggiohang(DocumentReference dele) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
+      barrierDismissible:
+          false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Xác nhận xóa sản phẩm'),
           content: const SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng không?'),
+                Text(
+                    'Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng không?'),
               ],
             ),
           ),
@@ -382,19 +418,22 @@ class _GioHangState extends State<GioHang> {
             TextButton(
               child: const Text('Hủy'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const GioHang()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const GioHang()));
               },
             ),
             TextButton(
               child: const Text('Xóa'),
-              onPressed: () async{
-                try{
+              onPressed: () async {
+                try {
                   await dele.delete();
                   Fluttertoast.showToast(msg: 'Xóa thành công!');
-                }catch(e){
-                  Fluttertoast.showToast(msg: 'Xóa thất bại', backgroundColor: Colors.red);
+                } catch (e) {
+                  Fluttertoast.showToast(
+                      msg: 'Xóa thất bại', backgroundColor: Colors.red);
                 }
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const GioHang()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const GioHang()));
               },
             ),
           ],
