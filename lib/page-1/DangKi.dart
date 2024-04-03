@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/DangNhap.dart';
 import 'package:myapp/utils.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 
 class DangKi extends StatefulWidget {
   const DangKi({super.key});
+
 
   @override
   State<DangKi> createState() => _DangKi();
@@ -21,6 +23,8 @@ class _DangKi extends State<DangKi> {
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   bool _passwordVisible = false;
 
@@ -330,6 +334,14 @@ class _DangKi extends State<DangKi> {
                                 ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                              child: ElevatedButton.icon(
+                                onPressed: _signUpWithGoogle,
+                                icon: Icon(Icons.login),
+                                label: Text('Đăng ký bằng Google'),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -343,6 +355,36 @@ class _DangKi extends State<DangKi> {
       ),
     ));
   }
+
+  void _signUpWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+        final User? user = userCredential.user;
+
+        if (user != null) {
+          // Thực hiện các bước đăng ký tài khoản người dùng vào Firestore
+          await _addUserDataToFirestore(user);
+
+          Fluttertoast.showToast(msg: 'Đăng ký bằng Google thành công!');
+          Navigator.pushReplacementNamed(context, "/login");
+        } else {
+          Fluttertoast.showToast(msg: 'Đăng ký bằng Google thất bại!');
+        }
+      }
+    } catch (e) {
+      print("Error during sign up with Google: $e");
+      Fluttertoast.showToast(msg: 'Đăng ký bằng Google thất bại!');
+    }
+  }
+
 
   void _signUp() async {
     String email = _emailController.text;

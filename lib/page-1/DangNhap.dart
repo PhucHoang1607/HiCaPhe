@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/DangKi.dart';
 import 'package:myapp/page-1/QuenMatKhau.dart';
 import 'package:myapp/utils.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../user_auth/firebase_auth_implementation/firebase_auth_services.dart';
 
@@ -18,6 +19,7 @@ class DangNhap extends StatefulWidget {
 class _DangNhap extends State<DangNhap> {
   final formKey = GlobalKey<FormState>();
 
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   // bool _isSigning = false;
 
@@ -338,8 +340,15 @@ class _DangNhap extends State<DangNhap> {
                                     ),
                                   ),
 
-                                )
-
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                  child: ElevatedButton.icon(
+                                    onPressed: _signInWithGoogle,
+                                    icon: Icon(Icons.login),
+                                    label: Text('Đăng nhập bằng Google'),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -353,6 +362,33 @@ class _DangNhap extends State<DangNhap> {
         ),
       ),
     );
+  }
+  //đăng nhập bằng google
+  void _signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth =
+        await googleUser.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleAuth.accessToken,
+          idToken: googleAuth.idToken,
+        );
+        UserCredential userCredential = await FirebaseAuth.instance.signInWithCredential(credential);
+        final User? user = userCredential.user;
+
+        if (user != null) {
+          // Perform role-based navigation here
+          // For example, check user's role in Firestore and navigate accordingly
+          Fluttertoast.showToast(msg: 'Đăng nhập thành công!');
+        } else {
+          Fluttertoast.showToast(msg: 'Đăng nhập thất bại!');
+        }
+      }
+    } catch (e) {
+      print(e.toString());
+      Fluttertoast.showToast(msg: 'Đăng nhập thất bại!');
+    }
   }
 
   void _signIn() async {
