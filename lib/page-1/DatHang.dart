@@ -20,6 +20,7 @@ class DatHang extends StatefulWidget {
   @override
   State<DatHang> createState() => _DatHangState();
 }
+final user = FirebaseAuth.instance.currentUser;
 
 class _DatHangState extends State<DatHang> {
   Map<String, dynamic> userInfo = {}; // Lưu thông tin người dùng
@@ -59,7 +60,7 @@ class _DatHangState extends State<DatHang> {
   @override
   void initState() {
     super.initState();
-    final user = FirebaseAuth.instance.currentUser;
+
     String? userID = user?.uid;
     productStreamdathang = FirebaseFirestore.instance
         .collection('Cart')
@@ -94,30 +95,30 @@ class _DatHangState extends State<DatHang> {
     loadingIndicator: const Center(child: CircularProgressIndicator()),
   );
   DocumentSnapshot? hoadon;
-  // Widget buildGooglePayButton() {
-  //   return GooglePayButton(
-  //     paymentConfiguration:
-  //         PaymentConfiguration.fromJsonString(defaultGooglePay),
-  //     paymentItems: const [],
-  //     width: double.infinity,
-  //     type: GooglePayButtonType.buy,
-  //     margin: const EdgeInsets.only(top: 15),
-  //     onPaymentResult: (result) async {
-  //       debugPrint('Payment Result $result ');
-  //       Fluttertoast.showToast(msg: 'Thanh toán thành công');
-  //       Navigator.of(context)
-  //           .push(MaterialPageRoute(builder: (context) => QuanLyKH()));
-  //       try {
-  //         await GioHangKH.moveCartToBill();
-  //       } catch (e) {
-  //         // Xử lý lỗi
-  //         Fluttertoast.showToast(msg: 'Có lỗi xảy ra: $e');
-  //         print(e);
-  //       }
-  //     },
-  //     loadingIndicator: const Center(child: CircularProgressIndicator()),
-  //   );
-  // }
+  Widget buildGooglePayButton() {
+    return GooglePayButton(
+      paymentConfiguration:
+          PaymentConfiguration.fromJsonString(defaultGooglePay),
+      paymentItems: const [],
+      width: double.infinity,
+      type: GooglePayButtonType.buy,
+      margin: const EdgeInsets.only(top: 15),
+      onPaymentResult: (result) async {
+        debugPrint('Payment Result $result ');
+        Fluttertoast.showToast(msg: 'Thanh toán thành công');
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => QuanLyKH()));
+        try {
+          await GioHangKH.moveCartToBill(user!.uid);
+        } catch (e) {
+          // Xử lý lỗi
+          Fluttertoast.showToast(msg: 'Có lỗi xảy ra: $e');
+          print(e);
+        }
+      },
+      loadingIndicator: const Center(child: CircularProgressIndicator()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -450,7 +451,7 @@ class _DatHangState extends State<DatHang> {
                                 mainAxisAlignment: MainAxisAlignment
                                     .end, // Điều chỉnh căn giữa hoặc căn đều theo ý muốn
                                 children: [
-                                  //buildGooglePayButton(),
+                                  buildGooglePayButton(),
                                 ],
                               ),
                             )
