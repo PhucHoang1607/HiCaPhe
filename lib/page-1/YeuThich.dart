@@ -82,14 +82,30 @@ class _YeuThichState extends State<YeuThich> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
+                              // vectoreZX (5:500)
+                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 11*fem, 0*fem),
+                              width: 45*fem,
+                              height: 45*fem,
+                              child: TextButton(
+                                onPressed: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> QuanLyKH()));
+                                },
+                                child: Image.asset(
+                                  'assets/page-1/images/vector.png',
+                                  width: 45*fem,
+                                  height: 45*fem,
+
+                                ),
+                              ),
+                            ),
+                            Container(
                               // timkiemyLu (5:501)
-                              padding: EdgeInsets.fromLTRB(15*fem, 10*fem, 0*fem, 0*fem),
+                              padding: EdgeInsets.fromLTRB(17*fem, 0*fem, 0*fem, 0*fem),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  SizedBox(width: 350,
+                                  SizedBox(width: 270,height: 50,
                                     child: CupertinoSearchTextField(
                                       decoration: BoxDecoration (
                                         border: Border.all(color: const Color(0xff993300)),
