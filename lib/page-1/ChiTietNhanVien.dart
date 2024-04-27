@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
-
+import 'package:myapp/page-1/DanhSachNhanVien.dart';
 import 'CapNhatNhanVien.dart';
 
 class ChiTietNhanVien extends StatefulWidget {
@@ -73,7 +73,7 @@ class _ChiTietNhanVienState extends State<ChiTietNhanVien> {
                 height: 32*fem,
                 child:GestureDetector(
                   onTap: (){
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
                   },
                   child: Image.asset(
                     'assets/page-1/images/vector-y13.png',

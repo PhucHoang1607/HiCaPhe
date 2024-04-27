@@ -160,7 +160,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                               height: 50*fem,
                               child: TextButton(
                                 onPressed: (){
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector-Pzq.png',

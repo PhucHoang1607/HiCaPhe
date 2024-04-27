@@ -182,7 +182,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                               height: 45*fem,
                               child: TextButton(
                                 onPressed:(){
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
                                 } ,
                                 child: Image.asset(
                                   'assets/page-1/images/vector.png',

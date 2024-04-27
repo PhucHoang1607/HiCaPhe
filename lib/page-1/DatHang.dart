@@ -150,7 +150,7 @@ class _DatHangState extends State<DatHang> {
                               height: 32*fem,
                               child: GestureDetector(
                                 onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const GioHang()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> QuanLyKH()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector-KvY.png',

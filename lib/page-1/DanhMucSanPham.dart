@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/CapNhatSanPham.dart';
 import 'package:myapp/page-1/ChiTietSanPham.dart';
 import 'package:myapp/page-1/ThemSanPham.dart';
+import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
 
 class DanhMucSanPham extends StatefulWidget {
@@ -98,7 +99,7 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                               height: 45*fem,
                               child: GestureDetector(
                                 onTap: (){
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  TrangChuNew()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector.png',

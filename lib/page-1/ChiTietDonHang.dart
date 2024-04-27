@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/utils.dart';
 import 'ChiTietSanPham.dart';
+import 'package:myapp/page-1/DanhMucDonHang.dart';
+
 
 class ChiTetDonHang extends StatefulWidget {
   final String id, displayName, ngayDH, tinhTrang;
@@ -112,7 +114,7 @@ class _ChiTetDonHangState extends State<ChiTetDonHang> {
                         children: [
                           GestureDetector(
                             onTap: (){
-                              Navigator.pop(context);
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucDonHang()));
                             },
                             child: Container(
                               // vectorcrd (301:496)

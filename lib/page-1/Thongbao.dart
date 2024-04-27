@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/TrangChuNew.dart';
 
 class ThongBao extends StatelessWidget {
   @override
@@ -35,7 +36,7 @@ class ThongBao extends StatelessWidget {
                         height: 32*fem,
                         child: GestureDetector(
                           onTap: (){
-                            Navigator.pop(context);
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> const TrangChuNew()));
                           },
                           child: Image.asset(
                             'assets/page-1/images/vector.png',

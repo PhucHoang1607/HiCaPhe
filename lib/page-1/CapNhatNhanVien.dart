@@ -183,7 +183,7 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                               child: Align(
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.pop(context);
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
                                   },
                                   child: SizedBox(
                                     width: 32*fem,

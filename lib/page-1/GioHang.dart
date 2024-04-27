@@ -83,26 +83,9 @@ class _GioHangState extends State<GioHang> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Container(
-                                // vector7ma (180:352)
-                                margin: EdgeInsets.fromLTRB(
-                                    0 * fem, 0 * fem, 30 * fem, 0 * fem),
-                                width: 32 * fem,
-                                height: 32 * fem,
-                                child: Image.asset(
-                                  'assets/page-1/images/vector-QPr.png',
-                                  width: 32 * fem,
-                                  height: 32 * fem,
-                                ),
-                              ),
-                            ),
                             Container(
                               // opt4cyE (180:275)
-                              width: 223.05 * fem,
+                              width: 320 * fem,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: Color(0xff993300),
@@ -133,6 +116,7 @@ class _GioHangState extends State<GioHang> {
                             0 * fem, 0 * fem, 1.94 * fem, 7 * fem),
                         width: double.infinity,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
@@ -171,6 +155,7 @@ class _GioHangState extends State<GioHang> {
                         width: double.infinity,
                         height: 32 * fem,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
@@ -185,8 +170,9 @@ class _GioHangState extends State<GioHang> {
                             ),
                             Container(
                               // opt56or (180:278)
-                              width: 195 * fem,
+                              width: 100 * fem,
                               height: double.infinity,
+                              margin: EdgeInsets.only(right: 30),
                               decoration: BoxDecoration(
                                 color: Color(0xff993300),
                                 borderRadius: BorderRadius.circular(30 * fem),

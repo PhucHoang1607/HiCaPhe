@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/page-1/DanhMucNguyenLieu.dart';
 
 import 'package:myapp/utils.dart';
 
@@ -70,7 +71,7 @@ class _ChiTietNguyenLieuState extends State<ChiTietNguyenLieu> {
                   height: 45*fem,
                   child: TextButton(
                     onPressed: (){
-                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
                     },
                     child: Image.asset(
                       'assets/page-1/images/vector-y13.png',

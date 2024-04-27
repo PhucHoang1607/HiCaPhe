@@ -165,7 +165,7 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                               height: 75*fem,
                               child: GestureDetector(
                                 onTap: (){
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector-32y.png',

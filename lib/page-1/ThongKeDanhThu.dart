@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/TrangChuNew.dart';
 
 class ThongKeDoanhThu extends StatefulWidget {
   const ThongKeDoanhThu({super.key});
@@ -131,7 +132,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                               height: 32 * fem,
                               child: GestureDetector(
                                 onTap: () {
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const TrangChuNew()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector.png',

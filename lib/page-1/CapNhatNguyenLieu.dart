@@ -179,7 +179,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             height: 32*fem,
                             child: GestureDetector(
                               onTap: (){
-                                Navigator.pop(context);
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
                               },
                               child: Image.asset(
                                 'assets/page-1/images/vector-uG5.png',

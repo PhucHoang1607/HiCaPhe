@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:myapp/page-1/ChiTietDonHang.dart';
+import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
 
 class DanhMucDonHang extends StatefulWidget {
@@ -80,7 +81,7 @@ class _DanhMucDonHangState extends State<DanhMucDonHang> {
                                 height: 32*fem,
                                 child: GestureDetector(
                                   onTap: (){
-                                    Navigator.pop(context);
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>  TrangChuNew()));
                                   },
                                   child: Image.asset(
                                     'assets/page-1/images/vector-QPr.png',

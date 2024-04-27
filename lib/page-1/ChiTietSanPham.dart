@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/page-1/DanhMucSanPham.dart';
 
 class ChiTietSanPham extends StatefulWidget {
   final String productId;
@@ -96,7 +97,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.pop(context);
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
                           },
                           child: Container(
                             // vectorehX (5:672)

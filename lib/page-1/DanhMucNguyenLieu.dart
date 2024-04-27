@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/capnhatnguyenlieu.dart';
 import 'package:myapp/page-1/ChiTietNguyenLieu.dart';
 import 'package:myapp/page-1/ThemNguyenLieu.dart';
+import 'package:myapp/page-1/TrangChuNew.dart';
 import 'package:myapp/utils.dart';
 
 class QuanLyNguyenLieu extends StatefulWidget {
@@ -88,7 +89,7 @@ class _QuanLyNguyenLieuState extends State<QuanLyNguyenLieu> {
                               height: 45*fem,
                               child: TextButton(
                                 onPressed: (){
-                                  Navigator.pop(context);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  TrangChuNew()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector-Fey.png',
