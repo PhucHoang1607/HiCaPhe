@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:myapp/page-1/DangKi.dart';
+import 'package:myapp/page-1/DangNhapSDT.dart';
 import 'package:myapp/page-1/QuenMatKhau.dart';
 import 'package:myapp/utils.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -31,6 +32,7 @@ class _DangNhap extends State<DangNhap> {
   final TextEditingController _passwordController = TextEditingController();
 
 
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -41,6 +43,9 @@ class _DangNhap extends State<DangNhap> {
 
   @override
   Widget build(BuildContext context) {
+    double baseWidth = 360;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    // double ffem = fem * 0.97;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -341,14 +346,48 @@ class _DangNhap extends State<DangNhap> {
                                   ),
 
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                                  child: ElevatedButton.icon(
-                                    onPressed: _signInWithGoogle,
-                                    icon: Icon(Icons.login),
-                                    label: Text('Đăng nhập bằng Google'),
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => DangNhapSDT()
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    //buttonsdangnhapsdt9F7 (39:507)
+                                    margin:
+                                    const EdgeInsets.fromLTRB(50, 10, 39, 0),
+                                    width: double.infinity,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xff007373),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Center(
+                                      child: Center(
+                                        child: Text(
+                                          'Đăng Nhập bằng sđt',
+                                          textAlign: TextAlign.center,
+                                          style: SafeGoogleFont(
+                                            'Quicksand',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w700,
+                                            height: 1.2000000477 / fem,
+                                            color: const Color(0xfffcf2d9),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ),
+                                // Padding(
+                                //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                                //   child: ElevatedButton.icon(
+                                //     onPressed: _signInWithGoogle,
+                                //     icon: Icon(Icons.login),
+                                //     label: Text('Đăng nhập bằng Google'),
+                                //   ),
+                                // ),
                               ],
                             ),
                           ),

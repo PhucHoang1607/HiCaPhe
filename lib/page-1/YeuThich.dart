@@ -89,7 +89,7 @@ class _YeuThichState extends State<YeuThich> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  SizedBox(width: 350,
+                                  SizedBox(width: 340,
                                     child: CupertinoSearchTextField(
                                       decoration: BoxDecoration (
                                         border: Border.all(color: const Color(0xff993300)),
