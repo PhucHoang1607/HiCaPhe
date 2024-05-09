@@ -57,8 +57,8 @@ flutter:
     - assets/page-1/
     - assets/page-1/images/
     - fonts:
-         - family: Quicksand
-           fonts:
-             - asset: assets/fonts/Quicksand-VariableFont_wght.ttf
+        - family: Quicksand
+          fonts:
+            - asset: assets/fonts/Quicksand-VariableFont_wght.ttf
 
 
