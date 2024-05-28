@@ -286,6 +286,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     keyboardType: TextInputType.number,
+                                    textInputAction: TextInputAction.next,
                                     controller: dongiaNL,
                                     style: const TextStyle(fontSize: 14),
                                     decoration: const InputDecoration(
@@ -308,6 +309,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     controller: donVitinhNL,
                                     style: const TextStyle(fontSize: 14),
+                                    textInputAction: TextInputAction.next,
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Đơn vị tính",
@@ -328,6 +330,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     controller: motaNL,
                                     style: const TextStyle(fontSize: 14),
+                                    textInputAction: TextInputAction.next,
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Mô tả",
@@ -349,12 +352,14 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                   },
                                   controller: ngaynhapNL,
                                   style: const TextStyle(fontSize: 14),
+                                  textInputAction: TextInputAction.next,
                                   decoration: InputDecoration(
+                                    
                                     hintText: defaultNgaySinh,
-                                    hintStyle: TextStyle(color: Color(0xff007373)),
+                                    hintStyle: const TextStyle(color: Color(0xff007373)),
                                     fillColor: Colors.white,
                                     suffixIcon: IconButton(
-                                      icon: Icon(Icons.calendar_today),
+                                      icon: const Icon(Icons.calendar_today),
                                       onPressed: () {
                                         // Mở datetime picker ở đây
                                         _selectDateupAdd(context);
@@ -378,6 +383,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     controller: tenNL,
                                     style: const TextStyle(fontSize: 14),
+                                    textInputAction: TextInputAction.next,
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Tên nguyên liệu",
