@@ -102,8 +102,8 @@ class _GioHangState extends State<GioHang> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 15 * ffem,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w400,
                                       height: 1.3333333333 * ffem / fem,
                                       color: Color(0xfffcf2d9),
                                     ),
@@ -131,8 +131,8 @@ class _GioHangState extends State<GioHang> {
                                 'Tổng tiền thanh toán',
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 16 * ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12 * ffem,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25 * ffem / fem,
                                   color: Color(0xff000000),
                                 ),
@@ -143,8 +143,8 @@ class _GioHangState extends State<GioHang> {
                               ' ${tonghoadon.toStringAsFixed(0)} \t VND',
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 16 * ffem,
-                                fontWeight: FontWeight.w700,
+                                fontSize: 12 * ffem,
+                                fontWeight: FontWeight.w400,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
@@ -195,8 +195,8 @@ class _GioHangState extends State<GioHang> {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 15 * ffem,
-                                        fontWeight: FontWeight.w700,
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
                                         height: 1 * ffem / fem,
                                         color: Color(0xfffcf2d9),
                                       ),
@@ -283,8 +283,8 @@ class _GioHangState extends State<GioHang> {
                                             tensp,
                                             style: const TextStyle(
                                                 fontFamily: 'Quicksand',
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 26,
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 12,
                                                 color: Colors.black),
                                           ),
                                           subtitle: Column(

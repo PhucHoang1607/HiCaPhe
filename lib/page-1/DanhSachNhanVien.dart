@@ -173,8 +173,8 @@ class _DanhSachNhanVienState extends State<DanhSachNhanVien> {
                                           textAlign: TextAlign.center,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 20 * ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w400,
                                             height: 1.25 * ffem / fem,
                                             color: const Color(0xfffcf2d9),
                                           ),
@@ -188,8 +188,8 @@ class _DanhSachNhanVienState extends State<DanhSachNhanVien> {
                                         'Thêm nhân viên mới',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
                                           height: 1.25 * ffem / fem,
                                           color: const Color(0xff993300),
                                         ),
@@ -223,8 +223,8 @@ class _DanhSachNhanVienState extends State<DanhSachNhanVien> {
                                     'Sắp xếp',
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 16 * ffem,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w400,
                                       height: 1.25 * ffem / fem,
                                       color: const Color(0xff993300),
                                     ),
@@ -298,8 +298,8 @@ class _DanhSachNhanVienState extends State<DanhSachNhanVien> {
                                       ),
                                       title: Text(tenNV, style: const TextStyle(
                                         fontFamily: 'Quicksand',
-                                        fontSize: 19,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
                                         color: Colors.black,
                                       ),),
                                       subtitle: Text(ngaySinh),

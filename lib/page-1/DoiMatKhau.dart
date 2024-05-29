@@ -127,8 +127,8 @@ class DoiMatKhau extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
                                   'Quicksand',
-                                  fontSize: 14*ffem,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12*ffem,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25*ffem/fem,
                                   color: Color(0xfffcf2d9),
                                 ),
@@ -223,8 +223,8 @@ class DoiMatKhau extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Quicksand',
-                                    fontSize: 16*ffem,
-                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12*ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.2000000477*ffem/fem,
                                     color: Color(0xfffcf2d9),
                                   ),
