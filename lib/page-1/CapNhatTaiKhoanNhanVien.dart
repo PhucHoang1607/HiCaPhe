@@ -140,7 +140,7 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
               // capnhattaikhoankhachhang8tq (385:2130)
               padding: EdgeInsets.fromLTRB(16*fem, 16*fem, 17*fem, 148*fem),
               width: double.infinity,
-              decoration: BoxDecoration (
+              decoration: const BoxDecoration (
                 color: Color(0xffffffff),
                 image: DecorationImage (
                   fit: BoxFit.cover,
@@ -302,6 +302,8 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                               child: TextFormField(
                                 controller: displayName,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.text,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Họ và tên",
@@ -314,6 +316,8 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                               child: TextFormField(
                                 controller: email,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.emailAddress,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "email",
@@ -326,6 +330,8 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                               child: TextFormField(
                                 controller: sdt,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.number,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Số điện thoại",
@@ -337,6 +343,7 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                           child: Padding(
                             padding: const EdgeInsets.only(top: 10.0), // Thêm khoảng trống ở đầu
                             child: DropdownButtonFormField<String>(
+                              
                               isExpanded: true,
                               value: buoilam,
                               items: ["Sáng","Chiều", "Tối","Khuya"].map((String value) {
@@ -365,6 +372,7 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                                 keyboardType: TextInputType.number,
                                 controller: luong,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Lương",
@@ -404,12 +412,13 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                             child: TextFormField(
                               controller: ngaysinh,
                               style: const TextStyle(fontSize: 14),
+                              textInputAction: TextInputAction.next,
                               decoration: InputDecoration(
                                 hintText: "Ngày sinh",
-                                hintStyle: TextStyle(color: Color(0xff007373)),
+                                hintStyle: const TextStyle(color: Color(0xff007373)),
                                 fillColor: Colors.white,
                                 suffixIcon: IconButton(
-                                  icon: Icon(Icons.calendar_today),
+                                  icon: const Icon(Icons.calendar_today),
                                   onPressed: () {
                                     // Mở datetime picker ở đây
                                     _selectDateupdate(context);

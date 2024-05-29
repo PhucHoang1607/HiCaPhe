@@ -267,6 +267,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                           child: SizedBox(height: 30,
                             child: TextFormField(
+                              textInputAction: TextInputAction.next,
                               keyboardType: TextInputType.number,
                               controller: donGia,
                               style: const TextStyle(fontSize: 14),
@@ -280,9 +281,11 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                           child: SizedBox(height: 30,
                             child: TextFormField(
+                              textInputAction: TextInputAction.next,
                               controller: donViTinh,
                               style: const TextStyle(fontSize: 14),
                               decoration: const InputDecoration(
+                                  
                                   hintStyle: TextStyle(color: Color(0xff007373)),
                                   hintText: "Đơn vị tính",
                                   fillColor: Colors.white),
@@ -295,6 +298,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                               maxLines: 2,
                               controller: moTa,
                               style: const TextStyle(fontSize: 14),
+                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
                                   isDense: true,
                                   hintStyle: TextStyle(color: Color(0xff007373)),
@@ -309,12 +313,13 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                           child: TextFormField(
                             controller: ngayNhap,
                             style: const TextStyle(fontSize: 14),
+                            textInputAction: TextInputAction.next,
                             decoration: InputDecoration(
                               hintText: "Ngày nhập",
-                              hintStyle: TextStyle(color: Color(0xff007373)),
+                              hintStyle: const TextStyle(color: Color(0xff007373)),
                               fillColor: Colors.white,
                               suffixIcon: IconButton(
-                                icon: Icon(Icons.calendar_today),
+                                icon: const Icon(Icons.calendar_today),
                                 onPressed: () {
                                   // Mở datetime picker ở đây
                                   _selectDateupdate(context);
@@ -331,6 +336,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                               keyboardType: TextInputType.number,
                               controller: slTonKho,
                               style: const TextStyle(fontSize: 14),
+                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
                                   hintStyle: TextStyle(color: Color(0xff007373)),
                                   hintText: "Số lượng tồn kho",
@@ -343,6 +349,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             child: TextFormField(
                               controller: tenNL,
                               style: const TextStyle(fontSize: 14),
+                              textInputAction: TextInputAction.done,
                               decoration: const InputDecoration(
                                   hintStyle: TextStyle(color: Color(0xff007373)),
                                   hintText: "Tên nguyên liệu",
