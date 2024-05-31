@@ -12,7 +12,6 @@ class ChiTietSanPham extends StatefulWidget {
 }
 
 class _ChiTietSanPhamState extends State<ChiTietSanPham> {
-
   late String tenSP;
   late String hinhAnh;
   late String kichThuoc;
@@ -20,7 +19,6 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
   late String donVitinh;
   late String moTa;
   late String idCate;
-
 
   @override
   void initState() {
@@ -50,11 +48,11 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
     }
   }
 
-
   Future<String> fetchTenLoaiSanPham(String idCate) async {
     final QuerySnapshot querySnapshot = await FirebaseFirestore.instance
         .collection('Category')
-        .where(FieldPath.documentId, isEqualTo: idCate) // Sử dụng idCate để so sánh với documentId
+        .where(FieldPath.documentId,
+            isEqualTo: idCate) // Sử dụng idCate để so sánh với documentId
         .get();
 
     if (querySnapshot.docs.isNotEmpty) {
@@ -66,6 +64,7 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
       return '';
     }
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -76,16 +75,14 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator(); // Hiển thị tiến trình chờ khi đang tải dữ liệu
-          }
-          else {
-            final tenLoaiSanPham = snapshot.data?? "";
+          } else {
+            final tenLoaiSanPham = snapshot.data ?? "";
             return Scaffold(
               backgroundColor: Color(0xfff5dab1),
               body: SafeArea(
                 child: SizedBox(
                   width: double.infinity,
                   child: Container(
-                    // chitietsanphamkc9 (5:671)
                     padding: EdgeInsets.fromLTRB(
                         16 * fem, 16 * fem, 14 * fem, 0 * fem),
                     width: double.infinity,
@@ -97,10 +94,13 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const DanhMucSanPham()));
                           },
                           child: Container(
-                            // vectorehX (5:672)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 0 * fem, 34 * fem),
                             width: 32 * fem,
@@ -113,23 +113,19 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ),
                         ),
                         Container(
-                          // autogroupw5nhmn9 (NufAFUrHuEt4KEXhhXw5NH)
                           margin: EdgeInsets.fromLTRB(
                               0 * fem, 0 * fem, 0 * fem, 80 * fem),
-
                           height: 110 * fem,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // anhsphA1 (5:675)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 20 * fem, 0 * fem),
                                 width: 75 * fem,
                                 height: 110 * fem,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(
-                                      20 * fem),
+                                  borderRadius: BorderRadius.circular(20 * fem),
                                   child: Image.network(
                                     hinhAnh,
                                     fit: BoxFit.cover,
@@ -137,38 +133,32 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                                 ),
                               ),
                               SizedBox(
-                                // autogroupwcxhQq7 (NufAMyfU32sJbSG9hyWCxh)
                                 height: double.infinity,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(
-                                      child: Container(
-                                        // txcphenYwK (5:673)
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 0 * fem,
-                                            15 * fem),
-                                        child: Text(
-                                          tenSP,
-                                          softWrap: true,
-                                          maxLines: 2,
-                                          style: SafeGoogleFont(
-                                            'Quicksand',
-                                            fontSize: 21 * ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.25 * ffem / fem,
-                                            color: const Color(0xff000000),
-                                          ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 15 * fem),
+                                      child: Text(
+                                        tenSP,
+                                        softWrap: true,
+                                        maxLines: 2,
+                                        style: SafeGoogleFont(
+                                          'Quicksand',
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.25 * ffem / fem,
+                                          color: const Color(0xff000000),
                                         ),
                                       ),
                                     ),
                                     Text(
-                                      // cph48y (5:674)
                                       tenLoaiSanPham,
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 21 * ffem,
-                                        fontWeight: FontWeight.w600,
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
                                         height: 1.25 * ffem / fem,
                                         color: const Color(0xff777777),
                                       ),
@@ -180,7 +170,6 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ),
                         ),
                         Container(
-                          // autogroup8xeho6Z (NufAVyS9H5vqZ51ULD8XEH)
                           margin: EdgeInsets.fromLTRB(
                               16 * fem, 0 * fem, 95 * fem, 50 * fem),
                           width: double.infinity,
@@ -188,27 +177,25 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // kchthcizD (5:676)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 40 * fem, 0 * fem),
                                 child: Text(
                                   'Kích thước:',
                                   style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 24 * ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25 * ffem / fem,
                                     color: const Color(0xff007373),
                                   ),
                                 ),
                               ),
                               Text(
-                                // nhe7B (5:677)
                                 kichThuoc,
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 24 * ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12 * ffem,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25 * ffem / fem,
                                   color: const Color(0xff993300),
                                 ),
@@ -217,7 +204,6 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ),
                         ),
                         Container(
-                          // autogroupuf5bmhb (NufAc46LzaqfsD1nivuf5b)
                           margin: EdgeInsets.fromLTRB(
                               16 * fem, 0 * fem, 0 * fem, 50 * fem),
                           width: double.infinity,
@@ -225,42 +211,39 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // ngiJBj (5:678)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 71 * fem, 0 * fem),
                                 child: Text(
                                   'Đơn giá:',
                                   style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 24 * ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25 * ffem / fem,
                                     color: const Color(0xff007373),
                                   ),
                                 ),
                               ),
                               Container(
-                                // pQy (5:679)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 13 * fem, 0 * fem),
                                 child: Text(
                                   donGia.toString(),
                                   style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 24 * ffem,
-                                    fontWeight: FontWeight.w700,
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25 * ffem / fem,
                                     color: const Color(0xff993300),
                                   ),
                                 ),
                               ),
                               Text(
-                                // wEh (5:680)
                                 'VND',
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 22 * ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12 * ffem,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25 * ffem / fem,
                                   color: const Color(0xff993300),
                                 ),
@@ -269,7 +252,6 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ),
                         ),
                         Container(
-                          // autogroupipgvtQq (NufAitEJGDHeX4XYRYiPGV)
                           margin: EdgeInsets.fromLTRB(
                               16 * fem, 0 * fem, 0 * fem, 25 * fem),
                           width: double.infinity,
@@ -277,27 +259,25 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // slngbnpZP (5:681)
                                 margin: EdgeInsets.fromLTRB(
                                     0 * fem, 0 * fem, 7 * fem, 0 * fem),
                                 child: Text(
                                   'Số lượng bán:',
                                   style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 24 * ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25 * ffem / fem,
                                     color: const Color(0xff007373),
                                   ),
                                 ),
                               ),
                               Text(
-                                // lyM3X (5:682)
                                 donVitinh,
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 24 * ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12 * ffem,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25 * ffem / fem,
                                   color: const Color(0xff993300),
                                 ),
@@ -306,36 +286,31 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
                           ),
                         ),
                         Container(
-                          // mt6Wu (5:683)
                           margin: EdgeInsets.fromLTRB(
                               16 * fem, 0 * fem, 0 * fem, 15 * fem),
                           child: Text(
                             'Mô tả:',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 24 * ffem,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w400,
                               height: 1 * ffem / fem,
                               color: const Color(0xff007373),
                             ),
                           ),
                         ),
                         Container(
-                          // lthcungtruynthngcangidnvitnam1 (5:684)
                           margin: EdgeInsets.fromLTRB(
                               16 * fem, 0 * fem, 0 * fem, 0 * fem),
                           constraints: BoxConstraints(
                             maxWidth: 289 * fem,
-
                           ),
                           child: Text(
                             moTa,
-
                             style: SafeGoogleFont(
                               'Quicksand',
-
-                              fontSize: 24 * ffem,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w400,
                               height: 1.25 * ffem / fem,
                               color: const Color(0xff993300),
                             ),
@@ -348,7 +323,6 @@ class _ChiTietSanPhamState extends State<ChiTietSanPham> {
               ),
             );
           }
-        }
-    );
+        });
   }
 }
