@@ -7,33 +7,31 @@ class SuccessScreen extends StatefulWidget {
   const SuccessScreen({super.key});
 
   @override
-  State<SuccessScreen> createState() => _successScreenState();
+  State<SuccessScreen> createState() => _SuccessScreenState();
 }
 
-class _successScreenState extends State<SuccessScreen> {
+class _SuccessScreenState extends State<SuccessScreen> {
   Map payload = {};
   @override
   Widget build(BuildContext context) {
     final message = ModalRoute.of(context)!.settings.arguments as RemoteMessage;
-    if(message is RemoteMessage)  {
+    if (message is RemoteMessage)  {
       payload = message.data;
     }
-    // if(message is NotificationResponse) {
+    // if (message is NotificationResponse) {
     //   payload = jsonDecode(message.payload!);
     // }
       return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Center(child: Text(message.notification!.title.toString())),
-        ),
+          title: Center(child: Text(message.notification!.title.toString(), style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)))),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:[
-              Text(message.notification!.body.toString()),   // Chỉnh sửa dòng này
+              Text(message.notification!.body.toString(), style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),   // Chỉnh sửa dòng này
             ],
           ),
-
         ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -44,9 +42,9 @@ class _successScreenState extends State<SuccessScreen> {
                 CupertinoPageRoute(builder: (context) => QuanLyKH()),
               );
             },
-            child: const Text('Quay lại trang chủ'),
+            child: const Text('Quay lại trang chủ', style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
           ),
         ),
       );
   }
-  }
+}

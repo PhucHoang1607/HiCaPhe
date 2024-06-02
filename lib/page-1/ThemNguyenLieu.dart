@@ -13,7 +13,7 @@ import '../model/QuanLyNguyenLieu.dart';
 
 class ThemNguyenLieu extends StatefulWidget {
   final void Function() updateProductStreamNL;
-  const ThemNguyenLieu({super.key, required this.updateProductStreamNL});
+  const ThemNguyenLieu({Key? key, required this.updateProductStreamNL});
 
   @override
   State<ThemNguyenLieu> createState() => _ThemNguyenLieuState();
@@ -163,8 +163,8 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                   child: Text(
                                     'Thưởng thức vị ngon trọn vẹn',
                                     textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
-                                      'Dancing Script',
+                                    style: TextStyle (
+                                      fontFamily: 'Dancing Script',
                                       fontSize: 24*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2*ffem/fem,
@@ -219,8 +219,8 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                 child: Text(
                                   'Thêm mới nguyên liệu',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Quicksand',
+                                  style: TextStyle (
+                                    fontFamily: 'Quicksand',
                                     fontSize: 14*ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.25*ffem/fem,
@@ -234,8 +234,8 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
                               child: Text(
                                 'Tải ảnh lên',
-                                style: SafeGoogleFont (
-                                  'Quicksand',
+                                style: TextStyle (
+                                  fontFamily: 'Quicksand',
                                   fontSize: 16*ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.25*ffem/fem,
@@ -287,7 +287,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     keyboardType: TextInputType.number,
                                     controller: dongiaNL,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Giá nguyên liệu",
@@ -307,7 +307,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     controller: donVitinhNL,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Đơn vị tính",
@@ -327,7 +327,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     controller: motaNL,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Mô tả",
@@ -348,7 +348,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     }
                                   },
                                   controller: ngaynhapNL,
-                                  style: const TextStyle(fontSize: 14),
+                                  style: const TextStyle(fontSize: 12),
                                   decoration: InputDecoration(
                                     hintText: defaultNgaySinh,
                                     hintStyle: TextStyle(color: Color(0xff007373)),
@@ -377,7 +377,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     controller: tenNL,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Tên nguyên liệu",
@@ -398,7 +398,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     keyboardType: TextInputType.number,
                                     controller: sltonkho,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Số lượng tồn kho",
@@ -443,8 +443,8 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     child: Text('Xác nhận thêm mới',
                                         textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
+                                        style: TextStyle (
+                                          fontFamily: 'Quicksand',
                                           fontSize: 16*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2000000477*ffem/fem,
@@ -469,4 +469,3 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
     );
   }
 }
-
