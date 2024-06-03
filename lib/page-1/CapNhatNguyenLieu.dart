@@ -10,8 +10,17 @@ import 'package:myapp/model/QuanLyNguyenLieu.dart';
 import 'package:myapp/utils.dart';
 
 class SuaNguyenLieu extends StatefulWidget {
-  const SuaNguyenLieu({super.key, required this.donGia, required this.donViTinh, required this.moTa, required this.ngayNhap, required this.slTonKho, required this.tenNL, required this.hinhAnh, required this.id});
-  final String donGia, donViTinh,moTa, ngayNhap, slTonKho, tenNL, hinhAnh, id;
+  const SuaNguyenLieu(
+      {super.key,
+        required this.donGia,
+        required this.donViTinh,
+        required this.moTa,
+        required this.ngayNhap,
+        required this.slTonKho,
+        required this.tenNL,
+        required this.hinhAnh,
+        required this.id});
+  final String donGia, donViTinh, moTa, ngayNhap, slTonKho, tenNL, hinhAnh, id;
 
   @override
   State<SuaNguyenLieu> createState() => _SuaNguyenLieuState();
@@ -34,30 +43,31 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
     }
   }
 
-  final TextEditingController donGia= TextEditingController();
+  final TextEditingController donGia = TextEditingController();
   final TextEditingController donViTinh = TextEditingController();
   final TextEditingController moTa = TextEditingController();
-  final TextEditingController ngayNhap= TextEditingController();
+  final TextEditingController ngayNhap = TextEditingController();
   final TextEditingController slTonKho = TextEditingController();
   final TextEditingController tenNL = TextEditingController();
   String imageURLNL = "";
-  Future updateNguyenLieu(NguyenLieu nguyenLieu, String id) async
-  {
+  Future updateNguyenLieu(NguyenLieu nguyenLieu, String id) async {
     Map<String, dynamic> dulieuNL = {
-      'donGia' : nguyenLieu.donGia,
+      'donGia': nguyenLieu.donGia,
       'donViTinh': nguyenLieu.donVitinh,
       'hinhAnh': imageURLNL,
-      'moTa' :nguyenLieu.moTa,
+      'moTa': nguyenLieu.moTa,
       'ngayNhap': nguyenLieu.ngayNhap,
       'slTonKho': nguyenLieu.slTonKho,
       'tenNL': nguyenLieu.tenNL
     };
     // Kiểm tra nếu có ảnh URL, thì thêm nó vào dữ liệu cập nhật
-    try{
-      await FirebaseFirestore.instance.collection('RawMaterials').doc(id).update(dulieuNL);
+    try {
+      await FirebaseFirestore.instance
+          .collection('RawMaterials')
+          .doc(id)
+          .update(dulieuNL);
       Fluttertoast.showToast(msg: 'Cập nhật thành công!');
-    }
-    catch (e){
+    } catch (e) {
       Fluttertoast.showToast(msg: 'Thêm thất bại', backgroundColor: Colors.red);
     }
   }
@@ -73,12 +83,14 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
 
   // hàm đưa đưa dữ liệu lên Storage
   UploadImage() async {
-    final storageRef = FirebaseStorage.instance.ref().child("nguyenLieu"); // Ham lien ket vao storage
+    final storageRef = FirebaseStorage.instance
+        .ref()
+        .child("nguyenLieu"); // Ham lien ket vao storage
     try {
       final imageRef = storageRef.child(imagesupdateNL!.name);
       await imageRef.putFile(File(imagesupdateNL!.path));
       return imageURLNL = await imageRef.getDownloadURL();
-    } on FirebaseException catch(e) {
+    } on FirebaseException catch (e) {
       print(e);
       return '';
     }
@@ -107,17 +119,18 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
       body: SingleChildScrollView(
         reverse: true,
         child: Padding(
-          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          padding:
+          EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: Container(
             // capnhatnguyenlieuPP7 (5:264)
-            padding: EdgeInsets.fromLTRB(16*fem, 16*fem, 19*fem, 0*fem),
+            padding: EdgeInsets.fromLTRB(16 * fem, 16 * fem, 19 * fem, 0 * fem),
             width: double.infinity,
             height: 852,
-            decoration: const BoxDecoration (
+            decoration: const BoxDecoration(
               color: Color(0xffffffff),
-              image: DecorationImage (
+              image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage (
+                image: AssetImage(
                   'assets/page-1/images/hinhnen1-bg.png',
                 ),
               ),
@@ -127,19 +140,20 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
               children: [
                 Container(
                   // autogroupwxx5fLd (NueqzfwCZvEHy68GJkwXx5)
-                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
+                  margin:
+                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
                   width: double.infinity,
-                  height: 170*fem,
+                  height: 170 * fem,
                   child: Stack(
                     children: [
                       Positioned(
                         // logomauaiV (5:266)
-                        left: 114*fem,
-                        top: 16*fem,
+                        left: 114 * fem,
+                        top: 16 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 100*fem,
-                            height: 100*fem,
+                            width: 100 * fem,
+                            height: 100 * fem,
                             child: Image.asset(
                               'assets/page-1/images/logomau.png',
                               fit: BoxFit.cover,
@@ -149,22 +163,22 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                       ),
                       Positioned(
                         // caukhauhieuhHK (5:293)
-                        left: 3*fem,
-                        top: 114*fem,
+                        left: 3 * fem,
+                        top: 114 * fem,
                         child: Align(
                           child: SizedBox(
-                            width: 322*fem,
-                            height: 29*fem,
+                            width: 322 * fem,
+                            height: 29 * fem,
                             child: Text(
                               'Thưởng thức vị ngon trọn vẹn',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Dancing Script',
-                                fontSize: 24*ffem,
+                                fontSize: 24 * ffem,
                                 fontWeight: FontWeight.w700,
-                                height: 1.2*ffem/fem,
-                                letterSpacing: 1*fem,
-                                color: const Color(0xff993300),
+                                height: 1.2 * ffem / fem,
+                                letterSpacing: 1 * fem,
+                                color: Color(0xff993300),
                               ),
                             ),
                           ),
@@ -172,19 +186,24 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                       ),
                       Container(
                         // vectorac1 (5:294)
-                        margin: EdgeInsets.fromLTRB(0*fem, 20*fem, 291*fem, 53*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 20 * fem, 291 * fem, 53 * fem),
                         child: Align(
                           child: SizedBox(
-                            width: 32*fem,
-                            height: 32*fem,
+                            width: 32 * fem,
+                            height: 32 * fem,
                             child: GestureDetector(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                        const QuanLyNguyenLieu()));
                               },
                               child: Image.asset(
                                 'assets/page-1/images/vector-uG5.png',
-                                width: 32*fem,
-                                height: 32*fem,
+                                width: 32 * fem,
+                                height: 32 * fem,
                               ),
                             ),
                           ),
@@ -195,34 +214,37 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                 ),
                 Container(
                   // bieumaudangnhapJ2D (5:267)
-                  margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 7*fem, 0*fem),
-                  padding: EdgeInsets.fromLTRB(25*fem, 26*fem, 24*fem, 28*fem),
+                  margin:
+                  EdgeInsets.fromLTRB(10 * fem, 0 * fem, 7 * fem, 0 * fem),
+                  padding: EdgeInsets.fromLTRB(
+                      25 * fem, 26 * fem, 24 * fem, 28 * fem),
                   width: double.infinity,
-                  decoration: BoxDecoration (
+                  decoration: BoxDecoration(
                     color: const Color(0xb2f5dab1),
-                    borderRadius: BorderRadius.circular(30*fem),
+                    borderRadius: BorderRadius.circular(30 * fem),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         // group32aEd (5:268)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 12 * fem),
                         width: double.infinity,
-                        height: 36*fem,
-                        decoration: BoxDecoration (
+                        height: 36 * fem,
+                        decoration: BoxDecoration(
                           color: const Color(0xff007373),
-                          borderRadius: BorderRadius.circular(15*fem),
+                          borderRadius: BorderRadius.circular(15 * fem),
                         ),
                         child: Center(
                           child: Text(
                             'Thay đổi thông tin nguyên liệu',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 14*ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.25*ffem/fem,
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w400,
+                              height: 1.25 * ffem / fem,
                               color: const Color(0xfffcf2d9),
                             ),
                           ),
@@ -230,85 +252,101 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                       ),
                       Container(
                         // txspxpdCu (5:273)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 12 * fem),
                         child: Text(
                           'Tải ảnh lên',
-                          style: SafeGoogleFont (
+                          style: SafeGoogleFont(
                             'Quicksand',
-                            fontSize: 16*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.25*ffem/fem,
+                            fontSize: 12 * ffem,
+                            fontWeight: FontWeight.w400,
+                            height: 1.25 * ffem / fem,
                             color: const Color(0xff007373),
                           ),
                         ),
                       ),
                       Container(
                         // frame53ugD (5:289)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 34*fem),
-                        width: 259*fem,
-                        height: 110*fem,
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 34 * fem),
+                        width: 259 * fem,
+                        height: 110 * fem,
                         child: TextButton(
                           onPressed: () async {
-                            final newImages = await pickersupdateNL.pickImage(source: ImageSource.gallery);
+                            final newImages = await pickersupdateNL.pickImage(
+                                source: ImageSource.gallery);
                             if (newImages == null) {
                               return;
                             }
                             uploadImage(newImages);
                           },
-                          child:
-                          imagesupdateNL != null ? Image.file(File(imagesupdateNL!.path),width: 259*fem,
-                            height: 110*fem,) :  Image.network( widget.hinhAnh,
-                            width: 259*fem,
-                            height: 110*fem,
+                          child: imagesupdateNL != null
+                              ? Image.file(
+                            File(imagesupdateNL!.path),
+                            width: 259 * fem,
+                            height: 110 * fem,
+                          )
+                              : Image.network(
+                            widget.hinhAnh,
+                            width: 259 * fem,
+                            height: 110 * fem,
                           ),
                         ),
                       ),
                       Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: SizedBox(height: 30,
+                          child: SizedBox(
+                            height: 30,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
                               controller: donGia,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Đơn giá",
                                   fillColor: Colors.white),
-                            ),)
-                      ),
+                            ),
+                          )),
                       Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: SizedBox(height: 30,
+                          child: SizedBox(
+                            height: 30,
                             child: TextFormField(
                               controller: donViTinh,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Đơn vị tính",
                                   fillColor: Colors.white),
-                            ),)
-                      ),
+                            ),
+                          )),
                       Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                          child: SizedBox(height: 30,
+                          child: SizedBox(
+                            height: 30,
                             child: TextFormField(
                               maxLines: 2,
                               controller: moTa,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
                                   isDense: true,
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Mô tả",
                                   fillColor: Colors.white),
-                            ),)
-                      ),
+                            ),
+                          )),
                       Container(
                         margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                         child: SizedBox(
                           height: 50,
                           child: TextFormField(
                             controller: ngayNhap,
-                            style: const TextStyle(fontSize: 14),
+                            style: const TextStyle(fontSize: 12),
                             decoration: InputDecoration(
                               hintText: "Ngày nhập",
                               hintStyle: TextStyle(color: Color(0xff007373)),
@@ -326,64 +364,70 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                       ),
                       Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                          child: SizedBox(height: 30,
+                          child: SizedBox(
+                            height: 30,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
                               controller: slTonKho,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Số lượng tồn kho",
                                   fillColor: Colors.white),
-                            ),)
-                      ),
+                            ),
+                          )),
                       Container(
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                          child: SizedBox(height: 30,
+                          child: SizedBox(
+                            height: 30,
                             child: TextFormField(
                               controller: tenNL,
-                              style: const TextStyle(fontSize: 14),
+                              style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Tên nguyên liệu",
                                   fillColor: Colors.white),
-                            ),)
-                      ),
+                            ),
+                          )),
                       Container(
                         // btndangnhapVgM (5:271)
-                        margin: EdgeInsets.fromLTRB(44*fem, 0*fem, 45*fem, 0*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            44 * fem, 0 * fem, 45 * fem, 0 * fem),
                         width: double.infinity,
-                        height: 40*fem,
-                        decoration: BoxDecoration (
+                        height: 40 * fem,
+                        decoration: BoxDecoration(
                           color: const Color(0xff007373),
-                          borderRadius: BorderRadius.circular(20*fem),
+                          borderRadius: BorderRadius.circular(20 * fem),
                         ),
                         child: Center(
                           child: Center(
                             child: TextButton(
-                              onPressed: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                    const QuanLyNguyenLieu()));
                                 double Gia = double.parse(donGia.text);
                                 final UpdateNL = NguyenLieu(
                                     donGia: Gia,
-                                    donVitinh: donViTinh.text ,
-                                    hinhAnh: imageURLNL ,
+                                    donVitinh: donViTinh.text,
+                                    hinhAnh: imageURLNL,
                                     moTa: moTa.text,
-                                    ngayNhap: ngayNhap.text ,
-                                    slTonKho: slTonKho.text ,
+                                    ngayNhap: ngayNhap.text,
+                                    slTonKho: slTonKho.text,
                                     tenNL: tenNL.text);
                                 updateNguyenLieu(UpdateNL, widget.id);
                               },
-                              child: Text( 'Xác nhận thay đổi',
+                              child: Text('Xác nhận thay đổi',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 16*ffem,
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.2000000477*ffem/fem,
-                                    color: const Color(0xfffcf2d9),)
-
-                              ),
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.2000000477 * ffem / fem,
+                                    color: const Color(0xfffcf2d9),
+                                  )),
                             ),
                           ),
                         ),
