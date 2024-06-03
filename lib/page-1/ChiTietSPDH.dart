@@ -25,7 +25,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
           .doc(orderId)
           .update({'tinhTrang': 'Đơn đã hủy'});
 
-      // Optionally, you can also navigate to a new screen or show a message
       Fluttertoast.showToast(
         msg: "Đơn hàng đã được hủy",
         toastLength: Toast.LENGTH_SHORT,
@@ -37,7 +36,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
       );
     } catch (error) {
       print("Error updating order status: $error");
-      // Handle the error, show a message, or navigate to an error screen
     }
   }
 
@@ -56,8 +54,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
       child: SizedBox(
         width: double.infinity,
         child: Container(
-          // danhmucsanphamtB3 (5:376)
-          width: double.infinity,
           decoration: const BoxDecoration(
             color: Color(0xfff5dab1),
           ),
@@ -65,8 +61,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                // chitietsanpham2tR (301:495)
-                width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xfff5dab1),
                 ),
@@ -74,7 +68,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // autogrouphjqtK6q (SivAximhhNxvjZBaCZHjqT)
                       padding: EdgeInsets.fromLTRB(
                           16 * fem, 16 * fem, 0 * fem, 20 * fem),
                       width: double.infinity,
@@ -86,7 +79,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                               Navigator.pop(context);
                             },
                             child: Container(
-                              // vectorcrd (301:496)
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 11 * fem),
                               width: 32 * fem,
@@ -99,7 +91,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                             ),
                           ),
                           Container(
-                            // autogroupd6nv95s (SivAhZYJ3rzgkR9CBXd6nV)
                             margin: EdgeInsets.fromLTRB(
                                 8 * fem, 0 * fem, 0 * fem, 21 * fem),
                             width: double.infinity,
@@ -108,7 +99,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // safes1s (301:510)
                                   margin: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 22 * fem, 0 * fem),
                                   width: 90 * fem,
@@ -119,34 +109,31 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                   ),
                                 ),
                                 Container(
-                                  // autogroupj3bwB2Z (SivAoPhuuz4UHKK2ocj3Bw)
                                   height: 200,
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        // txcphenvVw (301:497)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
                                             0 * fem, 0 * fem, 15 * fem),
                                         child: Text(
                                           mahoadon,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w400,
                                             height: 1.25 * ffem / fem,
                                             color: Color(0xff000000),
                                           ),
                                         ),
                                       ),
                                       Text(
-                                        // ctZ (301:498)
                                         ngayDH,
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
                                           height: 1.25 * ffem / fem,
                                           color: Color(0xff993300),
                                         ),
@@ -158,7 +145,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                             ),
                           ),
                           Container(
-                            // group889Nh (301:499)
                             margin: EdgeInsets.fromLTRB(
                                 8 * fem, 0 * fem, 0 * fem, 17 * fem),
                             width: 900 * fem,
@@ -166,25 +152,21 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // autogroupct2hsZb (SivBknHHd9BRqrvViTCT2h)
                                   padding: EdgeInsets.fromLTRB(
                                       0 * fem, 0 * fem, 0 * fem, 5 * fem),
-                                  // width: double.infinity,
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        // autogroup8mrqzeD (SivBFYd125Epax8UgU8Mrq)
                                         margin: EdgeInsets.fromLTRB(
                                             0 * fem, 0 * fem, 2 * fem, 0 * fem),
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              // tnkhchhngXe9 (301:500)
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0 * fem,
@@ -194,20 +176,19 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                                 'Tên khách hàng',
                                                 style: SafeGoogleFont(
                                                   'Quicksand',
-                                                  fontSize: 16 * ffem,
-                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 12 * ffem,
+                                                  fontWeight: FontWeight.w400,
                                                   height: 1.25 * ffem / fem,
                                                   color: Color(0xff007373),
                                                 ),
                                               ),
                                             ),
                                             Text(
-                                              // nguynvnadhB (301:501)
                                               widget.Name,
                                               style: SafeGoogleFont(
                                                 'Quicksand',
-                                                fontSize: 16 * ffem,
-                                                fontWeight: FontWeight.w700,
+                                                fontSize: 12 * ffem,
+                                                fontWeight: FontWeight.w400,
                                                 height: 1.25 * ffem / fem,
                                                 color: Color(0xff993300),
                                               ),
@@ -218,20 +199,15 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                       SizedBox(
                                         height: 5 * fem,
                                       ),
-                                      SizedBox(
-                                        height: 5 * fem,
-                                      ),
                                       Container(
-                                        // autogroupdsnv5hb (SivBT3HrBQ92TvaW5ZDSNV)
                                         margin: EdgeInsets.fromLTRB(
                                             0 * fem, 0 * fem, 0 * fem, 0 * fem),
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              // thnhtin1r9 (301:507)
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0 * fem,
@@ -241,20 +217,19 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                                 'Thành tiền',
                                                 style: SafeGoogleFont(
                                                   'Quicksand',
-                                                  fontSize: 16 * ffem,
-                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 12 * ffem,
+                                                  fontWeight: FontWeight.w400,
                                                   height: 1.25 * ffem / fem,
                                                   color: Color(0xff007373),
                                                 ),
                                               ),
                                             ),
                                             Text(
-                                              // j1T (301:503)
                                               thanhtien.toString() + "VND",
                                               style: SafeGoogleFont(
                                                 'Quicksand',
-                                                fontSize: 16 * ffem,
-                                                fontWeight: FontWeight.w700,
+                                                fontSize: 12 * ffem,
+                                                fontWeight: FontWeight.w400,
                                                 height: 1.25 * ffem / fem,
                                                 color: Color(0xff993300),
                                               ),
@@ -266,16 +241,14 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                         height: 5 * fem,
                                       ),
                                       Container(
-                                        // autogrouprbayTTF (SivBYCoumrHMFXBjKHrBay)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
                                             0 * fem, 43 * fem, 0 * fem),
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              // phngthcthanhtono1K (301:508)
                                               margin: EdgeInsets.fromLTRB(
                                                   0 * fem,
                                                   0 * fem,
@@ -285,20 +258,19 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                                 'Phương thức thanh toán',
                                                 style: SafeGoogleFont(
                                                   'Quicksand',
-                                                  fontSize: 16 * ffem,
-                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 12 * ffem,
+                                                  fontWeight: FontWeight.w400,
                                                   height: 1.25 * ffem / fem,
                                                   color: Color(0xff007373),
                                                 ),
                                               ),
                                             ),
                                             Text(
-                                              // tinmtHx5 (301:504)
                                               phuongthuc,
                                               style: SafeGoogleFont(
                                                 'Quicksand',
-                                                fontSize: 16 * ffem,
-                                                fontWeight: FontWeight.w700,
+                                                fontSize: 12 * ffem,
+                                                fontWeight: FontWeight.w400,
                                                 height: 1.25 * ffem / fem,
                                                 color: Color(0xff993300),
                                               ),
@@ -310,34 +282,31 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                   ),
                                 ),
                                 Container(
-                                  // autogroupixpwpx1 (SivBdhekW8tQQmaGFCiXPw)
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Container(
-                                        // tnhtrngnhngB1s (301:509)
                                         margin: EdgeInsets.fromLTRB(0 * fem,
                                             0 * fem, 48 * fem, 0 * fem),
                                         child: Text(
                                           'Tình trạng đơn hàng',
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w600,
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w400,
                                             height: 1.25 * ffem / fem,
                                             color: Color(0xff007373),
                                           ),
                                         ),
                                       ),
                                       Text(
-                                        // thanhtonV2Z (301:505)
                                         tinhTrang,
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
                                           height: 1.25 * ffem / fem,
                                           color: Color(0xff993300),
                                         ),
@@ -353,7 +322,6 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                               await updateOrderStatus(mahoadon);
                             },
                             child: Container(
-                              // opt6RS1 (301:556)
                               margin: EdgeInsets.fromLTRB(
                                   53 * fem, 0 * fem, 55.96 * fem, 0 * fem),
                               width: double.infinity,
@@ -369,9 +337,9 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 15 * ffem,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.3333333333 * ffem / fem,
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.25 * ffem / fem,
                                       color: Color(0xfffcf2d9),
                                     ),
                                   ),
@@ -390,8 +358,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                   stream: FirebaseFirestore.instance
                       .collection('Bill')
                       .doc(mahoadon)
-                      .collection(
-                          'products')
+                      .collection('products')
                       .snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData || snapshot.data == null) {
@@ -415,15 +382,13 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                           builder: (context, productDataSnapshot) {
                             if (!productDataSnapshot.hasData ||
                                 productDataSnapshot.data == null) {
-                              // Handle the case where no data is available for the given idSP
                               return Text('Không có dữ liệu cho idSP: $idSP');
                             }
                             final Map<String, dynamic>? productData =
-                                productDataSnapshot.data?.data()
-                                    as Map<String, dynamic>?;
+                            productDataSnapshot.data?.data()
+                            as Map<String, dynamic>?;
 
                             if (productData == null) {
-                              // Handle the case where the product data is null or empty
                               return Text(
                                   'Dữ liệu sản phẩm trống cho idSP: $idSP');
                             }
@@ -431,14 +396,13 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                             final tensp = productData['tenSP'] as String?;
                             final hinhanh = productData['hinhAnh'] as String?;
                             final kichthuoc =
-                                productData['kichThuoc'] as String?;
+                            productData['kichThuoc'] as String?;
                             final dongia = productData['donGia'] as int?;
 
                             if (tensp == null ||
                                 hinhanh == null ||
                                 kichthuoc == null ||
                                 dongia == null) {
-                              // Handle the case where any of the required fields are null
                               return Text(
                                   'Dữ liệu sản phẩm không đầy đủ cho idSP: $idSP');
                             }
@@ -455,21 +419,47 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                 leading: Image.network(hinhanh),
                                 title: Text(
                                   tensp,
-                                  style: const TextStyle(
-                                    fontFamily: 'Quicksand',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 26,
+                                  style: SafeGoogleFont(
+                                    'Quicksand',
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.25 * ffem / fem,
                                     color: Colors.black,
                                   ),
                                 ),
                                 subtitle: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Kích thước : " + kichthuoc),
-                                    Text("Số lượng : " + soluong.toString()),
-                                    Text("Đơn giá : " +
-                                        dongia.toString() +
-                                        ' VND'),
+                                    Text(
+                                      "Kích thước : " + kichthuoc,
+                                      style: SafeGoogleFont(
+                                        'Quicksand',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.25 * ffem / fem,
+                                        color: Color(0xff777777),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Số lượng : " + soluong.toString(),
+                                      style: SafeGoogleFont(
+                                        'Quicksand',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.25 * ffem / fem,
+                                        color: Color(0xff777777),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Đơn giá : " + dongia.toString() + ' VND',
+                                      style: SafeGoogleFont(
+                                        'Quicksand',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.25 * ffem / fem,
+                                        color: Color(0xff777777),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
