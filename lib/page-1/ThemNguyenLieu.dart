@@ -221,7 +221,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                   textAlign: TextAlign.center,
                                   style: TextStyle (
                                     fontFamily: 'Quicksand',
-                                    fontSize: 14*ffem,
+                                    fontSize: 12*ffem,
                                     fontWeight: FontWeight.w600,
                                     height: 1.25*ffem/fem,
                                     color: const Color(0xfffcf2d9),
@@ -236,7 +236,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                 'Tải ảnh lên',
                                 style: TextStyle (
                                   fontFamily: 'Quicksand',
-                                  fontSize: 16*ffem,
+                                  fontSize: 12*ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.25*ffem/fem,
                                   color: const Color(0xff007373),
@@ -286,6 +286,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     keyboardType: TextInputType.number,
+                                    textInputAction: TextInputAction.next,
                                     controller: dongiaNL,
                                     style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
@@ -350,11 +351,12 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                   controller: ngaynhapNL,
                                   style: const TextStyle(fontSize: 12),
                                   decoration: InputDecoration(
+
                                     hintText: defaultNgaySinh,
-                                    hintStyle: TextStyle(color: Color(0xff007373)),
+                                    hintStyle: const TextStyle(color: Color(0xff007373)),
                                     fillColor: Colors.white,
                                     suffixIcon: IconButton(
-                                      icon: Icon(Icons.calendar_today),
+                                      icon: const Icon(Icons.calendar_today),
                                       onPressed: () {
                                         // Mở datetime picker ở đây
                                         _selectDateupAdd(context);
@@ -445,7 +447,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle (
                                           fontFamily: 'Quicksand',
-                                          fontSize: 16*ffem,
+                                          fontSize: 12*ffem,
                                           fontWeight: FontWeight.w700,
                                           height: 1.2000000477*ffem/fem,
                                           color: const Color(0xfffcf2d9),)

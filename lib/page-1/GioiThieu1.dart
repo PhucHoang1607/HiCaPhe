@@ -45,8 +45,8 @@ class GioiThieu1 extends StatelessWidget {
                 'Nguyên chất',
                 style: SafeGoogleFont (
                   'Quicksand',
-                  fontSize: 36,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
                   height: 1.25,
                   letterSpacing: 1,
                   color: const Color(0xff993300),
@@ -73,7 +73,7 @@ class GioiThieu1 extends StatelessWidget {
                 'Nguyên liệu được lấy từ thiên nhiên và tinh chế ra các sản phẩm thơm ngon mà vẫn giữ nguyên hương vị gộc của nguyên liệu',
                 style: SafeGoogleFont (
                   'Quicksand',
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: FontWeight.w400,
                   height: 1.25,
                   letterSpacing: 1,
@@ -152,8 +152,8 @@ class GioiThieu1 extends StatelessWidget {
                     'Tiếp theo',
                     style: SafeGoogleFont (
                       'Quicksand',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       height: 1.25,
                       letterSpacing: 1,
                       color: const Color(0xff993300),

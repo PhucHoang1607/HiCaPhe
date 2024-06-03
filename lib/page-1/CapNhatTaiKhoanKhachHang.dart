@@ -276,6 +276,7 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                               child: TextFormField(
                                 controller: displayName,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Họ và tên",
@@ -288,6 +289,8 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                               child: TextFormField(
                                 controller: sdt,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.number,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Số điện thoại",
@@ -300,6 +303,8 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                               child: TextFormField(
                                 controller: email,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
+                                keyboardType: TextInputType.emailAddress,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Email",
