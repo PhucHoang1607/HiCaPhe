@@ -315,6 +315,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             child: TextFormField(
                               controller: donViTinh,
                               style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
                                   hintStyle:
                                   TextStyle(color: Color(0xff007373)),
