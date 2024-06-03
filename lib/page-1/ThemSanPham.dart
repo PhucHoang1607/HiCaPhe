@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -11,7 +10,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 class ThemSanPham extends StatefulWidget {
   final void Function() updateProductStream;
-  const ThemSanPham({super.key, required this.updateProductStream});
+  const ThemSanPham({Key? key, required this.updateProductStream});
   @override
   State<ThemSanPham> createState() => _ThemSanPhamState();
 }
@@ -138,8 +137,8 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                               child: Text(
                                 'Thưởng thức vị ngon trọn vẹn',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont (
-                                  'Dancing Script',
+                                style: TextStyle (
+                                  fontFamily: 'Dancing Script',
                                   fontSize: 24*ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2*ffem/fem,
@@ -199,9 +198,9 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                             child: Text(
                               'Thêm mới sản phẩm',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
-                                'Quicksand',
-                                fontSize: 14*ffem,
+                              style: TextStyle (
+                                fontFamily: 'Quicksand',
+                                fontSize: 12*ffem,
                                 fontWeight: FontWeight.w600,
                                 height: 1.25*ffem/fem,
                                 color: const Color(0xfffcf2d9),
@@ -215,8 +214,8 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                           child:  TextButton(
                               onPressed:(){} ,
                               child: Text('Tải ảnh lên',
-                                style: SafeGoogleFont (
-                                  'Quicksand',
+                                style: TextStyle (
+                                  fontFamily: 'Quicksand',
                                   fontSize: 16*ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.25*ffem/fem,
@@ -268,7 +267,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                   }
                                 },
                                 controller: masp,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 12),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Mã loại sản phẩm",
@@ -280,7 +279,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                             child: SizedBox(height: 30,
                               child: TextFormField(
                                 controller: tensp,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 12),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Tên sản phẩm",
@@ -322,7 +321,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                   }
                                 },
                                 controller: soluong,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 12),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Đơn vị tính",
@@ -343,7 +342,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 keyboardType: TextInputType.number,
                                 controller: dongia,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 12),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Giá sản phẩm",
@@ -366,7 +365,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                   }
                                 },
                                 controller: mota,
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(fontSize: 12),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Mô tả",
@@ -409,9 +408,9 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 child: Text( 'Xác nhận thêm mới',
                                     textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
-                                      'Quicksand',
-                                      fontSize: 16*ffem,
+                                    style: TextStyle (
+                                      fontFamily: 'Quicksand',
+                                      fontSize: 12*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2000000477*ffem/fem,
                                       color: const Color(0xfffcf2d9),)

@@ -86,8 +86,8 @@ class LienHe extends StatelessWidget {
                                   'Liên hệ',
                                   style: SafeGoogleFont (
                                     'Quicksand',
-                                    fontSize: 28*ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12*ffem,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25*ffem/fem,
                                     letterSpacing: 1*fem,
                                     color: Color(0xff993300),
@@ -156,11 +156,11 @@ class LienHe extends StatelessWidget {
                           '@hicaphe.onmicrosoft.com',
                           style: SafeGoogleFont (
                             'Quicksand',
-                            fontSize: 16*ffem,
+                            fontSize: 12*ffem,
                             textStyle: TextStyle(
                               overflow: TextOverflow.ellipsis
                             ),
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                             height: 1.25*ffem/fem,
                             letterSpacing: 1*fem,
                             color: Color(0xff993300),
@@ -193,8 +193,8 @@ class LienHe extends StatelessWidget {
                       'fb.com/hicaphe',
                       style: SafeGoogleFont (
                         'Quicksand',
-                        fontSize: 20*ffem,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 12*ffem,
+                        fontWeight: FontWeight.w400,
                         height: 1.25*ffem/fem,
                         letterSpacing: 1*fem,
                         color: Color(0xff993300),
@@ -225,8 +225,8 @@ class LienHe extends StatelessWidget {
                       '@hicaphe',
                       style: SafeGoogleFont (
                         'Quicksand',
-                        fontSize: 20*ffem,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 12*ffem,
+                        fontWeight: FontWeight.w400,
                         height: 1.25*ffem/fem,
                         letterSpacing: 1*fem,
                         color: Color(0xff993300),
@@ -279,8 +279,8 @@ class LienHe extends StatelessWidget {
                         '0978163454',
                         style: SafeGoogleFont (
                           'Quicksand',
-                          fontSize: 20*ffem,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 12*ffem,
+                          fontWeight: FontWeight.w400,
                           height: 1.25*ffem/fem,
                           letterSpacing: 1*fem,
                           color: Color(0xff993300),
@@ -317,8 +317,8 @@ class LienHe extends StatelessWidget {
                         '157, Đ.Tân Xuân 6, X.Tân Xuân, H.Hóc Môn. TP.HCM',
                         style: SafeGoogleFont (
                           'Quicksand',
-                          fontSize: 16*ffem,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 12*ffem,
+                          fontWeight: FontWeight.w400,
                           height: 1.25*ffem/fem,
                           letterSpacing: 1*fem,
                           color: Color(0xff993300),

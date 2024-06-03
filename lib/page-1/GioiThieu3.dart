@@ -48,8 +48,8 @@ class GioiThieu3 extends StatelessWidget {
                   'Liên tục',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 36,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                     height: 1.25,
                     letterSpacing: 1,
                     color: const Color(0xff993300),
@@ -76,7 +76,7 @@ class GioiThieu3 extends StatelessWidget {
                   'Tại Hi cà phê, cánh cửa luôn luôn mở để chào đón khách hàng đến trải nghiệm dịch vụ',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                     height: 1.25,
                     letterSpacing: 1,
@@ -152,8 +152,8 @@ class GioiThieu3 extends StatelessWidget {
                     'Tiếp theo',
                     style: SafeGoogleFont (
                       'Quicksand',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       height: 1.25,
                       letterSpacing: 1,
                       color: const Color(0xff993300),

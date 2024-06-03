@@ -152,8 +152,8 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                                 child: Text(
                                   '${usersNV?.displayName}',
                                   style: TextStyle(
-                                      fontFamily: 'Readex Pro',
-                                      fontSize: 15,
+                                      fontFamily: 'Quicksand',
+                                      fontSize: 12,
                                       color: Colors.white
                                   ),
                                 ),
@@ -163,8 +163,8 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                                 child: Text(
                                   '${usersNV?.email}',
                                   style: TextStyle(
-                                      fontFamily: 'Readex Pro',
-                                      fontSize: 8.8,
+                                      fontFamily: 'Quicksand',
+                                      fontSize: 12,
                                       color: Colors.white
                                   ),
                                 ),
@@ -362,7 +362,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                               softWrap:false,
                               style: SafeGoogleFont (
                                 'Quicksand',
-                                fontSize: 14*ffem,
+                                fontSize: 12*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.25*ffem/fem,
                                 color: Color(0xff000000),
@@ -406,7 +406,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                             softWrap:false,
                             style: SafeGoogleFont (
                               'Quicksand',
-                              fontSize: 14*ffem,
+                              fontSize: 12*ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.25*ffem/fem,
                               color: Color(0xff000000),
@@ -460,7 +460,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                               softWrap:false,
                               style: SafeGoogleFont (
                                 'Quicksand',
-                                fontSize: 14*ffem,
+                                fontSize: 12*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.25*ffem/fem,
                                 color: Color(0xff000000),

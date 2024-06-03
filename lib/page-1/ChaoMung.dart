@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/page-1/GioiThieu1.dart';
 import 'package:myapp/utils.dart';
@@ -21,18 +20,28 @@ class GioiThieuPage extends StatelessWidget {
   }
 }
 
-
-
 class ChaoMungPage extends StatefulWidget {
   final Widget child;
   const ChaoMungPage({super.key, required this.child});
-  @override
-  State<StatefulWidget> createState() => ChaoMung();
 
+  @override
+  State<StatefulWidget> createState() => _ChaoMungPageState();
 }
 
-
-class ChaoMung extends State<ChaoMungPage>{
+class _ChaoMungPageState extends State<ChaoMungPage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        PageTransition(
+          child: const GioiThieuPage(),
+          type: PageTransitionType.bottomToTop,
+        ),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,52 +49,40 @@ class ChaoMung extends State<ChaoMungPage>{
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
 
-    return SizedBox(
-      height: 900,
-      child: TextButton(
-        // chaomungAGR (10:1834)
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const GioiThieuPage()),
-          );
-        },
-        style: TextButton.styleFrom (
-          padding: EdgeInsets.zero,
-        ),
+    return Scaffold(
+      body: SizedBox(
+        height: double.infinity,
         child: Container(
           padding: const EdgeInsets.fromLTRB(44, 219, 43, 342),
           width: double.infinity,
-          decoration: const BoxDecoration (
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
-            image: DecorationImage (
+            image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage (
-                'assets/page-1/images/hinhnen1-bg.png',
-              ),
+              image: AssetImage('assets/page-1/images/hinhnen1-bg.png'),
             ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                // logomaur9F (10:3518)
-                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 39*fem),
-                width: 176*fem,
-                height: 176*fem,
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1 * fem, 39 * fem),
+                width: 176 * fem,
+                height: 176 * fem,
                 child: Image.asset(
                   'assets/page-1/images/logomau.png',
                   fit: BoxFit.cover,
                 ),
               ),
               Text(
-                // caukhauhieuP9B (10:1841)
                 'Thưởng thức vị ngon trọn vẹn',
                 textAlign: TextAlign.center,
-                style: SafeGoogleFont (
+                style: SafeGoogleFont(
                   'Dancing Script',
-                  fontSize: 22*ffem,
+                  fontSize: 22 * ffem,
                   fontWeight: FontWeight.w700,
-                  height: 1*ffem/fem,
-                  letterSpacing: 1*fem,
+                  height: 1 * ffem / fem,
+                  letterSpacing: 1 * fem,
                   color: const Color(0xff993300),
                 ),
               ),
@@ -93,19 +90,6 @@ class ChaoMung extends State<ChaoMungPage>{
           ),
         ),
       ),
-
     );
-
-  }
-
-  @override
-  void initState() {
-    Timer(const Duration(seconds: 3), (){
-      Navigator.push(
-          context, PageTransition(child: const GioiThieuPage(), type: PageTransitionType.bottomToTop
-      ));
-    });
-    super.initState();
   }
 }
-

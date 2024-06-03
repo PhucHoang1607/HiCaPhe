@@ -11,9 +11,26 @@ import 'package:myapp/page-1/DanhSachNhanVien.dart';
 import 'package:myapp/utils.dart';
 
 class SuaNhanVien extends StatefulWidget {
+  const SuaNhanVien({
+    super.key,
+    required this.calam,
+    required this.hinhAnh,
+    required this.luong,
+    required this.ngaySinh,
+    required this.sodienthoai,
+    required this.tenNV,
+    required this.id,
+    required this.gioiTinh,
+  });
+  final String calam,
+      hinhAnh,
+      luong,
+      ngaySinh,
+      sodienthoai,
+      tenNV,
+      gioiTinh,
+      id;
 
-  const SuaNhanVien({super.key, required this.calam, required this.hinhAnh, required this.luong, required this.ngaySinh, required this.sodienthoai, required this.tenNV, required this.id, required this.gioiTinh});
-  final String calam, hinhAnh,luong, ngaySinh, sodienthoai, tenNV, gioiTinh, id;
   @override
   State<SuaNhanVien> createState() => _SuaNhanVienState();
 }
@@ -38,29 +55,31 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
   DateTime selectedDate = DateTime.now();
   final TextEditingController luong = TextEditingController();
   final TextEditingController ngaySinh = TextEditingController();
-  final TextEditingController sodienthoai= TextEditingController();
+  final TextEditingController sodienthoai = TextEditingController();
   final TextEditingController tenNV = TextEditingController();
   String gentle = "Khác";
   String calam = "Sáng"; // Giá trị ban đầu
   String imageURLNV = "";
-  Future updateNhanvien(NhanVien nhanvien, String id) async
-  {
+  Future updateNhanvien(NhanVien nhanvien, String id) async {
     Map<String, dynamic> dulieuNV = {
-      'caLam' : nhanvien.caLam,
+      'caLam': nhanvien.caLam,
       'hinhAnh': imageURLNV,
       'luong': nhanvien.luong,
-      'ngaySinh' :nhanvien.ngaySinh,
+      'ngaySinh': nhanvien.ngaySinh,
       'sdt': nhanvien.sdt,
       'tenNV': nhanvien.tenNV,
       'gioiTinh': nhanvien.gioiTinh,
     };
     // Kiểm tra nếu có ảnh URL, thì thêm nó vào dữ liệu cập nhật
-    try{
-      await FirebaseFirestore.instance.collection('Staff').doc(id).update(dulieuNV);
+    try {
+      await FirebaseFirestore.instance
+          .collection('Staff')
+          .doc(id)
+          .update(dulieuNV);
       Fluttertoast.showToast(msg: 'Cập nhật thành công!');
-    }
-    catch (e){
-      Fluttertoast.showToast(msg: 'Cập nhật thất bại', backgroundColor: Colors.red);
+    } catch (e) {
+      Fluttertoast.showToast(
+          msg: 'Cập nhật thất bại', backgroundColor: Colors.red);
     }
   }
 
@@ -70,17 +89,19 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
     setState(() {
       imagesupdateNV = newImages;
     });
-    imageURLNV= await UploadImage();
+    imageURLNV = await UploadImage();
   }
 
   // hàm đưa đưa dữ liệu lên Storage
   UploadImage() async {
-    final storageRef = FirebaseStorage.instance.ref().child("nhanVien"); // Ham lien ket vao storage
+    final storageRef = FirebaseStorage.instance
+        .ref()
+        .child("nhanVien"); // Ham lien ket vao storage
     try {
       final imageRef = storageRef.child(imagesupdateNV!.name);
       await imageRef.putFile(File(imagesupdateNV!.path));
       return imageURLNV = await imageRef.getDownloadURL();
-    } on FirebaseException catch(e) {
+    } on FirebaseException catch (e) {
       print(e);
       return '';
     }
@@ -98,6 +119,7 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
     gentle = widget.gioiTinh;
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -109,22 +131,21 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
         child: SingleChildScrollView(
           reverse: true,
           child: Padding(
-            padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
               width: double.infinity,
               height: 818,
               child: Container(
-                // themnhanvienbeR (5:211)
-                padding: EdgeInsets.fromLTRB(16*fem, 16*fem, 17*fem, 0*fem),
+                padding:
+                EdgeInsets.fromLTRB(16 * fem, 16 * fem, 17 * fem, 0 * fem),
                 width: double.infinity,
                 height: 800,
-                decoration: const BoxDecoration (
+                decoration: const BoxDecoration(
                   color: Color(0xffffffff),
-                  image: DecorationImage (
+                  image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage (
-                      'assets/page-1/images/hinhnen1-bg.png',
-                    ),
+                    image: AssetImage('assets/page-1/images/hinhnen1-bg.png'),
                   ),
                 ),
                 child: SingleChildScrollView(
@@ -132,20 +153,19 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // autogroupqwvfVUu (Nueq4cewQ6xFu9e2AdQWVF)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 13*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 13 * fem),
                         width: double.infinity,
-                        height: 140*fem,
+                        height: 140 * fem,
                         child: Stack(
                           children: [
                             Positioned(
-                              // logomauQ65 (5:213)
-                              left: 114*fem,
-                              top: 16*fem,
+                              left: 114 * fem,
+                              top: 16 * fem,
                               child: Align(
                                 child: SizedBox(
-                                  width: 100*fem,
-                                  height: 100*fem,
+                                  width: 100 * fem,
+                                  height: 100 * fem,
                                   child: Image.asset(
                                     'assets/page-1/images/logomau.png',
                                     fit: BoxFit.cover,
@@ -154,22 +174,21 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                               ),
                             ),
                             Positioned(
-                              // caukhauhieu7FP (5:231)
-                              left: 5*fem,
-                              top: 114*fem,
+                              left: 5 * fem,
+                              top: 114 * fem,
                               child: Align(
                                 child: SizedBox(
-                                  width: 322*fem,
-                                  height: 32*fem,
+                                  width: 322 * fem,
+                                  height: 32 * fem,
                                   child: Text(
                                     'Thưởng thức vị ngon trọn vẹn',
                                     textAlign: TextAlign.center,
-                                    style: SafeGoogleFont (
+                                    style: SafeGoogleFont(
                                       'Dancing Script',
-                                      fontSize: 24*ffem,
+                                      fontSize: 24 * ffem,
                                       fontWeight: FontWeight.w700,
-                                      height: 1.2*ffem/fem,
-                                      letterSpacing: 1*fem,
+                                      height: 1.2 * ffem / fem,
+                                      letterSpacing: 1 * fem,
                                       color: Color(0xff993300),
                                     ),
                                   ),
@@ -177,21 +196,24 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                               ),
                             ),
                             Positioned(
-                              // vectorzKB (5:232)
-                              left: 0*fem,
-                              top: 0*fem,
+                              left: 0 * fem,
+                              top: 0 * fem,
                               child: Align(
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                            const DanhSachNhanVien()));
                                   },
                                   child: SizedBox(
-                                    width: 32*fem,
-                                    height: 32*fem,
+                                    width: 32 * fem,
+                                    height: 32 * fem,
                                     child: Image.asset(
                                       'assets/page-1/images/vector-Hxd.png',
-                                      width: 32*fem,
-                                      height: 32*fem,
+                                      width: 32 * fem,
+                                      height: 32 * fem,
                                     ),
                                   ),
                                 ),
@@ -201,110 +223,130 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                         ),
                       ),
                       Container(
-                        // bieumaudangnhaphzH (5:214)
-                        margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 9*fem, 0*fem),
-                        padding: EdgeInsets.fromLTRB(25*fem, 26*fem, 24*fem, 31*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            10 * fem, 0 * fem, 9 * fem, 0 * fem),
+                        padding: EdgeInsets.fromLTRB(
+                            25 * fem, 26 * fem, 24 * fem, 31 * fem),
                         width: double.infinity,
-                        decoration: BoxDecoration (
+                        decoration: BoxDecoration(
                           color: Color(0xb2f5dab1),
-                          borderRadius: BorderRadius.circular(30*fem),
+                          borderRadius: BorderRadius.circular(30 * fem),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              // group32b45 (5:215)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
+                              margin: EdgeInsets.fromLTRB(
+                                  0 * fem, 0 * fem, 0 * fem, 12 * fem),
                               width: double.infinity,
-                              height: 36*fem,
-                              decoration: BoxDecoration (
+                              height: 36 * fem,
+                              decoration: BoxDecoration(
                                 color: Color(0xff007373),
-                                borderRadius: BorderRadius.circular(15*fem),
+                                borderRadius: BorderRadius.circular(15 * fem),
                               ),
                               child: Center(
                                 child: Text(
                                   'Thay đổi thông tin nhân viên',
                                   textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
+                                  style: SafeGoogleFont(
                                     'Quicksand',
-                                    fontSize: 14*ffem,
-                                    fontWeight: FontWeight.w600,
-                                    height: 1.25*ffem/fem,
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w400,
+                                    height: 1.25 * ffem / fem,
                                     color: Color(0xfffcf2d9),
                                   ),
                                 ),
                               ),
                             ),
                             Container(
-                              // txspxp4TT (5:226)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
+                              margin: EdgeInsets.fromLTRB(
+                                  0 * fem, 0 * fem, 0 * fem, 12 * fem),
                               child: Text(
                                 'Tải ảnh lên',
-                                overflow:TextOverflow.clip,
-                                softWrap:false,
-                                style: SafeGoogleFont (
+                                overflow: TextOverflow.clip,
+                                softWrap: false,
+                                style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 16*ffem,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.25*ffem/fem,
+                                  fontSize: 12 * ffem,
+                                  fontWeight: FontWeight.w400,
+                                  height: 1.25 * ffem / fem,
                                   color: Color(0xff007373),
                                 ),
                               ),
                             ),
                             Container(
-                              // frame51MxM (5:227)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 25*fem),
-                              width: 259*fem,
-                              height: 110*fem,
+                              margin: EdgeInsets.fromLTRB(
+                                  0 * fem, 0 * fem, 0 * fem, 25 * fem),
+                              width: 259 * fem,
+                              height: 110 * fem,
                               child: TextButton(
                                 onPressed: () async {
-                                  final newImages = await pickersupdateNV.pickImage(source: ImageSource.gallery);
+                                  final newImages = await pickersupdateNV
+                                      .pickImage(source: ImageSource.gallery);
                                   if (newImages == null) {
                                     return;
                                   }
                                   uploadImage(newImages);
                                 },
-                                child:
-                                imagesupdateNV != null ? Image.file(File(imagesupdateNV!.path),width: 259*fem,
-                                  height: 110*fem,) :  Image.network( widget.hinhAnh,
-                                  width: 259*fem,
-                                  height: 110*fem,
+                                child: imagesupdateNV != null
+                                    ? Image.file(
+                                  File(imagesupdateNV!.path),
+                                  width: 259 * fem,
+                                  height: 110 * fem,
+                                )
+                                    : Image.network(
+                                  widget.hinhAnh,
+                                  width: 259 * fem,
+                                  height: 110 * fem,
                                 ),
                               ),
                             ),
                             Container(
                                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child: SizedBox(height: 30,
+                                child: SizedBox(
+                                  height: 30,
                                   child: TextFormField(
                                     controller: tenNV,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
-                                        hintStyle: TextStyle(color: Color(0xff007373)),
+                                        hintStyle:
+                                        TextStyle(color: Color(0xff007373)),
                                         hintText: "Tên nhân viên",
                                         fillColor: Colors.white),
-                                  ),)
-                            ),
+                                  ),
+                                )),
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 10.0), // Thêm khoảng trống ở đầu
+                                padding: const EdgeInsets.only(top: 10.0),
                                 child: DropdownButtonFormField<String>(
                                   isExpanded: true,
                                   value: gentle,
-                                  items: ["Khác","Nam", "Nữ"].map((String value) {
+                                  items:
+                                  ["Khác", "Nam", "Nữ"].map((String value) {
                                     return DropdownMenuItem<String>(
                                       value: value,
-                                      child: Text(value),
+                                      child: Text(
+                                        value,
+                                        style: SafeGoogleFont(
+                                          'Quicksand',
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.25 * ffem / fem,
+                                          color: Color(0xff000000),
+                                        ),
+                                      ),
                                     );
                                   }).toList(),
                                   onChanged: (newValue) {
                                     setState(() {
-                                      gentle= newValue!;
+                                      gentle = newValue!;
                                     });
                                   },
                                   decoration: const InputDecoration(
-                                    hintStyle: TextStyle(color: Color(0xff007373)),
-                                    hintText: "giới tính",
+                                    hintStyle:
+                                    TextStyle(color: Color(0xff007373)),
+                                    hintText: "Giới tính",
                                     fillColor: Colors.white,
                                   ),
                                 ),
@@ -312,26 +354,38 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                             ),
                             Container(
                                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child: SizedBox(height: 30,
+                                child: SizedBox(
+                                  height: 30,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
                                     controller: sodienthoai,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
-                                        hintStyle: TextStyle(color: Color(0xff007373)),
+                                        hintStyle:
+                                        TextStyle(color: Color(0xff007373)),
                                         hintText: "Số điện thoại",
                                         fillColor: Colors.white),
-                                  ),)
-                            ),
+                                  ),
+                                )),
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                               child: DropdownButtonFormField<String>(
                                 isExpanded: true,
                                 value: calam,
-                                items: ["Sáng","Chiều", "Tối","Khuya"].map((String value) {
+                                items: ["Sáng", "Chiều", "Tối", "Khuya"]
+                                    .map((String value) {
                                   return DropdownMenuItem<String>(
                                     value: value,
-                                    child: Text(value),
+                                    child: Text(
+                                      value,
+                                      style: SafeGoogleFont(
+                                        'Quicksand',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.25 * ffem / fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
                                   );
                                 }).toList(),
                                 onChanged: (newValue) {
@@ -340,7 +394,8 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                   });
                                 },
                                 decoration: const InputDecoration(
-                                  hintStyle: TextStyle(color: Color(0xff007373)),
+                                  hintStyle:
+                                  TextStyle(color: Color(0xff007373)),
                                   hintText: "Ca làm",
                                   fillColor: Colors.white,
                                 ),
@@ -348,27 +403,30 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                             ),
                             Container(
                                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                child: SizedBox(height: 30,
+                                child: SizedBox(
+                                  height: 30,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
                                     controller: luong,
-                                    style: const TextStyle(fontSize: 14),
+                                    style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
-                                        hintStyle: TextStyle(color: Color(0xff007373)),
+                                        hintStyle:
+                                        TextStyle(color: Color(0xff007373)),
                                         hintText: "Lương",
                                         fillColor: Colors.white),
-                                  ),)
-                            ),
+                                  ),
+                                )),
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                               child: SizedBox(
-                                height: 50*fem,
+                                height: 50 * fem,
                                 child: TextFormField(
                                   controller: ngaySinh,
-                                  style: const TextStyle(fontSize: 14),
+                                  style: const TextStyle(fontSize: 12),
                                   decoration: InputDecoration(
                                     hintText: "Ngày sinh",
-                                    hintStyle: TextStyle(color: Color(0xff007373)),
+                                    hintStyle:
+                                    TextStyle(color: Color(0xff007373)),
                                     fillColor: Colors.white,
                                     suffixIcon: IconButton(
                                       icon: Icon(Icons.calendar_today),
@@ -382,19 +440,22 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                               ),
                             ),
                             Container(
-                              // btndangnhap5Wy (5:224)
-                              margin: EdgeInsets.fromLTRB(25*fem, 0*fem, 25*fem, 10*fem),
+                              margin: EdgeInsets.fromLTRB(
+                                  25 * fem, 0 * fem, 25 * fem, 10 * fem),
                               width: 300,
-                              height: 50*fem,
-                              decoration: BoxDecoration (
+                              height: 50 * fem,
+                              decoration: BoxDecoration(
                                 color: Color(0xff007373),
-                                borderRadius: BorderRadius.circular(90*fem),
+                                borderRadius: BorderRadius.circular(90 * fem),
                               ),
                               child: Center(
                                 child: Center(
                                   child: TextButton(
-                                    onPressed: (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                              const DanhSachNhanVien()));
                                       double Luong = double.parse(luong.text);
                                       final UpdateNV = NhanVien(
                                         calam,
@@ -407,15 +468,16 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                       );
                                       updateNhanvien(UpdateNV, widget.id);
                                     },
-                                    child: Text( 'Xác nhận thay đổi',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
-                                          fontSize: 16*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.2000000477*ffem/fem,
-                                          color: const Color(0xfffcf2d9),)
-
+                                    child: Text(
+                                      'Xác nhận thay đổi',
+                                      textAlign: TextAlign.center,
+                                      style: SafeGoogleFont(
+                                        'Quicksand',
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
+                                        height: 1.2000000477 * ffem / fem,
+                                        color: const Color(0xfffcf2d9),
+                                      ),
                                     ),
                                   ),
                                 ),

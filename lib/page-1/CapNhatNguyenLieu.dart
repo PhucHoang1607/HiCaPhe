@@ -343,7 +343,6 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             child: TextFormField(
                               controller: tenNL,
                               style: const TextStyle(fontSize: 14),
-                              textInputAction: TextInputAction.next,
                               decoration: const InputDecoration(
                                   hintStyle: TextStyle(color: Color(0xff007373)),
                                   hintText: "Tên nguyên liệu",

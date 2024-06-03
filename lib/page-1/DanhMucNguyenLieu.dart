@@ -173,8 +173,8 @@ class _QuanLyNguyenLieuState extends State<QuanLyNguyenLieu> {
                                           textAlign: TextAlign.center,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 20 * ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w400,
                                             height: 1.25 * ffem / fem,
                                             color: const Color(0xfffcf2d9),
                                           ),
@@ -188,8 +188,8 @@ class _QuanLyNguyenLieuState extends State<QuanLyNguyenLieu> {
                                         'Thêm nguyên liệu mới',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 16 * ffem,
-                                          fontWeight: FontWeight.w700,
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w400,
                                           height: 1.25 * ffem / fem,
                                           color: const Color(0xff993300),
                                         ),
@@ -223,8 +223,8 @@ class _QuanLyNguyenLieuState extends State<QuanLyNguyenLieu> {
                                     'Sắp xếp',
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 16 * ffem,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w400,
                                       height: 1.25 * ffem / fem,
                                       color: const Color(0xff993300),
                                     ),
@@ -282,8 +282,8 @@ class _QuanLyNguyenLieuState extends State<QuanLyNguyenLieu> {
                                           child: Image.network(hinhAnh)),
                                       title: Text(tenNL, style: const TextStyle(
                                         fontFamily: 'Quicksand',
-                                        fontSize: 26,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
                                         color: Colors.black,
                                       ),),
                                       subtitle: Text(" Số lượng tồn kho:" + slTonKho),

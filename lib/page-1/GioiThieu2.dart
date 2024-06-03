@@ -47,8 +47,8 @@ class GioiThieu2 extends StatelessWidget {
                   'Tiện lợi',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 36,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                     height: 1.25,
                     letterSpacing: 1,
                     color: const Color(0xff993300),
@@ -77,7 +77,7 @@ class GioiThieu2 extends StatelessWidget {
                   'Từ không gian quán, thanh toán đến đặt hàng đều đa dạng. Mang đến sự hài lòng của khách khi đắm chìm vào các cuộc họp, học nhóm, trò chuyện, giải trí',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 16,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                     height: 1.25,
                     letterSpacing: 1,
@@ -153,8 +153,8 @@ class GioiThieu2 extends StatelessWidget {
                     'Tiếp theo',
                     style: SafeGoogleFont (
                       'Quicksand',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
                       height: 1.25,
                       letterSpacing: 1,
                       color: const Color(0xff993300),

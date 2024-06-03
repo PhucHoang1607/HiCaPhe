@@ -234,8 +234,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                             textAlign: TextAlign.center,
                                             style: SafeGoogleFont(
                                               'Quicksand',
-                                              fontSize: 20 * ffem,
-                                              fontWeight: FontWeight.w700,
+                                              fontSize: 12 * ffem,
+                                              fontWeight: FontWeight.w400,
                                               height: 1.25 * ffem / fem,
                                               color: const Color(0xfffcf2d9),
                                             ),
@@ -249,8 +249,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                           'Thêm sản phẩm mới',
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 16 * ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12 * ffem,
+                                            fontWeight: FontWeight.w400,
                                             height: 1.25 * ffem / fem,
                                             color: const Color(0xff993300),
                                           ),
@@ -284,8 +284,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                       'Sắp xếp',
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 16 * ffem,
-                                        fontWeight: FontWeight.w700,
+                                        fontSize: 12 * ffem,
+                                        fontWeight: FontWeight.w400,
                                         height: 1.25 * ffem / fem,
                                         color: const Color(0xff993300),
                                       ),
@@ -386,8 +386,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                           child: Image.network(hinhAnh, fit: BoxFit.cover)),
                                       title: Text(tenSP, style: const TextStyle(
                                           fontFamily: 'Quicksand',
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
                                           color: Colors.black
                                       ),),
                                       subtitle: Column(

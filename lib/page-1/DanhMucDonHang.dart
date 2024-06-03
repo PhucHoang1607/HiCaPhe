@@ -117,8 +117,8 @@ class _DanhMucDonHangState extends State<DanhMucDonHang> {
                                                   'Sắp xếp',
                                                   style: SafeGoogleFont(
                                                     'Quicksand',
-                                                    fontSize: 16 * ffem,
-                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 12 * ffem,
+                                                    fontWeight: FontWeight.w400,
                                                     height: 1.25 * ffem / fem,
                                                     color: const Color(0xff993300),
                                                   ),
@@ -186,8 +186,8 @@ class _DanhMucDonHangState extends State<DanhMucDonHang> {
                                               title: Text(ngayDH,
                                                 style: const TextStyle(
                                                     fontFamily: 'Quicksand',
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 26,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 12,
                                                     color: Colors.black
 
                                                 ),),

@@ -8,7 +8,7 @@ import 'package:myapp/utils.dart';
 import 'ChiTietSanPhamKH.dart';
 
 class YeuThich extends StatefulWidget {
-  const YeuThich({super.key});
+  const YeuThich({Key? key});
 
   @override
   State<YeuThich> createState() => _YeuThichState();
@@ -21,6 +21,7 @@ class _YeuThichState extends State<YeuThich> {
   String normalizeString(String input) {
     return input.toLowerCase(); // Chuyển hết sang chữ thường
   }
+
   void searchValue() {
     String normalizedKeyword = normalizeString(searchKeyYeuThich);
     setState(() {
@@ -30,11 +31,14 @@ class _YeuThichState extends State<YeuThich> {
           .snapshots();
     });
   }
-// Nhưng biến phục vụ chức năng search
 
-  final CollectionReference updataYeuThich =FirebaseFirestore.instance.collection('FavoriteProduct');
+  // Nhưng biến phục vụ chức năng search
+
+  final CollectionReference updataYeuThich =
+      FirebaseFirestore.instance.collection('FavoriteProduct');
   bool sapXepYeuThich = true;
   late Stream<QuerySnapshot> productStreamYeuThich;
+
   void updateProductStream() {
     setState(() {
       productStreamYeuThich = updataYeuThich.orderBy('tenSP').snapshots();
@@ -47,19 +51,20 @@ class _YeuThichState extends State<YeuThich> {
     // Khởi tạo productStream với dữ liệu ban đầu
     productStreamYeuThich = updataYeuThich.snapshots();
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return  Material(
+    return Material(
       type: MaterialType.transparency,
       child: SizedBox(
         width: double.infinity,
         child: Container(
           // danhmucsanphamtB3 (5:376)
           width: double.infinity,
-          decoration: const BoxDecoration (
+          decoration: const BoxDecoration(
             color: Color(0xfff5dab1),
           ),
           child: Column(
@@ -67,7 +72,7 @@ class _YeuThichState extends State<YeuThich> {
             children: [
               Container(
                 // autogroupd25pQv5 (Nuf1G9zcm6EPhD28Yvd25P)
-                padding: EdgeInsets.fromLTRB(13*fem, 48*fem, 0*fem, 12.5*fem),
+                padding: EdgeInsets.fromLTRB(13 * fem, 48 * fem, 0 * fem, 12.5 * fem),
                 width: double.infinity,
                 child: SingleChildScrollView(
                   child: Column(
@@ -75,30 +80,31 @@ class _YeuThichState extends State<YeuThich> {
                     children: [
                       Container(
                         // group71jBf (5:499)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 31*fem),
+                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 13 * fem, 31 * fem),
                         width: double.infinity,
-                        height: 45*fem,
+                        height: 45 * fem,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               // timkiemyLu (5:501)
-                              padding: EdgeInsets.fromLTRB(15*fem, 10*fem, 0*fem, 0*fem),
+                              padding: EdgeInsets.fromLTRB(15 * fem, 10 * fem, 0 * fem, 0 * fem),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  SizedBox(width: 340,
+                                  SizedBox(
+                                    width: 340,
                                     child: CupertinoSearchTextField(
-                                      decoration: BoxDecoration (
+                                      decoration: BoxDecoration(
                                         border: Border.all(color: const Color(0xff993300)),
                                         color: const Color(0xffffffff),
-                                        borderRadius: BorderRadius.circular(30*fem),
+                                        borderRadius: BorderRadius.circular(30 * fem),
                                       ),
                                       placeholder: 'Tìm kiếm',
                                       //thay đổi trạng thái listview lọc sản phẩm khi search
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
                                           searchKeyYeuThich = value;
                                         });
@@ -114,23 +120,23 @@ class _YeuThichState extends State<YeuThich> {
                       ),
                       Container(
                         // opt4jZi (180:200)
-                        margin: EdgeInsets.fromLTRB(40*fem, 0*fem, 51.95*fem, 16*fem),
+                        margin: EdgeInsets.fromLTRB(40 * fem, 0 * fem, 51.95 * fem, 16 * fem),
                         width: double.infinity,
-                        height: 32*fem,
-                        decoration: BoxDecoration (
+                        height: 32 * fem,
+                        decoration: BoxDecoration(
                           color: Color(0xff993300),
-                          borderRadius: BorderRadius.circular(30*fem),
+                          borderRadius: BorderRadius.circular(30 * fem),
                         ),
                         child: Center(
                           child: Center(
                             child: Text(
                               'Sản phẩm đã thích',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
+                              style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 15*ffem,
+                                fontSize: 15 * ffem,
                                 fontWeight: FontWeight.w700,
-                                height: 1.3333333333*ffem/fem,
+                                height: 1.3333333333 * ffem / fem,
                                 color: Color(0xfffcf2d9),
                               ),
                             ),
@@ -138,132 +144,129 @@ class _YeuThichState extends State<YeuThich> {
                         ),
                       ),
                       Container(
-                        // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
-                          margin: EdgeInsets.fromLTRB(12*fem, 0*fem, 23*fem, 0*fem),
+                          // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
+                          margin: EdgeInsets.fromLTRB(12 * fem, 0 * fem, 23 * fem, 0 * fem),
                           width: double.infinity,
-                          height: 25*fem,
+                          height: 25 * fem,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
                                     sapXepYeuThich = false; // Đảo ngược trạng thái sắp xếp
                                   });
                                 },
                                 child: Row(
-                                  children: [
-
-                                  ],
+                                  children: [],
                                 ),
                               )
                             ],
-                          )
-                      ),
+                          )),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
-                    stream: sapXepYeuThich ?  productStreamYeuThich : updataYeuThich.orderBy('tenSP').snapshots(),
-                    builder: (context,snapshot) {
+                    stream: sapXepYeuThich ? productStreamYeuThich : updataYeuThich.orderBy('tenSP').snapshots(),
+                    builder: (context, snapshot) {
                       final nuoc = snapshot.data!.docs;
                       return ListView.builder(
                         // đưa dữ liệu hiển thị lên màn hình
-                          itemCount: nuoc.length,
-                          itemBuilder: (context, document) {
-                            print("Number of filtered items: ${nuoc.length}"); // Add this lin
-                            final DocumentSnapshot documentSnapshotYeuThich = nuoc[document];
-                            final IDsp = documentSnapshotYeuThich['id'];
+                        itemCount: nuoc.length,
+                        itemBuilder: (context, document) {
+                          print("Number of filtered items: ${nuoc.length}"); // Add this lin
+                          final DocumentSnapshot documentSnapshotYeuThich = nuoc[document];
+                          final IDsp = documentSnapshotYeuThich['id'];
 
-                            return StreamBuilder<DocumentSnapshot>(
-                                stream: FirebaseFirestore.instance.collection('Product').doc(IDsp).snapshots(),
-                                builder: (context, index){
-                                  if (!index.hasData || index.data == null) {
-                                    // Handle the case where no data is available for the given idSP
-                                    return Text('Không có dữ liệu cho idSP: $IDsp');
-                                  }
+                          return StreamBuilder<DocumentSnapshot>(
+                              stream: FirebaseFirestore.instance.collection('Product').doc(IDsp).snapshots(),
+                              builder: (context, index) {
+                                if (!index.hasData || index.data == null) {
+                                  // Handle the case where no data is available for the given idSP
+                                  return Text('Không có dữ liệu cho idSP: $IDsp');
+                                }
 
-                                  final sanphamyeuthich = index.data?.data() as Map<String, dynamic>? ?? {};
-                                  if (sanphamyeuthich.isEmpty) {
-                                    // Handle the case where the product data is empty
-                                    return Text('Dữ liệu sản phẩm trống cho idSP: $IDsp');
-                                  }
+                                final sanphamyeuthich = index.data?.data() as Map<String, dynamic>? ?? {};
+                                if (sanphamyeuthich.isEmpty) {
+                                  // Handle the case where the product data is empty
+                                  return Text('Dữ liệu sản phẩm trống cho idSP: $IDsp');
+                                }
 
-                                  final hinhanh = sanphamyeuthich['hinhAnh'];
-                                  final tenSP = sanphamyeuthich['tenSP'];
-                                  final kichthuoc = sanphamyeuthich['kichThuoc'];
-                                  final dongia = sanphamyeuthich['donGia'];
-                                  final donvitinh = sanphamyeuthich['donVitinh'];
-                                  // Check if the product matches the search criteria
-                                  bool matchesSearch = tenSP.toLowerCase().contains(searchKeyYeuThich.toLowerCase());
+                                final hinhanh = sanphamyeuthich['hinhAnh'];
+                                final tenSP = sanphamyeuthich['tenSP'];
+                                final kichthuoc = sanphamyeuthich['kichThuoc'];
+                                final dongia = sanphamyeuthich['donGia'];
+                                final donvitinh = sanphamyeuthich['donVitinh'];
+                                // Check if the product matches the search criteria
+                                bool matchesSearch = tenSP.toLowerCase().contains(searchKeyYeuThich.toLowerCase());
 
-                                  // If the product doesn't match the search, return an empty container
-                                  if (!matchesSearch) {
-                                    return Container();
-                                  }
-                                  return Card(
-                                    child: ListTile(
-                                      visualDensity: VisualDensity(vertical: 4),
-                                      tileColor: Color(0xfff5dab2),
-                                      onTap: (){
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ChiTietSanPhamKH(idspKH: IDsp),),);
-                                      },
-                                      leading: ConstrainedBox(
-                                        constraints: const BoxConstraints(
-                                          minWidth: 60,
-                                          minHeight: 55,
-                                          maxWidth: 64,
-                                          maxHeight: 64,
-                                        ),
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(10),
-                                              child: Image.network(hinhanh, fit: BoxFit.cover, )
-                                          ),
+                                // If the product doesn't match the search, return an empty container
+                                if (!matchesSearch) {
+                                  return Container();
+                                }
+                                return Card(
+                                  child: ListTile(
+                                    visualDensity: VisualDensity(vertical: 4),
+                                    tileColor: Color(0xfff5dab2),
+                                    onTap: () {
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChiTietSanPhamKH(idspKH: IDsp),),);
+                                    },
+                                    leading: ConstrainedBox(
+                                      constraints: const BoxConstraints(
+                                        minWidth: 60,
+                                        minHeight: 55,
+                                        maxWidth: 64,
+                                        maxHeight: 64,
                                       ),
-                                      title: Text(tenSP,
-                                        style: const TextStyle(
-                                            fontFamily: 'Quicksand',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 26,
-                                            color: Colors.black
-
-                                        ),),
-                                      subtitle: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Kích thước : " + kichthuoc),
-                                          Text(dongia.toString() + "/" + donvitinh),
-                                        ],
-                                      ),
-                                      trailing:
-                                      Column(
-                                        // crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            // btxoaWL1 (5:462)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                                            width: 32*fem,
-                                            height: 32*fem,
-                                            child: TextButton(
-                                              onPressed: (){
-                                                confirmDeleteDialogyeuthich(updataYeuThich.doc(documentSnapshotYeuThich.id));
-                                              },
-                                              child: Image.asset(
-                                                'assets/page-1/images/btxoa.png',
-                                                width: 32*fem,
-                                                height: 32*fem,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.network(hinhanh, fit: BoxFit.cover,),
                                       ),
                                     ),
-                                  );
+                                    title: Text(tenSP,
+                                      style: const TextStyle(
+                                          fontFamily: 'Quicksand',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
+                                          color: Colors.black
 
-                                });
-                          }
+                                      ),),
+                                    subtitle: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Kích thước : " + kichthuoc),
+                                        Text(dongia.toString() + "/" + donvitinh),
+                                      ],
+                                    ),
+                                    trailing:
+                                    Column(
+                                      // crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          // btxoaWL1 (5:462)
+                                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 0 * fem),
+                                          width: 32 * fem,
+                                          height: 32 * fem,
+                                          child: TextButton(
+                                            onPressed: () {
+                                              confirmDeleteDialogyeuthich(updataYeuThich.doc(documentSnapshotYeuThich.id));
+                                            },
+                                            child: Image.asset(
+                                              'assets/page-1/images/btxoa.png',
+                                              width: 32 * fem,
+                                              height: 32 * fem,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+
+                              });
+                        },
                       );
                     }
                 ),
@@ -274,6 +277,7 @@ class _YeuThichState extends State<YeuThich> {
       ),
     );
   }
+
   Future confirmDeleteDialogyeuthich(DocumentReference dele) async {
     return showDialog<void>(
       context: context,
@@ -292,19 +296,19 @@ class _YeuThichState extends State<YeuThich> {
             TextButton(
               child: const Text('Hủy'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const YeuThich()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const YeuThich()));
               },
             ),
             TextButton(
               child: const Text('Xóa'),
-              onPressed: () async{
-                try{
+              onPressed: () async {
+                try {
                   await dele.delete();
                   Fluttertoast.showToast(msg: 'Xóa thành công!');
-                }catch(e){
+                } catch (e) {
                   Fluttertoast.showToast(msg: 'Xóa thất bại', backgroundColor: Colors.red);
                 }
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const YeuThich()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const YeuThich()));
               },
             ),
           ],

@@ -133,8 +133,8 @@ class _GuiThongBaoState extends State<GuiThongBao> {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont(
                             'Quicksand',
-                            fontSize: 14 * ffem,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 12 * ffem,
+                            fontWeight: FontWeight.w400,
                             height: 1.25 * ffem / fem,
                             color: Color(0xfffcf2d9),
                           ),
@@ -175,7 +175,7 @@ class _GuiThongBaoState extends State<GuiThongBao> {
                               style: SafeGoogleFont(
                                 'Quicksand',
                                 fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w400,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff007373),
                               ),
@@ -197,7 +197,7 @@ class _GuiThongBaoState extends State<GuiThongBao> {
                               style: SafeGoogleFont(
                                 'Quicksand',
                                 fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w400,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff777777),
                               ),
@@ -252,8 +252,8 @@ class _GuiThongBaoState extends State<GuiThongBao> {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 16 * ffem,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w400,
                               height: 1.2000000477 * ffem / fem,
                               color: Color(0xfffcf2d9),
                             ),
