@@ -62,8 +62,7 @@ class _ChiTetDonHangState extends State<ChiTetDonHang> {
 
         Fluttertoast.showToast(msg: 'Cập nhật thành công');
       } else {
-        Fluttertoast.showToast(
-            msg: 'Đơn đã bị hủy, không thể cập nhật trạng thái.');
+        Fluttertoast.showToast(msg: 'Đơn đã bị hủy, không thể cập nhật trạng thái.');
       }
     } catch (e) {
       Fluttertoast.showToast(msg: 'Cập nhật thất bại');
