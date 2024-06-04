@@ -6,7 +6,7 @@ import 'package:myapp/utils.dart';
 import 'package:myapp/page-1/TrangChuNew.dart';
 
 class ThongKeDoanhThu extends StatefulWidget {
-  const ThongKeDoanhThu({super.key});
+  const ThongKeDoanhThu({Key? key}) : super(key: key);
 
   @override
   State<ThongKeDoanhThu> createState() => _ThongKeDoanhThuState();
@@ -32,9 +32,11 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
 
   void loadFieldValues() async {
     QuerySnapshot querySnapshot =
-    await FirebaseFirestore.instance.collection('Bill').get();
+        await FirebaseFirestore.instance.collection('Bill').get();
 
-    List<String> values = querySnapshot.docs.map((doc) => (doc.data() as Map<String, dynamic>)['tongHoaDon']?.toString() ?? '').toList();
+    List<String> values = querySnapshot.docs
+        .map((doc) => (doc.data() as Map<String, dynamic>)['tongHoaDon']?.toString() ?? '')
+        .toList();
 
     setState(() {
       fieldValues = values;
@@ -60,37 +62,29 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
           child: Container(
             width: double.infinity,
             child: Container(
-              // thongkedoanhthupqP (385:1752)
-              padding:
-              EdgeInsets.fromLTRB(6 * fem, 16 * fem, 6 * fem, 52 * fem),
+              padding: EdgeInsets.fromLTRB(6 * fem, 16 * fem, 6 * fem, 52 * fem),
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0xffffffff),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(
-                    'assets/page-1/images/hinhnen1-bg.png',
-                  ),
+                  image: AssetImage('assets/page-1/images/hinhnen1-bg.png'),
                 ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    // autogroupmkex1Q5 (WXgHrLzoHS7H8qqqMHMkEX)
-                    margin: EdgeInsets.fromLTRB(
-                        10 * fem, 0 * fem, 13 * fem, 53 * fem),
+                    margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 13 * fem, 53 * fem),
                     width: double.infinity,
                     height: 143 * fem,
                     child: Stack(
                       children: [
                         Positioned(
-                          // logomau6wK (385:1754)
                           left: 114 * fem,
                           top: 16 * fem,
                           child: Align(
                             child: SizedBox(
-                              // width: 100 * fem,
                               height: 100 * fem,
                               child: Image.asset(
                                 'assets/page-1/images/logomau.png',
@@ -100,7 +94,6 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                           ),
                         ),
                         Positioned(
-                          // caukhauhieuDFF (385:1755)
                           left: 3 * fem,
                           top: 114 * fem,
                           child: Align(
@@ -110,8 +103,8 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                               child: Text(
                                 'Thưởng thức vị ngon trọn vẹn',
                                 textAlign: TextAlign.center,
-                                style: SafeGoogleFont(
-                                  'Dancing Script',
+                                style: TextStyle(
+                                  fontFamily: 'Dancing Script',
                                   fontSize: 24 * ffem,
                                   fontWeight: FontWeight.w700,
                                   height: 1.2 * ffem / fem,
@@ -123,7 +116,6 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                           ),
                         ),
                         Positioned(
-                          // vector5oF (385:1756)
                           left: 0 * fem,
                           top: 0 * fem,
                           child: Align(
@@ -147,14 +139,12 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // tnghanxutz9X (385:1757)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 0 * fem, 1 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 0 * fem, 1 * fem),
                     child: Text(
                       'Tổng hóa đơn đã xuất:',
-                      style: SafeGoogleFont(
-                        'Quicksand',
-                        fontSize: 24 * ffem,
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 12 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -163,26 +153,22 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // autogrouptrbzrSd (WXgJ3kqTAJPoRQM2pptRbZ)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 30 * fem, 24 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 30 * fem, 24 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // BUu (385:1762)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 110 * fem, 0 * fem),
+                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 110 * fem, 0 * fem),
                           child: FutureBuilder<int>(
                             future: loadCategoryValues(),
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
                                 return Text(
                                   '${snapshot.data}',
-                                  style: SafeGoogleFont(
-                                    'Quicksand',
-                                    fontSize: 24 * ffem,
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 12 * ffem,
                                     fontWeight: FontWeight.w400,
                                     height: 1.25 * ffem / fem,
                                     letterSpacing: 1 * fem,
@@ -190,17 +176,16 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                                   ),
                                 );
                               } else {
-                                return CircularProgressIndicator(); // Hoặc bất kỳ tiến trình tải nào khác bạn muốn hiển thị
+                                return CircularProgressIndicator();
                               }
                             },
                           ),
                         ),
                         Text(
-                          // hant8R (385:1763)
                           'hóa đơn',
-                          style: SafeGoogleFont(
-                            'Quicksand',
-                            fontSize: 24 * ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.25 * ffem / fem,
                             letterSpacing: 1 * fem,
@@ -211,14 +196,12 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // doanhthutcQMf (385:1758)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 0 * fem, 4 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 0 * fem, 4 * fem),
                     child: Text(
                       'Doanh thu đạt được:',
-                      style: SafeGoogleFont(
-                        'Quicksand',
-                        fontSize: 24 * ffem,
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 12 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -227,22 +210,18 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // autogrouplkwqhLm (WXgJCvErNn4tgpKvNgLKwq)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 57 * fem, 21 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 57 * fem, 21 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // 2dw (385:1764)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 58 * fem, 0 * fem),
+                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 58 * fem, 0 * fem),
                           child: Text(
                             '${fieldSum}',
-                            style: SafeGoogleFont(
-                              'Quicksand',
-                              fontSize: 24 * ffem,
+                            style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.25 * ffem / fem,
                               letterSpacing: 1 * fem,
@@ -251,11 +230,10 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                           ),
                         ),
                         Text(
-                          // vndjoF (385:1765)
                           'VND',
-                          style: SafeGoogleFont(
-                            'Quicksand',
-                            fontSize: 24 * ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.25 * ffem / fem,
                             letterSpacing: 1 * fem,
@@ -266,14 +244,12 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // thuphitrG2V (385:1759)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 0 * fem, 7 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 0 * fem, 7 * fem),
                     child: Text(
                       'Thuế phải trả:',
-                      style: SafeGoogleFont(
-                        'Quicksand',
-                        fontSize: 24 * ffem,
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 12 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -282,22 +258,18 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // autogroup5stzxAD (WXgJJFRJY9SafEpoTW5sTZ)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 57 * fem, 18 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 57 * fem, 18 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // Gwb (385:1761)
-                          margin: EdgeInsets.fromLTRB(
-                              0 * fem, 0 * fem, 79 * fem, 0 * fem),
+                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 79 * fem, 0 * fem),
                           child: Text(
                             '${fieldSum * 0.1}',
-                            style: SafeGoogleFont(
-                              'Quicksand',
-                              fontSize: 24 * ffem,
+                            style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.25 * ffem / fem,
                               letterSpacing: 1 * fem,
@@ -306,11 +278,10 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                           ),
                         ),
                         Text(
-                          // vndCKT (385:1766)
                           'VND',
-                          style: SafeGoogleFont(
-                            'Quicksand',
-                            fontSize: 24 * ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12 * ffem,
                             fontWeight: FontWeight.w400,
                             height: 1.25 * ffem / fem,
                             letterSpacing: 1 * fem,
@@ -321,17 +292,15 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // biudoanhthutheoloiY8R (385:1760)
-                    margin: EdgeInsets.fromLTRB(
-                        14 * fem, 0 * fem, 0 * fem, 7 * fem),
+                    margin: EdgeInsets.fromLTRB(14 * fem, 0 * fem, 0 * fem, 7 * fem),
                     constraints: BoxConstraints(
                       maxWidth: 223 * fem,
                     ),
                     child: Text(
                       'Biểu đồ doanh thu theo loại:',
-                      style: SafeGoogleFont(
-                        'Quicksand',
-                        fontSize: 24 * ffem,
+                      style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontSize: 12 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -340,9 +309,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                     ),
                   ),
                   Container(
-                    // autogroup6axt2ZP (WXgJTVeu35jMX4kWvu6AxT)
-                    margin:
-                    EdgeInsets.fromLTRB(0 * fem, 0 * fem, 9 * fem, 0 * fem),
+                    margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 9 * fem, 0 * fem),
                     width: double.infinity,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -379,8 +346,7 @@ class PieChart2State extends State<PieChart2> {
 
   Future<List<Map<String, dynamic>>> getCombinedData() async {
     try {
-      Map<String, Map<String, dynamic>> combinedDataMap =
-          {}; // Dùng Map thay vì List
+      Map<String, Map<String, dynamic>> combinedDataMap = {};
       Set<String> uniqueIdCates = Set<String>();
 
       QuerySnapshot billSnapshot =
@@ -398,24 +364,17 @@ class PieChart2State extends State<PieChart2> {
         for (int i = 0; i < productDocs.length; i++) {
           String idCate = productDocs[i]['idCate'];
 
-          // Kiểm tra xem idCate đã được xử lý chưa
           if (!uniqueIdCates.contains(idCate)) {
             uniqueIdCates.add(idCate);
-            combinedDataMap[idCate] =
-                {}; // Tạo một entry mới trong Map nếu idCate chưa tồn tại
-            combinedDataMap[idCate]?['thanhTien'] =
-                0; // Khởi tạo giá trị thanhTien
+            combinedDataMap[idCate] = {};
+            combinedDataMap[idCate]?['thanhTien'] = 0;
           }
 
-          // Lấy tổng giá trị thanhTien cho idCate
-          double thanhTien =
-              double.tryParse(productDocs[i]['thanhTien']?.toString() ?? '') ??
-                  0;
+          double thanhTien = double.tryParse(productDocs[i]['thanhTien']?.toString() ?? '') ?? 0;
           combinedDataMap[idCate]?['thanhTien'] += thanhTien;
         }
       }
 
-      // Truy vấn collection "Category" và lấy thông tin quan trọng
       await Future.forEach(combinedDataMap.keys, (idCate) async {
         DocumentSnapshot categorySnapshot = await FirebaseFirestore.instance
             .collection('Category')
@@ -426,7 +385,6 @@ class PieChart2State extends State<PieChart2> {
         combinedDataMap[idCate]?['importantFieldValue'] = categoryData['Name'];
       });
 
-      // Chuyển dữ liệu từ Map sang List
       List<Map<String, dynamic>> combinedDataList =
           combinedDataMap.values.toList();
 
@@ -437,8 +395,6 @@ class PieChart2State extends State<PieChart2> {
     }
   }
 
-
-
   List<Color> getColors() {
     return [
       Colors.black,
@@ -447,7 +403,6 @@ class PieChart2State extends State<PieChart2> {
       Colors.green,
       Colors.orange,
       Colors.purple,
-      // Add more colors if needed
     ];
   }
 
@@ -467,7 +422,6 @@ class PieChart2State extends State<PieChart2> {
                   child: AspectRatio(
                     aspectRatio: 1,
                     child: FutureBuilder(
-                      // Truy vấn dữ liệu từ collection "Cart" và "Category"
                       future: getCombinedData(),
                       builder: (BuildContext context,
                           AsyncSnapshot<List<Map<String, dynamic>>>
@@ -484,7 +438,6 @@ class PieChart2State extends State<PieChart2> {
                         List<Map<String, dynamic>> combinedDataList =
                             combinedDataSnapshot.data ?? [];
 
-                        // Trả về PieChart với dữ liệu từ hàm showingSections
                         return PieChart(
                           PieChartData(
                             pieTouchData: PieTouchData(
@@ -520,7 +473,6 @@ class PieChart2State extends State<PieChart2> {
                 Container(
                   width: 166,
                   child: FutureBuilder(
-                    // Truy vấn dữ liệu từ collection "Cart" và "Category"
                     future: getCombinedData(),
                     builder: (BuildContext context,
                         AsyncSnapshot<List<Map<String, dynamic>>>
@@ -537,21 +489,17 @@ class PieChart2State extends State<PieChart2> {
                       List<Map<String, dynamic>> combinedDataList =
                           combinedDataSnapshot.data ?? [];
 
-                      // Trả về ListView từ dữ liệu Cart và Category
                       return ListView.builder(
                         itemCount: combinedDataList.length,
                         itemBuilder: (context, index) {
                           Map<String, dynamic> combinedData =
                           combinedDataList[index];
 
-                          // Lấy giá trị quan trọng
                           var importantFieldValue =
                           combinedData['importantFieldValue'];
 
-                          // Lấy màu từ danh sách màu
                           color = getColors()[index % getColors().length];
 
-                          // Trả về ListTile từ dữ liệu Category
                           return ListTile(
                             title: Row(
                               children: [
@@ -564,8 +512,9 @@ class PieChart2State extends State<PieChart2> {
                                 Text(
                                   '$importantFieldValue',
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 12,
                                     color: Colors.black,
+                                    fontFamily: 'Quicksand',
                                   ),
                                 ),
                               ],
@@ -590,7 +539,6 @@ class PieChart2State extends State<PieChart2> {
 
     double sum = 0;
 
-    // Tính tổng giá trị của tất cả thanhTien
     for (int i = 0; i < combinedDataList.length; i++) {
       sum += combinedDataList[i]['thanhTien'] as double;
     }
@@ -601,24 +549,22 @@ class PieChart2State extends State<PieChart2> {
       final radius = isTouched ? 60.0 : 50.0;
       const shadows = [Shadow(color: Colors.black, blurRadius: 2)];
 
-      // Lấy giá trị thanhTien cho idCate hiện tại
       double thanhTien = combinedDataList[i]['thanhTien'] as double;
 
-      // Tính giá trị của từng phần dựa trên tỷ lệ so với tổng giá trị
       double sectionValue = (thanhTien / sum) * 100;
 
       return PieChartSectionData(
         color: getColors()[i % getColors().length],
         value: sectionValue,
-        title:
-        '${sectionValue.toStringAsFixed(2)}%', // Thay đổi tiêu đề theo giá trị thực
+        title: '${sectionValue.toStringAsFixed(2)}%',
         radius: radius,
         titleStyle: TextStyle(
-          fontSize: fontSize,
+          fontSize: 12,
           fontWeight: FontWeight.bold,
           color: Colors.white,
           shadows: shadows,
           decoration: TextDecoration.none,
+          fontFamily: 'Quicksand',
         ),
       );
     });

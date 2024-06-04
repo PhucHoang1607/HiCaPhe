@@ -267,8 +267,10 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                     return null;
                                   }
                                 },
+                                keyboardType: TextInputType.number,
                                 controller: masp,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Mã loại sản phẩm",
@@ -279,6 +281,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                             margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                             child: SizedBox(height: 30,
                               child: TextFormField(
+                                keyboardType: TextInputType.text,
                                 controller: tensp,
                                 style: const TextStyle(fontSize: 14),
                                 decoration: const InputDecoration(
@@ -321,8 +324,10 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                     return null;
                                   }
                                 },
+                                keyboardType: TextInputType.text,
                                 controller: soluong,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Đơn vị tính",
@@ -344,6 +349,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 keyboardType: TextInputType.number,
                                 controller: dongia,
                                 style: const TextStyle(fontSize: 14),
+                                textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Giá sản phẩm",
@@ -365,6 +371,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                     return null;
                                   }
                                 },
+                                keyboardType: TextInputType.text,
                                 controller: mota,
                                 style: const TextStyle(fontSize: 14),
                                 decoration: const InputDecoration(

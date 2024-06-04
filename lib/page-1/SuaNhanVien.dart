@@ -13,7 +13,6 @@ class SuaNhanVien extends StatelessWidget {
       child: Container(
         width: double.infinity,
         child: Container(
-          // themnhanvienbeR (5:211)
           padding: EdgeInsets.fromLTRB(16*fem, 16*fem, 17*fem, 0*fem),
           width: double.infinity,
           decoration: BoxDecoration (
@@ -30,14 +29,12 @@ class SuaNhanVien extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // autogroupqwvfVUu (Nueq4cewQ6xFu9e2AdQWVF)
                   margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 16*fem),
                   width: double.infinity,
                   height: 143*fem,
                   child: Stack(
                     children: [
                       Positioned(
-                        // logomauQ65 (5:213)
                         left: 114*fem,
                         top: 16*fem,
                         child: Align(
@@ -52,7 +49,6 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // caukhauhieu7FP (5:231)
                         left: 5*fem,
                         top: 114*fem,
                         child: Align(
@@ -62,8 +58,8 @@ class SuaNhanVien extends StatelessWidget {
                             child: Text(
                               'Thưởng thức vị ngon trọn vẹn',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
-                                'Dancing Script',
+                              style: TextStyle(
+                                fontFamily: 'Dancing Script',
                                 fontSize: 24*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.2*ffem/fem,
@@ -75,7 +71,6 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        // vectorzKB (5:232)
                         left: 0*fem,
                         top: 0*fem,
                         child: Align(
@@ -94,7 +89,6 @@ class SuaNhanVien extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  // bieumaudangnhaphzH (5:214)
                   margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 9*fem, 0*fem),
                   padding: EdgeInsets.fromLTRB(25*fem, 26*fem, 24*fem, 31*fem),
                   width: double.infinity,
@@ -106,7 +100,6 @@ class SuaNhanVien extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // group32b45 (5:215)
                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
                         width: double.infinity,
                         height: 36*fem,
@@ -118,9 +111,9 @@ class SuaNhanVien extends StatelessWidget {
                           child: Text(
                             'Thay đổi thông tin nhân viên',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Quicksand',
-                              fontSize: 14*ffem,
+                            style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
                               fontWeight: FontWeight.w600,
                               height: 1.25*ffem/fem,
                               color: Color(0xfffcf2d9),
@@ -129,13 +122,12 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // txspxp4TT (5:226)
                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 172*fem, 12*fem),
                         child: Text(
                           'Tải ảnh lên',
-                          style: SafeGoogleFont (
-                            'Quicksand',
-                            fontSize: 16*ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
@@ -143,7 +135,6 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // frame51MxM (5:227)
                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 25*fem),
                         width: 259*fem,
                         height: 110*fem,
@@ -154,15 +145,14 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // edtnhapemailsfo (5:218)
                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 18*fem),
                         width: 258*fem,
                         height: 22*fem,
                         child: Text(
                           'Tên nhân viên',
-                          style: SafeGoogleFont (
-                            'Quicksand',
-                            fontSize: 12*ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
@@ -170,15 +160,14 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // edtnhappassyiq (5:221)
                         margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 1*fem, 24*fem),
                         width: 258*fem,
                         height: 22*fem,
                         child: Text(
                           'Chức vụ',
-                          style: SafeGoogleFont (
-                            'Quicksand',
-                            fontSize: 12*ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
@@ -186,7 +175,6 @@ class SuaNhanVien extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // btndangnhap5Wy (5:224)
                         margin: EdgeInsets.fromLTRB(46*fem, 0*fem, 43*fem, 0*fem),
                         width: double.infinity,
                         height: 40*fem,
@@ -199,11 +187,11 @@ class SuaNhanVien extends StatelessWidget {
                             child: Text(
                               'Xác nhận thay đổi',
                               textAlign: TextAlign.center,
-                              style: SafeGoogleFont (
-                                'Quicksand',
-                                fontSize: 16*ffem,
+                              style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                fontSize: 12,
                                 fontWeight: FontWeight.w700,
-                                height: 1.2000000477*ffem/fem,
+                                height: 1.2*ffem/fem,
                                 color: Color(0xfffcf2d9),
                               ),
                             ),
@@ -217,7 +205,7 @@ class SuaNhanVien extends StatelessWidget {
             ),
           ),
         ),
-            ),
+      ),
     );
   }
 }

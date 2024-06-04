@@ -112,7 +112,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                   height: 200,
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         margin: EdgeInsets.fromLTRB(0 * fem,
@@ -156,7 +156,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                       0 * fem, 0 * fem, 0 * fem, 5 * fem),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         margin: EdgeInsets.fromLTRB(
@@ -164,7 +164,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               margin: EdgeInsets.fromLTRB(
@@ -205,7 +205,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               margin: EdgeInsets.fromLTRB(
@@ -246,7 +246,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                         width: double.infinity,
                                         child: Row(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
                                               margin: EdgeInsets.fromLTRB(
@@ -285,7 +285,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         margin: EdgeInsets.fromLTRB(0 * fem,
@@ -385,8 +385,8 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                               return Text('Không có dữ liệu cho idSP: $idSP');
                             }
                             final Map<String, dynamic>? productData =
-                                productDataSnapshot.data?.data()
-                                    as Map<String, dynamic>?;
+                            productDataSnapshot.data?.data()
+                            as Map<String, dynamic>?;
 
                             if (productData == null) {
                               return Text(
@@ -396,7 +396,7 @@ class _ChiTietSPDHState extends State<ChiTietSPDH> {
                             final tensp = productData['tenSP'] as String?;
                             final hinhanh = productData['hinhAnh'] as String?;
                             final kichthuoc =
-                                productData['kichThuoc'] as String?;
+                            productData['kichThuoc'] as String?;
                             final dongia = productData['donGia'] as int?;
 
                             if (tensp == null ||

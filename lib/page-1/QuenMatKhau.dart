@@ -14,11 +14,9 @@ class QuenMatKhau extends StatelessWidget {
   Future<void> resetPassword(String email, BuildContext context) async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-      // Gửi email khôi phục mật khẩu thành công, hiển thị thông báo cho người dùng.
       showResetSuccessDialog(context,
           'Link lấy lại mật khẩu đã được gửi đến địa chỉ email của bạn.');
     } catch (e) {
-      // Xử lý lỗi, hiển thị thông báo lỗi cho người dùng.
       showResetErrorDialog(context, "Vui lòng kiểm tra lại địa chỉ Email.");
       if (kDebugMode) {
         print('Lỗi khi gửi email khôi phục mật khẩu: $e');
@@ -31,15 +29,14 @@ class QuenMatKhau extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Thành công'),
-          content: Text(message),
+          title: const Text('Thành công', style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
+          content: Text(message, style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
           actions: <Widget>[
             ElevatedButton(
               onPressed: () {
-                // Navigator.of(context).pop();
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> DangNhap()));
               },
-              child: const Text('OK'),
+              child: const Text('OK', style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
             ),
           ],
         );
@@ -52,14 +49,14 @@ class QuenMatKhau extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Lỗi'),
-          content: Text(message),
+          title: const Text('Lỗi', style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
+          content: Text(message, style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
           actions: <Widget>[
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('OK'),
+              child: const Text('OK', style: TextStyle(fontFamily: 'Quicksand', fontSize: 12)),
             ),
           ],
         );
@@ -76,7 +73,6 @@ class QuenMatKhau extends StatelessWidget {
       body: Container(
         width: double.infinity,
         child: Container(
-          // quenmatkhauLSD (522:7)
           padding: EdgeInsets.fromLTRB(16*fem, 16*fem, 18*fem, 262*fem),
           width: double.infinity,
           decoration: BoxDecoration (
@@ -92,14 +88,12 @@ class QuenMatKhau extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                // autogroupqw7tdgD (CcXXjUtPtE3pRd5R2mQW7T)
                 margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 0*fem, 103*fem),
                 width: double.infinity,
                 height: 143*fem,
                 child: Stack(
                   children: [
                     Positioned(
-                      // logomauAg9 (522:9)
                       left: 113*fem,
                       top: 16*fem,
                       child: Align(
@@ -114,7 +108,6 @@ class QuenMatKhau extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      // caukhauhieuVTX (522:10)
                       left: 7*fem,
                       top: 114*fem,
                       child: Align(
@@ -124,8 +117,8 @@ class QuenMatKhau extends StatelessWidget {
                           child: Text(
                             'Thưởng thức vị ngon trọn vẹn',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Dancing Script',
+                            style: TextStyle(
+                              fontFamily: 'Dancing Script',
                               fontSize: 24*ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.2*ffem/fem,
@@ -137,7 +130,6 @@ class QuenMatKhau extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      // vectorfvh (385:2134)
                       left: 0*fem,
                       top: 30*fem,
                       child: Align(
@@ -161,7 +153,6 @@ class QuenMatKhau extends StatelessWidget {
                 ),
               ),
               Container(
-                // frame385Aq (522:11)
                 margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 8*fem, 0*fem),
                 padding: EdgeInsets.fromLTRB(25*fem, 36*fem, 25*fem, 45*fem),
                 width: double.infinity,
@@ -173,7 +164,6 @@ class QuenMatKhau extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // group32NQq (522:12)
                       margin: EdgeInsets.fromLTRB(3*fem, 0*fem, 0*fem, 49*fem),
                       width: 255*fem,
                       height: 45*fem,
@@ -185,9 +175,9 @@ class QuenMatKhau extends StatelessWidget {
                         child: Text(
                           'Quên mật khẩu',
                           textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
-                            'Quicksand',
-                            fontSize: 14*ffem,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                             height: 1.25*ffem/fem,
                             color: Color(0xfffcf2d9),
@@ -196,23 +186,21 @@ class QuenMatKhau extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                        child: SizedBox(height: 30,
-                          child: TextField(
-                            controller: emailController,
-                            style: const TextStyle(fontSize: 14),
-                            decoration: const InputDecoration(
-                                hintStyle: TextStyle(color: Color(0xff007373)),
-                                hintText: "Nhập email",
-                                fillColor: Colors.white),
-                          ),
-                        )
+                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: SizedBox(height: 30,
+                        child: TextField(
+                          controller: emailController,
+                          style: TextStyle(fontSize: 12, fontFamily: 'Quicksand'),
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                              color: Color(0xff007373)),
+                              hintText: "Nhập email",
+                              fillColor: Colors.white),
+                        ),
+                      ),
                     ),
                     Container(
-
-                      // buttonguilink45 (126:412)
                       margin: const EdgeInsets.fromLTRB(45, 25, 44, 0),
-
                       width: double.infinity,
                       height: 40,
                       decoration: BoxDecoration (
@@ -224,14 +212,13 @@ class QuenMatKhau extends StatelessWidget {
                           onPressed: () {
                             resetPassword(emailController.text,context);
                           },
-
                           child: Text('Nhận link',
                             textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Quicksand',
-                              fontSize: 16,
+                            style: TextStyle(
+                              fontFamily: 'Quicksand',
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
-                              height: 1.2000000477,
+                              height: 1.2*ffem/fem,
                               color: const Color(0xfffcf2d9),
                             ),
                           ),
