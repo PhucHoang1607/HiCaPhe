@@ -19,7 +19,7 @@ import 'LienHe.dart';
 
 
 class TrangChuNew extends StatefulWidget {
-  const TrangChuNew({super.key});
+  const TrangChuNew({Key? key});
 
   @override
   State<TrangChuNew> createState() => _TrangChuNewState();
@@ -164,8 +164,8 @@ class _TrangChuNewState extends State<TrangChuNew> {
                                     child: Text(
                                       '${users?.displayName}',
                                       style: TextStyle(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 15,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 12,
                                           color: Colors.white
                                       ),
                                     ),
@@ -175,8 +175,8 @@ class _TrangChuNewState extends State<TrangChuNew> {
                                     child: Text(
                                       '${users?.email}',
                                       style: TextStyle(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 8.8,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 12,
                                           color: Colors.white
                                       ),
                                     ),
@@ -286,6 +286,8 @@ class _TrangChuNewState extends State<TrangChuNew> {
                                 ),
                               ),
                             ),
+                            
+
                             Positioned(
                               // caukhauhieubPf (301:71)
                               left: 0*fem,
@@ -313,334 +315,334 @@ class _TrangChuNewState extends State<TrangChuNew> {
                         ),
                       ),
                       Container(
-                        // autogroupoqwfH1b (Siudf7vwzeSfSFxiqxoqwf)
-                        margin: EdgeInsets.fromLTRB(25*fem, 0*fem, 30*fem, 65*fem),
-                        width: double.infinity,
-                        height: 135*fem,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // group60QM7 (301:73)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 76*fem, 0*fem),
-                              padding: EdgeInsets.fromLTRB(14*fem, 13*fem, 14*fem, 15*fem),
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                border: Border.all(color: Color(0xff993300)),
-                                color: Color(0xb2f5dab1),
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
-                                },
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // coffeecuptXB (301:76)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 8*fem),
-                                      width: 64*fem,
-                                      height: 64*fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/coffee-cup.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Container(
-                                      // qunlsnphmR1K (301:75)
-                                      constraints: BoxConstraints (
-                                        maxWidth: 70*fem,
-                                      ),
-                                      child: Text(
-                                        'Quản lý\nSản phẩm',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
-                                          fontSize: 12*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.25*ffem/fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // group617uj (301:77)
-                              padding: EdgeInsets.fromLTRB(8.5*fem, 13*fem, 8.5*fem, 15*fem),
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                border: Border.all(color: Color(0xff993300)),
-                                color: Color(0xb2f5dab1),
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const QuanLyNguyenLieu()));
-                                },
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // coffeebagRfX (301:80)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 8*fem),
-                                      width: 64*fem,
-                                      height: 64*fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/coffee-bag.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Container(
-                                      // qunlnguynliu9bX (301:79)
-                                      constraints: BoxConstraints (
-                                        maxWidth: 81*fem,
-                                      ),
-                                      child: Text(
-                                        'Quản lý\nNguyên liệu',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
-                                          fontSize: 12*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.25*ffem/fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // group753gu (301:81)
-                        margin: EdgeInsets.fromLTRB(27*fem, 0*fem, 28*fem, 65*fem),
-                        width: double.infinity,
-                        height: 135*fem,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // group60AmX (301:82)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 76*fem, 0*fem),
-                              padding: EdgeInsets.fromLTRB(15*fem, 16*fem, 15*fem, 15*fem),
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                border: Border.all(color: Color(0xff993300)),
-                                color: Color(0xb2f5dab1),
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const DanhSachNhanVien()));
-                                },
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // staffFHB (301:85)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                                      width: 64*fem,
-                                      height: 64*fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/staff.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Container(
-                                      // qunlnhnvinn2D (301:84)
-                                      constraints: BoxConstraints (
-                                        maxWidth: 68*fem,
-                                      ),
-                                      child: Text(
-                                        'Quản lý\nNhân viên',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
-                                          fontSize: 12*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.25*ffem/fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // group65HUm (301:86)
-                              padding: EdgeInsets.fromLTRB(14*fem, 13*fem, 13*fem, 15*fem),
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                border: Border.all(color: Color(0xff993300)),
-                                color: Color(0xb2f5dab1),
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ThongKeDoanhThu()));
-                                },
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // piechartPnh (301:89)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 8*fem),
-                                      width: 64*fem,
-                                      height: 64*fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/pie-chart.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Container(
-                                      // thngkdoanhthu7ih (301:88)
-                                      constraints: BoxConstraints (
-                                        maxWidth: 71*fem,
-                                      ),
-                                      child: Text(
-                                        'Thống kê\nDoanh thu',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Quicksand',
-                                          fontSize: 12*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.25*ffem/fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        // autogrouplxjhEoK (SiudrXmbsWjBipTvKWLXJh)
-                        margin: EdgeInsets.fromLTRB(25*fem, 0*fem, 30*fem, 0*fem),
-                        width: double.infinity,
-                        height: 135*fem,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // group93ZKo (301:91)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 76*fem, 0*fem),
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: Container(
-                                // group91tss (301:92)
-                                padding: EdgeInsets.fromLTRB(15.18*fem, 19*fem, 14.82*fem, 6*fem),
-                                width: double.infinity,
-                                height: double.infinity,
-                                decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff993300)),
-                                  color: Color(0xb2f5dab1),
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                ),
-                                child: GestureDetector(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>  DanhMucDonHang()));
-                                  },
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // checkCtZ (301:95)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0.36*fem, 11*fem),
-                                        width: 64*fem,
-                                        height: 64*fem,
-                                        child: Image.asset(
-                                          'assets/page-1/images/check.png',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Container(
-                                        // qunlnhng8nD (301:94)
-                                        constraints: BoxConstraints (
-                                          maxWidth: 68*fem,
-                                        ),
-                                        child: Text(
-                                          'Quản lý \nĐơn hàng',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont (
-                                            'Quicksand',
-                                            fontSize: 12*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.25*ffem/fem,
-                                            color: Color(0xff000000),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              // group95RmK (301:96)
-                              width: 98*fem,
-                              height: double.infinity,
-                              decoration: BoxDecoration (
-                                borderRadius: BorderRadius.circular(10*fem),
-                              ),
-                              child: Container(
-                                // group93yXw (301:97)
-                                padding: EdgeInsets.fromLTRB(15.18*fem, 19*fem, 14.82*fem, 6*fem),
-                                width: double.infinity,
-                                height: double.infinity,
-                                decoration: BoxDecoration (
-                                  border: Border.all(color: Color(0xff993300)),
-                                  color: Color(0xb2f5dab1),
-                                  borderRadius: BorderRadius.circular(10*fem),
-                                ),
-                                child: GestureDetector(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>  GuiThongBao()));
-                                  },
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // checkCtZ (301:95)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0.36*fem, 11*fem),
-                                        width: 64*fem,
-                                        height: 64*fem,
-                                        child: Image.asset(
-                                          'assets/page-1/images/Loudspeaker.png',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      Container(
-                                        // qunlnhng8nD (301:94)
-                                        constraints: BoxConstraints (
-                                          maxWidth: 68*fem,
-                                        ),
-                                        child: Text(
-                                          'Thông Báo',
-                                          textAlign: TextAlign.center,
-                                          style: SafeGoogleFont (
-                                            'Quicksand',
-                                            fontSize: 12*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.25*ffem/fem,
-                                            color: Color(0xff000000),
+  // autogroupoqwfH1b (Siudf7vwzeSfSFxiqxoqwf)
+  margin: EdgeInsets.fromLTRB(25 * fem, 0 * fem, 30 * fem, 65 * fem),
+  width: double.infinity,
+  height: 135 * fem,
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Container(
+        // group60QM7 (301:73)
+        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 76 * fem, 0 * fem),
+        padding: EdgeInsets.fromLTRB(14 * fem, 13 * fem, 14 * fem, 15 * fem),
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color(0xff993300)),
+          color: Color(0xb2f5dab1),
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const DanhMucSanPham()));
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // coffeecuptXB (301:76)
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 8 * fem),
+                width: 64 * fem,
+                height: 64 * fem,
+                child: Image.asset(
+                  'assets/page-1/images/coffee-cup.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                // qunlsnphmR1K (301:75)
+                constraints: BoxConstraints(
+                  maxWidth: 70 * fem,
+                ),
+                child: Text(
+                  'Quản lý\nSản phẩm',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25 * ffem / fem,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Container(
+        // group617uj (301:77)
+        padding: EdgeInsets.fromLTRB(8.5 * fem, 13 * fem, 8.5 * fem, 15 * fem),
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color(0xff993300)),
+          color: Color(0xb2f5dab1),
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanLyNguyenLieu()));
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // coffeebagRfX (301:80)
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 8 * fem),
+                width: 64 * fem,
+                height: 64 * fem,
+                child: Image.asset(
+                  'assets/page-1/images/coffee-bag.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                // qunlnguynliu9bX (301:79)
+                constraints: BoxConstraints(
+                  maxWidth: 81 * fem,
+                ),
+                child: Text(
+                  'Quản lý\nNguyên liệu',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25 * ffem / fem,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+Container(
+  // group753gu (301:81)
+  margin: EdgeInsets.fromLTRB(27 * fem, 0 * fem, 28 * fem, 65 * fem),
+  width: double.infinity,
+  height: 135 * fem,
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Container(
+        // group60AmX (301:82)
+        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 76 * fem, 0 * fem),
+        padding: EdgeInsets.fromLTRB(15 * fem, 16 * fem, 15 * fem, 15 * fem),
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color(0xff993300)),
+          color: Color(0xb2f5dab1),
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const DanhSachNhanVien()));
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // staffFHB (301:85)
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 5 * fem),
+                width: 64 * fem,
+                height: 64 * fem,
+                child: Image.asset(
+                  'assets/page-1/images/staff.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                // qunlnhnvinn2D (301:84)
+                constraints: BoxConstraints(
+                  maxWidth: 68 * fem,
+                ),
+                child: Text(
+                  'Quản lý\nNhân viên',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25 * ffem / fem,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Container(
+        // group65HUm (301:86)
+        padding: EdgeInsets.fromLTRB(14 * fem, 13 * fem, 13 * fem, 15 * fem),
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color(0xff993300)),
+          color: Color(0xb2f5dab1),
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ThongKeDoanhThu()));
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                // piechartPnh (301:89)
+                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 5 * fem, 8 * fem),
+                width: 64 * fem,
+                height: 64 * fem,
+                child: Image.asset(
+                  'assets/page-1/images/pie-chart.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                // thngkdoanhthu7ih (301:88)
+                constraints: BoxConstraints(
+                  maxWidth: 71 * fem,
+                ),
+                child: Text(
+                  'Thống kê\nDoanh thu',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 12 * ffem,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25 * ffem / fem,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ],
+  ),
+),
+Container(
+  // autogrouplxjhEoK (SiudrXmbsWjBipTvKWLXJh)
+  margin: EdgeInsets.fromLTRB(25 * fem, 0 * fem, 30 * fem, 0 * fem),
+  width: double.infinity,
+  height: 135 * fem,
+  child: Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Container(
+        // group93ZKo (301:91)
+        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 76 * fem, 0 * fem),
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: Container(
+          // group91tss (301:92)
+          padding: EdgeInsets.fromLTRB(15.18 * fem, 19 * fem, 14.82 * fem, 6 * fem),
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(color: Color(0xff993300)),
+            color: Color(0xb2f5dab1),
+            borderRadius: BorderRadius.circular(10 * fem),
+          ),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => DanhMucDonHang()));
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  // checkCtZ (301:95)
+                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0.36 * fem, 11 * fem),
+                  width: 64 * fem,
+                  height: 64 * fem,
+                  child: Image.asset(
+                    'assets/page-1/images/check.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Container(
+                  // qunlnhng8nD (301:94)
+                  constraints: BoxConstraints(
+                    maxWidth: 68 * fem,
+                  ),
+                  child: Text(
+                    'Quản lý \nĐơn hàng',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 12 * ffem,
+                      fontWeight: FontWeight.w700,
+                      height: 1.25 * ffem / fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      Container(
+        // group95RmK (301:96)
+        width: 98 * fem,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10 * fem),
+        ),
+        child: Container(
+          // group93yXw (301:97)
+          padding: EdgeInsets.fromLTRB(15.18 * fem, 19 * fem, 14.82 * fem, 6 * fem),
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(color: Color(0xff993300)),
+            color: Color(0xb2f5dab1),
+            borderRadius: BorderRadius.circular(10 * fem),
+          ),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => GuiThongBao()));
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  // checkCtZ (301:95)
+                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0.36 * fem, 11 * fem),
+                  width: 64 * fem,
+                  height: 64 * fem,
+                  child: Image.asset(
+                    'assets/page-1/images/Loudspeaker.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Container(
+                  // qunlnhng8nD (301:94)
+                  constraints: BoxConstraints(
+                    maxWidth: 68 * fem,
+                  ),
+                  child: Text(
+                    'Thông Báo',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 12 * ffem,
+                      fontWeight: FontWeight.w700,
+                      height: 1.25 * ffem / fem,
+                      color: Color(0xff000000),
                                           ),
                                         ),
                                       ),

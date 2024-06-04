@@ -296,6 +296,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                               return null;
                                             }
                                           },
+                                          keyboardType: TextInputType.text,
                                           controller: tenNV,
                                           style: const TextStyle(fontSize: 14),
                                           decoration: const InputDecoration(
@@ -342,6 +343,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                               return null;
                                             }
                                           },
+                                          keyboardType: TextInputType.number,
                                           controller: sodienthoai,
                                           style: const TextStyle(fontSize: 14),
                                           decoration: const InputDecoration(
@@ -388,8 +390,10 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                               return null;
                                             }
                                           },
+                                          keyboardType: TextInputType.number,
                                           controller: luong,
                                           style: const TextStyle(fontSize: 14),
+                                          textInputAction: TextInputAction.next,
                                           decoration: const InputDecoration(
                                               hintStyle: TextStyle(color: Color(0xff007373)),
                                               hintText: "Lương",
@@ -409,6 +413,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                             return null;
                                           }
                                         },
+                                        keyboardType: TextInputType.number,
                                         controller: ngaysinh,
                                         style: const TextStyle(fontSize: 14),
                                         decoration: InputDecoration(
