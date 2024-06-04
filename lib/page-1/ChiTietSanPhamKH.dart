@@ -144,8 +144,8 @@ class _ChiTietSanPhamKHState extends State<ChiTietSanPhamKH> {
                                         maxLines: 2,
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 12 * ffem,
-                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14 * ffem,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.25 * ffem / fem,
                                           color: const Color(0xff000000),
                                         ),

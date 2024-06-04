@@ -160,8 +160,8 @@ class _ChiTetDonHangState extends State<ChiTetDonHang> {
                                           widget.id,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 12 * ffem,
-                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14 * ffem,
+                                            fontWeight: FontWeight.w700,
                                             height: 1.25 * ffem / fem,
                                             color: Color(0xff000000),
                                           ),
@@ -534,8 +534,8 @@ class _ChiTetDonHangState extends State<ChiTetDonHang> {
                                     tensp,
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 12 * ffem,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14 * ffem,
+                                      fontWeight: FontWeight.w700,
                                       color: Colors.black,
                                     ),
                                   ),

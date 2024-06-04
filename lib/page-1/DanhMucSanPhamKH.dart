@@ -17,8 +17,10 @@ class DanhMucSanPhamKH extends StatefulWidget {
 }
 
 class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
-  Future addnewFavorite( CaPheYeuThich capheyeuthich) async {
-    final String newId = DateTime.now().millisecondsSinceEpoch.toString(); // Ham lien ket vao cloud firebase
+  Future addnewFavorite(CaPheYeuThich capheyeuthich) async {
+    final String newId = DateTime.now()
+        .millisecondsSinceEpoch
+        .toString(); // Ham lien ket vao cloud firebase
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
     User? user = FirebaseAuth.instance.currentUser;
     if (user == null) {
@@ -35,11 +37,11 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
         "uid": Uid,
       });
       Fluttertoast.showToast(msg: 'Đã thêm vào danh sách yêu thích!');
-    }
-    catch (e) {
+    } catch (e) {
       Fluttertoast.showToast(msg: 'Thêm thất bại', backgroundColor: Colors.red);
     }
   }
+
   void addToCart(DocumentSnapshot product) async {
     final String newId = DateTime.now().millisecondsSinceEpoch.toString();
     final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -63,18 +65,17 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
       // Nếu sản phẩm đã tồn tại, cập nhật số lượng
       // Nếu sản phẩm đã tồn tại, cập nhật số lượng
       final DocumentSnapshot existingProduct = cartProducts.docs[0];
-      final  currentQuantity = existingProduct.get("soluong");
+      final currentQuantity = existingProduct.get("soluong");
       final currentTotal = existingProduct.get("thanhTien");
       // Cập nhật số lượng và tổng tiền
-      final  newQuantity = currentQuantity + 1;
-      final  newTotal = newQuantity * product.get("donGia");
+      final newQuantity = currentQuantity + 1;
+      final newTotal = newQuantity * product.get("donGia");
 
       await firestore.collection("Cart").doc(existingProduct.id).update({
         "soluong": newQuantity,
         "thanhTien": newTotal,
       });
-    }
-    else {
+    } else {
       await firestore.collection("Cart").add({
         "donGia": product['donGia'],
         "soluong": 1,
@@ -97,26 +98,24 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
         tonghoadonKH = total;
       });
     }
-
   }
 
-
   double tonghoadonKH = 0.0;
-  String selectedIdCateKH = '';// Thêm trường này để lưu idCate được chọn
+  String selectedIdCateKH = ''; // Thêm trường này để lưu idCate được chọn
   // hàm lọc danh sức từ Category
   void filterProductsByCate(String idCate) {
     setState(() {
-      productStreamKH = updataKH
-          .where('idCate', isEqualTo: idCate)
-          .snapshots();
+      productStreamKH = updataKH.where('idCate', isEqualTo: idCate).snapshots();
     });
   }
+
   final TextEditingController searchKH = TextEditingController();
   String searchKeyKH = '';
   List<DocumentSnapshot> filteredSearchKH = [];
   String normalizeString(String input) {
     return input.toLowerCase(); // Chuyển hết sang chữ thường
   }
+
   void searchValue() {
     String normalizedKeyword = normalizeString(searchKeyKH);
     setState(() {
@@ -128,8 +127,10 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
   }
 // Nhưng biến phục vụ chức năng search
 
-  final CollectionReference updataKH =FirebaseFirestore.instance.collection('Product');
-  final CollectionReference upCateKH =FirebaseFirestore.instance.collection('Category');
+  final CollectionReference updataKH =
+      FirebaseFirestore.instance.collection('Product');
+  final CollectionReference upCateKH =
+      FirebaseFirestore.instance.collection('Category');
   bool sapXepKH = true;
   late Stream<QuerySnapshot> productStreamKH;
   void updateProductStream() {
@@ -144,6 +145,7 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
     // Khởi tạo productStream với dữ liệu ban đầu
     productStreamKH = updataKH.snapshots();
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -156,7 +158,7 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
         child: Container(
           // danhmucsanphamtB3 (5:376)
           width: double.infinity,
-          decoration: const BoxDecoration (
+          decoration: const BoxDecoration(
             color: Color(0xfff5dab1),
           ),
           child: Column(
@@ -164,7 +166,8 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
             children: [
               Container(
                 // autogroupd25pQv5 (Nuf1G9zcm6EPhD28Yvd25P)
-                padding: EdgeInsets.fromLTRB(13*fem, 48*fem, 0*fem, 12.5*fem),
+                padding: EdgeInsets.fromLTRB(
+                    13 * fem, 48 * fem, 0 * fem, 12.5 * fem),
                 width: double.infinity,
                 child: SingleChildScrollView(
                   child: Column(
@@ -172,31 +175,36 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                     children: [
                       Container(
                         // group71jBf (5:499)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 31*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 13 * fem, 31 * fem),
                         width: double.infinity,
-                        height: 45*fem,
+                        height: 45 * fem,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               // timkiemyLu (5:501)
-                              padding: EdgeInsets.fromLTRB(15*fem, 10*fem, 0*fem, 0*fem),
+                              padding: EdgeInsets.fromLTRB(
+                                  15 * fem, 10 * fem, 0 * fem, 0 * fem),
                               //padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  SizedBox(width: 340,
+                                  SizedBox(
+                                    width: 340,
                                     child: CupertinoSearchTextField(
-                                      decoration: BoxDecoration (
-                                        border: Border.all(color: const Color(0xff993300)),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: const Color(0xff993300)),
                                         color: const Color(0xffffffff),
-                                        borderRadius: BorderRadius.circular(30*fem),
+                                        borderRadius:
+                                            BorderRadius.circular(30 * fem),
                                       ),
                                       placeholder: 'Tìm kiếm',
                                       //thay đổi trạng thái listview lọc sản phẩm khi search
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
                                           searchKeyKH = value;
                                         });
@@ -216,13 +224,13 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                       ),
                       Container(
                         // frame36Q4q (5:388)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 17.5*fem),
-                        width: 613*fem,
-                        height: 32*fem,
-                        decoration: BoxDecoration (
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 17.5 * fem),
+                        width: 613 * fem,
+                        height: 32 * fem,
+                        decoration: BoxDecoration(
                           color: const Color(0xfffcf2d9),
                           borderRadius: BorderRadius.circular(30.0),
-
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -234,65 +242,78 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                               child: Expanded(
                                 child: StreamBuilder<QuerySnapshot>(
                                     stream: upCateKH.snapshots(),
-                                    builder: (context,snapshot) {
+                                    builder: (context, snapshot) {
                                       final loc = snapshot.data!.docs;
                                       return ListView.builder(
                                           scrollDirection: Axis.horizontal,
                                           itemCount: loc.length,
-                                          itemBuilder: (context, index){
-                                            final DocumentSnapshot documentSnapshot = loc[index];
-                                            final id =documentSnapshot.id;
-                                            return
-                                              Padding(
-                                                padding: const EdgeInsets.only(right: 10.0),
-                                                child: GestureDetector(
-                                                  onTap: (){
-                                                    setState(() {
-                                                      selectedIdCateKH= id;
-                                                    });
-                                                    filterProductsByCate(id);
-                                                  },
-                                                  child: Container(
-                                                    // width: 135,
-                                                    decoration: BoxDecoration(
-                                                        color:  const Color(0xff993300),
-                                                        borderRadius: BorderRadius.circular(30)
-                                                    ),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                                                      child: Center(child: Text(documentSnapshot['Name'],style: const TextStyle(color: Color(0xfffcf2d9),),),
+                                          itemBuilder: (context, index) {
+                                            final DocumentSnapshot
+                                                documentSnapshot = loc[index];
+                                            final id = documentSnapshot.id;
+                                            return Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 10.0),
+                                              child: GestureDetector(
+                                                onTap: () {
+                                                  setState(() {
+                                                    selectedIdCateKH = id;
+                                                  });
+                                                  filterProductsByCate(id);
+                                                },
+                                                child: Container(
+                                                  // width: 135,
+                                                  decoration: BoxDecoration(
+                                                      color: const Color(
+                                                          0xff993300),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30)),
+                                                  child: Padding(
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        horizontal: 15.0),
+                                                    child: Center(
+                                                      child: Text(
+                                                        documentSnapshot[
+                                                            'Name'],
+                                                        style: const TextStyle(
+                                                          color:
+                                                              Color(0xfffcf2d9),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                              );
-                                          }
-                                      );
-                                    }
-                                ),
-                              )
-                          ),
+                                              ),
+                                            );
+                                          });
+                                    }),
+                              )),
                         ),
                       ),
                       Container(
-                        // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
-                          margin: EdgeInsets.fromLTRB(12*fem, 0*fem, 23*fem, 0*fem),
+                          // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
+                          margin: EdgeInsets.fromLTRB(
+                              12 * fem, 0 * fem, 23 * fem, 0 * fem),
                           width: double.infinity,
-                          height: 25*fem,
+                          height: 25 * fem,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    sapXepKH = false; // Đảo ngược trạng thái sắp xếp
+                                    sapXepKH =
+                                        false; // Đảo ngược trạng thái sắp xếp
                                   });
                                 },
                                 child: Row(
                                   children: [
                                     Container(
                                       // btsapxep4FB (5:377)
-                                      margin: EdgeInsets.fromLTRB(210 * fem, 0 * fem, 8 * fem, 4 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          210 * fem, 0 * fem, 8 * fem, 4 * fem),
                                       width: 20 * fem,
                                       height: 20 * fem,
                                       child: Image.asset(
@@ -316,16 +337,17 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                 ),
                               )
                             ],
-                          )
-                      ),
+                          )),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
-                    stream: sapXepKH ?  productStreamKH : updataKH.orderBy('tenSP').snapshots(),
-                    builder: (context,snapshot) {
+                    stream: sapXepKH
+                        ? productStreamKH
+                        : updataKH.orderBy('tenSP').snapshots(),
+                    builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const CircularProgressIndicator();
                       }
@@ -350,8 +372,7 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                             productNames.add(sanpham['tenSP']);
                           }
                         }
-                      }
-                      else {
+                      } else {
                         // Duyệt qua tất cả sản phẩm và thêm tên sản phẩm vào Set
                         for (var sanpham in nuoc) {
                           if (sanpham['tenSP']
@@ -365,24 +386,27 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                       // Chuyển danh sách Set thành danh sách danh sách
                       List<String> uniqueProductNames = productNames.toList();
                       //thêm dữ liệu vào chuỗi rỗng để lọc sản phẩm phục vụ chức năng tìm kiếm
-                      filteredSearchKH = nuoc.where((sanpham) =>
-                          sanpham['tenSP'].toString().toLowerCase().contains(searchKeyKH.toLowerCase())
-                      ).toList();
+                      filteredSearchKH = nuoc
+                          .where((sanpham) => sanpham['tenSP']
+                              .toString()
+                              .toLowerCase()
+                              .contains(searchKeyKH.toLowerCase()))
+                          .toList();
 
                       return ListView.builder(
-                        // đưa dữ liệu hiển thị lên màn hình
+                          // đưa dữ liệu hiển thị lên màn hình
                           itemCount: uniqueProductNames.length,
                           itemBuilder: (context, document) {
                             // Tìm tất cả các sản phẩm có cùng tên và hiển thị chúng
                             List<DocumentSnapshot> productsWithSameName = nuoc
                                 .where((sanpham) =>
-                            sanpham['tenSP'] ==
-                                uniqueProductNames[document])
+                                    sanpham['tenSP'] ==
+                                    uniqueProductNames[document])
                                 .toList();
 
                             return Column(
-                              children: productsWithSameName.map((
-                                  documentSnapshotSP) {
+                              children: productsWithSameName
+                                  .map((documentSnapshotSP) {
                                 final tenSP = documentSnapshotSP['tenSP'];
                                 final hinhAnh = documentSnapshotSP['hinhAnh'];
                                 final Size = documentSnapshotSP['kichThuoc'];
@@ -399,7 +423,8 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                ChiTietSanPhamKH(idspKH: id),),
+                                                ChiTietSanPhamKH(idspKH: id),
+                                          ),
                                         );
                                       },
                                       leading: ConstrainedBox(
@@ -409,81 +434,99 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                           maxWidth: 64,
                                           maxHeight: 64,
                                         ),
-                                        child: ClipRRect (
-                                            borderRadius:BorderRadius.circular(10),
-                                            child: Image.network(hinhAnh, fit: BoxFit.cover,)
-                                        ),
+                                        child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(
+                                              hinhAnh,
+                                              fit: BoxFit.cover,
+                                            )),
                                       ),
-                                      title: Text(tenSP, style: const TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.black
-                                      ),),
+                                      title: Text(
+                                        tenSP,
+                                        style: SafeGoogleFont('Quicksand',
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.black),
+                                      ),
                                       subtitle: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text("Kích thước : " + Size),
                                           Text(donGia.toString()),
                                         ],
                                       ),
                                       trailing: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                         children: [
                                           GestureDetector(
-                                            onTap: () async   {
+                                            onTap: () async {
                                               {
-                                                final String newId = DateTime.now().millisecondsSinceEpoch.toString(); // Ham lien ket vao cloud firebase
-                                                final FirebaseFirestore firestore = FirebaseFirestore.instance;
-                                                QuerySnapshot favoriteProducts = await firestore
-                                                    .collection("FavoriteProduct")
-                                                    .where("id", isEqualTo: id)
-                                                    .get();
-                                                print('In ID product ${favoriteProducts}');
+                                                final String newId = DateTime
+                                                        .now()
+                                                    .millisecondsSinceEpoch
+                                                    .toString(); // Ham lien ket vao cloud firebase
+                                                final FirebaseFirestore
+                                                    firestore =
+                                                    FirebaseFirestore.instance;
+                                                QuerySnapshot favoriteProducts =
+                                                    await firestore
+                                                        .collection(
+                                                            "FavoriteProduct")
+                                                        .where("id",
+                                                            isEqualTo: id)
+                                                        .get();
+                                                print(
+                                                    'In ID product ${favoriteProducts}');
 
-                                                if (favoriteProducts.docs.isEmpty) {
-                                                  CaPheYeuThich yeuthich = CaPheYeuThich(id, idCate);
+                                                if (favoriteProducts
+                                                    .docs.isEmpty) {
+                                                  CaPheYeuThich yeuthich =
+                                                      CaPheYeuThich(id, idCate);
                                                   // Nếu sản phẩm chưa tồn tại, thêm vào danh sách yêu thích
                                                   addnewFavorite(yeuthich);
-                                                }
-                                                else {
+                                                } else {
                                                   // Nếu sản phẩm đã tồn tại, hiển thị thông báo
                                                   Fluttertoast.showToast(
-                                                      msg: 'Sản phẩm đã tồn tại trong danh sách yêu thích',
-                                                      backgroundColor: Colors.red);
+                                                      msg:
+                                                          'Sản phẩm đã tồn tại trong danh sách yêu thích',
+                                                      backgroundColor:
+                                                          Colors.red);
                                                 }
                                               }
                                             },
                                             child: Container(
                                               // bteditbTw (5:459)
-                                              margin: EdgeInsets
-                                                  .fromLTRB(0 * fem, 0 *
-                                                  fem, 0 * fem, 8 *
-                                                  fem),
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  8 * fem),
                                               width: 18 * fem,
                                               height: 20 * fem,
                                               child: Image.asset(
                                                 'assets/page-1/images/btLike.png',
-                                                width:  22 * fem,
+                                                width: 22 * fem,
                                                 height: 22 * fem,
                                               ),
                                             ),
                                           ),
                                           Container(
                                             // btxoaWL1 (5:462)
-                                            margin: EdgeInsets.fromLTRB(
-                                                0 * fem, 0 * fem,
-                                                0 * fem, 0 * fem),
-                                            width: 40*fem,
-                                            height: 35*fem,
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 0 * fem),
+                                            width: 40 * fem,
+                                            height: 35 * fem,
                                             child: TextButton(
-                                              onPressed: ( )  {
+                                              onPressed: () {
                                                 addToCart(documentSnapshotSP);
                                               },
                                               child: Image.asset(
                                                 'assets/page-1/images/btAddCart.png',
-                                                width: 17*fem,
-                                                height: 20*fem,
+                                                width: 17 * fem,
+                                                height: 20 * fem,
                                               ),
                                             ),
                                           ),
@@ -494,10 +537,8 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                 );
                               }).toList(),
                             );
-                          }
-                      );
-                    }
-                ),
+                          });
+                    }),
               ),
             ],
           ),

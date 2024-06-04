@@ -20,6 +20,7 @@ class DatHang extends StatefulWidget {
   @override
   State<DatHang> createState() => _DatHangState();
 }
+
 final user = FirebaseAuth.instance.currentUser;
 
 class _DatHangState extends State<DatHang> {
@@ -191,8 +192,8 @@ class _DatHangState extends State<DatHang> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 12 * ffem,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15 * ffem,
+                                      fontWeight: FontWeight.w700,
                                       height: 1.3333333333 * ffem / fem,
                                       color: Color(0xfffcf2d9),
                                     ),
@@ -222,8 +223,8 @@ class _DatHangState extends State<DatHang> {
                                 'Tổng tiền thanh toán',
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 12 * ffem,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16 * ffem,
+                                  fontWeight: FontWeight.w500,
                                   height: 1.25 * ffem / fem,
                                   color: Color(0xff007373),
                                 ),
@@ -234,8 +235,8 @@ class _DatHangState extends State<DatHang> {
                               ' ${tonghoadon.toStringAsFixed(0)}VND',
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w400,
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w700,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
@@ -262,8 +263,8 @@ class _DatHangState extends State<DatHang> {
                                 'Tên khách hàng: ',
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 12 * ffem,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16 * ffem,
+                                  fontWeight: FontWeight.w500,
                                   height: 1.25 * ffem / fem,
                                   color: Color(0xff007373),
                                 ),
@@ -274,8 +275,8 @@ class _DatHangState extends State<DatHang> {
                               '${userInfo['displayName'] ?? ''}',
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w400,
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w700,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
@@ -296,8 +297,8 @@ class _DatHangState extends State<DatHang> {
                             'Địa chỉ giao hàng:',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12 * ffem,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 16 * ffem,
+                              fontWeight: FontWeight.w500,
                               height: 1.25 * ffem / fem,
                               color: Color(0xff007373),
                             ),
@@ -323,8 +324,8 @@ class _DatHangState extends State<DatHang> {
                                 'Số điện thoại:',
                                 style: SafeGoogleFont(
                                   'Quicksand',
-                                  fontSize: 12 * ffem,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16 * ffem,
+                                  fontWeight: FontWeight.w500,
                                   height: 1.25 * ffem / fem,
                                   color: Color(0xff007373),
                                 ),
@@ -335,8 +336,8 @@ class _DatHangState extends State<DatHang> {
                               '${userInfo['sdt'] ?? ''}',
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w400,
+                                fontSize: 16 * ffem,
+                                fontWeight: FontWeight.w700,
                                 height: 1.25 * ffem / fem,
                                 color: Color(0xff000000),
                               ),
@@ -357,8 +358,8 @@ class _DatHangState extends State<DatHang> {
                             '${userInfo['diaChi'] ?? ''}',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12 * ffem,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 14 * ffem,
+                              fontWeight: FontWeight.w600,
                               height: 1.25 * ffem / fem,
                               color: Color(0xff000000),
                             ),
@@ -407,7 +408,8 @@ class _DatHangState extends State<DatHang> {
                                     child: GestureDetector(
                                       onTap: () async {
                                         try {
-                                          await GioHangKH.moveCartToBill(userInfo['uid'] ?? '');
+                                          await GioHangKH.moveCartToBill(
+                                              userInfo['uid'] ?? '');
                                         } catch (e) {
                                           // Xử lý lỗi
                                           Fluttertoast.showToast(
@@ -429,7 +431,7 @@ class _DatHangState extends State<DatHang> {
                                         style: SafeGoogleFont(
                                           'Quicksand',
                                           fontSize: 12 * ffem,
-                                          fontWeight: FontWeight.w400,
+                                          fontWeight: FontWeight.w700,
                                           height: 2 * ffem / fem,
                                           color: Color(0xffffffff),
                                         ),
@@ -471,8 +473,8 @@ class _DatHangState extends State<DatHang> {
                             'Phương thức thanh toán:',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12 * ffem,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 16 * ffem,
+                              fontWeight: FontWeight.w500,
                               height: 1.25 * ffem / fem,
                               color: Color(0xff007373),
                             ),
@@ -492,8 +494,8 @@ class _DatHangState extends State<DatHang> {
                             'Danh sách sản phẩm cần thanh toán:',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12 * ffem,
-                              fontWeight: FontWeight.w400,
+                              fontSize: 16 * ffem,
+                              fontWeight: FontWeight.w500,
                               height: 1.25 * ffem / fem,
                               color: Color(0xff007373),
                             ),
@@ -573,10 +575,9 @@ class _DatHangState extends State<DatHang> {
                                       ),
                                       title: Text(
                                         tensp,
-                                        style: const TextStyle(
-                                            fontFamily: 'Quicksand',
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 12,
+                                        style: SafeGoogleFont('Quicksand',
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 14,
                                             color: Colors.black),
                                       ),
                                       subtitle: Column(

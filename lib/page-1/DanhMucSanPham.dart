@@ -16,21 +16,21 @@ class DanhMucSanPham extends StatefulWidget {
 }
 
 class _DanhMucSanPhamState extends State<DanhMucSanPham> {
-  String selectedIdCate = '';// Thêm trường này để lưu idCate được chọn
+  String selectedIdCate = ''; // Thêm trường này để lưu idCate được chọn
   // hàm lọc danh sức từ Category
   void filterProductsByCate(String idCate) {
     setState(() {
-      productStream = updata
-          .where('idCate', isEqualTo: idCate)
-          .snapshots();
+      productStream = updata.where('idCate', isEqualTo: idCate).snapshots();
     });
   }
+
   final TextEditingController search = TextEditingController();
   String searchKey = '';
   List<DocumentSnapshot> filteredSearch = [];
   String normalizeString(String input) {
     return input.toLowerCase(); // Chuyển hết sang chữ thường
   }
+
   void searchValue() {
     String normalizedKeyword = normalizeString(searchKey);
     setState(() {
@@ -42,8 +42,10 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
   }
 // Nhưng biến phục vụ chức năng search
 
-  final CollectionReference updata =FirebaseFirestore.instance.collection('Product');
-  final CollectionReference upCate =FirebaseFirestore.instance.collection('Category');
+  final CollectionReference updata =
+      FirebaseFirestore.instance.collection('Product');
+  final CollectionReference upCate =
+      FirebaseFirestore.instance.collection('Category');
   bool sapXep = true;
   late Stream<QuerySnapshot> productStream;
   void updateProductStream() {
@@ -58,6 +60,7 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
     // Khởi tạo productStream với dữ liệu ban đầu
     productStream = updata.snapshots();
   }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -70,7 +73,7 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
         child: Container(
           // danhmucsanphamtB3 (5:376)
           width: double.infinity,
-          decoration: const BoxDecoration (
+          decoration: const BoxDecoration(
             color: Color(0xfff5dab1),
           ),
           child: Column(
@@ -78,7 +81,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
             children: [
               Container(
                 // autogroupd25pQv5 (Nuf1G9zcm6EPhD28Yvd25P)
-                padding: EdgeInsets.fromLTRB(13*fem, 48*fem, 0*fem, 12.5*fem),
+                padding: EdgeInsets.fromLTRB(
+                    13 * fem, 48 * fem, 0 * fem, 12.5 * fem),
                 width: double.infinity,
                 child: SingleChildScrollView(
                   child: Column(
@@ -86,45 +90,55 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                     children: [
                       Container(
                         // group71jBf (5:499)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 31*fem),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 13 * fem, 31 * fem),
                         width: double.infinity,
-                        height: 45*fem,
+                        height: 45 * fem,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
                               // vectoreZX (5:500)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                              width: 45*fem,
-                              height: 45*fem,
+                              margin: EdgeInsets.fromLTRB(
+                                  0 * fem, 0 * fem, 0 * fem, 0 * fem),
+                              width: 45 * fem,
+                              height: 45 * fem,
                               child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>  TrangChuNew()));
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TrangChuNew()));
                                 },
                                 child: Image.asset(
                                   'assets/page-1/images/vector.png',
-                                  width: 45*fem,
-                                  height: 45*fem,
+                                  width: 45 * fem,
+                                  height: 45 * fem,
                                 ),
                               ),
                             ),
                             Container(
                               // timkiemyLu (5:501)
-                              padding: EdgeInsets.fromLTRB(17*fem, 0*fem, 0*fem, 0*fem),
+                              padding: EdgeInsets.fromLTRB(
+                                  17 * fem, 0 * fem, 0 * fem, 0 * fem),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  SizedBox(width: 280,height: 50,
+                                  SizedBox(
+                                    width: 280,
+                                    height: 50,
                                     child: CupertinoSearchTextField(
-                                      decoration: BoxDecoration (
-                                        border: Border.all(color: const Color(0xff993300)),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: const Color(0xff993300)),
                                         color: const Color(0xffffffff),
-                                        borderRadius: BorderRadius.circular(30*fem),
+                                        borderRadius:
+                                            BorderRadius.circular(30 * fem),
                                       ),
                                       placeholder: 'Tìm kiếm',
                                       //thay đổi trạng thái listview lọc sản phẩm khi search
-                                      onChanged: (value){
+                                      onChanged: (value) {
                                         setState(() {
                                           searchKey = value;
                                         });
@@ -144,13 +158,13 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                       ),
                       Container(
                         // frame36Q4q (5:388)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 17.5*fem),
-                        width: 613*fem,
-                        height: 32*fem,
-                        decoration: BoxDecoration (
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 17.5 * fem),
+                        width: 613 * fem,
+                        height: 32 * fem,
+                        decoration: BoxDecoration(
                           color: const Color(0xfffcf2d9),
                           borderRadius: BorderRadius.circular(30.0),
-
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 0.0),
@@ -161,72 +175,84 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                               ),
                               child: StreamBuilder<QuerySnapshot>(
                                   stream: upCate.snapshots(),
-                                  builder: (context,snapshot) {
+                                  builder: (context, snapshot) {
                                     final loc = snapshot.data!.docs;
                                     return ListView.builder(
                                         scrollDirection: Axis.horizontal,
                                         itemCount: loc.length,
-                                        itemBuilder: (context, index){
-                                          final DocumentSnapshot documentSnapshot = loc[index];
-                                          final id =documentSnapshot.id;
-                                          return
-                                            Padding(
-                                              padding: const EdgeInsets.only(right: 10.0),
-                                              child: GestureDetector(
-                                                onTap: (){
-                                                  setState(() {
-                                                    selectedIdCate= id;
-                                                  });
-                                                  filterProductsByCate(id);
-                                                },
-                                                child: Container(
-                                                  // width: 140,
-                                                  decoration: BoxDecoration(
-                                                      color:  const Color(0xff993300),
-                                                      borderRadius: BorderRadius.circular(30)
-                                                  ),
-                                                  child: Padding(
-                                                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                                                    child: Center(child: Text(documentSnapshot['Name'],style: const TextStyle(color: Color(0xfffcf2d9) ),),
+                                        itemBuilder: (context, index) {
+                                          final DocumentSnapshot
+                                              documentSnapshot = loc[index];
+                                          final id = documentSnapshot.id;
+                                          return Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10.0),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                setState(() {
+                                                  selectedIdCate = id;
+                                                });
+                                                filterProductsByCate(id);
+                                              },
+                                              child: Container(
+                                                // width: 140,
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        const Color(0xff993300),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30)),
+                                                child: Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 15.0),
+                                                  child: Center(
+                                                    child: Text(
+                                                      documentSnapshot['Name'],
+                                                      style: const TextStyle(
+                                                          color: Color(
+                                                              0xfffcf2d9)),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            );
-                                        }
-                                    );
-                                  }
-                              )
-                          ),
+                                            ),
+                                          );
+                                        });
+                                  })),
                         ),
                       ),
                       Container(
-                        // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
-                          margin: EdgeInsets.fromLTRB(12*fem, 0*fem, 23*fem, 0*fem),
+                          // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
+                          margin: EdgeInsets.fromLTRB(
+                              12 * fem, 0 * fem, 23 * fem, 0 * fem),
                           width: double.infinity,
-                          height: 25*fem,
+                          height: 25 * fem,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Expanded(
                                 child: GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
-                                          builder: (context) => ThemSanPham(updateProductStream: updateProductStream)
-                                      ),
+                                          builder: (context) => ThemSanPham(
+                                              updateProductStream:
+                                                  updateProductStream)),
                                     );
                                   },
                                   child: Row(
                                     children: [
                                       Container(
                                         // butonthemspHbo (5:497)
-                                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 8 * fem, 0 * fem),
+                                        margin: EdgeInsets.fromLTRB(
+                                            0 * fem, 0 * fem, 8 * fem, 0 * fem),
                                         width: 24 * fem,
                                         height: double.infinity,
                                         decoration: BoxDecoration(
                                           color: const Color(0xff993300),
-                                          borderRadius: BorderRadius.circular(20 * fem),
+                                          borderRadius:
+                                              BorderRadius.circular(20 * fem),
                                         ),
                                         child: Center(
                                           child: Text(
@@ -244,7 +270,8 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                       ),
                                       Container(
                                         // txspxpYnd (5:403)
-                                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 10 * fem, 0 * fem),
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 10 * fem, 0 * fem),
                                         child: Text(
                                           'Thêm sản phẩm mới',
                                           style: SafeGoogleFont(
@@ -261,16 +288,18 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                 ),
                               ),
                               GestureDetector(
-                                onTap: (){
+                                onTap: () {
                                   setState(() {
-                                    sapXep = false; // Đảo ngược trạng thái sắp xếp
+                                    sapXep =
+                                        false; // Đảo ngược trạng thái sắp xếp
                                   });
                                 },
                                 child: Row(
                                   children: [
                                     Container(
                                       // btsapxep4FB (5:377)
-                                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 8 * fem, 4 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 8 * fem, 4 * fem),
                                       width: 20 * fem,
                                       height: 20 * fem,
                                       child: Image.asset(
@@ -294,16 +323,17 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                 ),
                               )
                             ],
-                          )
-                      ),
+                          )),
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
-                    stream: sapXep ?  productStream : updata.orderBy('tenSP').snapshots(),
-                    builder: (context,snapshot) {
+                    stream: sapXep
+                        ? productStream
+                        : updata.orderBy('tenSP').snapshots(),
+                    builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const CircularProgressIndicator();
                       }
@@ -329,8 +359,7 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                             productNames.add(sanpham['tenSP']);
                           }
                         }
-                      }
-                      else {
+                      } else {
                         // Duyệt qua tất cả sản phẩm và thêm tên sản phẩm vào Set
                         for (var sanpham in nuoc) {
                           if (sanpham['tenSP']
@@ -345,24 +374,27 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                       // Chuyển danh sách Set thành danh sách danh sách
                       List<String> uniqueProductNames = productNames.toList();
                       //thêm dữ liệu vào chuỗi rỗng để lọc sản phẩm phục vụ chức năng tìm kiếm
-                      filteredSearch = nuoc.where((sanpham) =>
-                          sanpham['tenSP'].toString().toLowerCase().contains(searchKey.toLowerCase())
-                      ).toList();
+                      filteredSearch = nuoc
+                          .where((sanpham) => sanpham['tenSP']
+                              .toString()
+                              .toLowerCase()
+                              .contains(searchKey.toLowerCase()))
+                          .toList();
 
                       return ListView.builder(
-                        // đưa dữ liệu hiển thị lên màn hình
+                          // đưa dữ liệu hiển thị lên màn hình
                           itemCount: uniqueProductNames.length,
                           itemBuilder: (context, document) {
                             // Tìm tất cả các sản phẩm có cùng tên và hiển thị chúng
                             List<DocumentSnapshot> productsWithSameName = nuoc
                                 .where((sanpham) =>
-                            sanpham['tenSP'] ==
-                                uniqueProductNames[document])
+                                    sanpham['tenSP'] ==
+                                    uniqueProductNames[document])
                                 .toList();
 
                             return Column(
-                              children: productsWithSameName.map((
-                                  documentSnapshotSP) {
+                              children: productsWithSameName
+                                  .map((documentSnapshotSP) {
                                 final tenSP = documentSnapshotSP['tenSP'];
                                 final hinhAnh = documentSnapshotSP['hinhAnh'];
                                 final Size = documentSnapshotSP['kichThuoc'];
@@ -378,78 +410,95 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                ChiTietSanPham(productId:id),),
+                                                ChiTietSanPham(productId: id),
+                                          ),
                                         );
                                       },
                                       leading: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.network(hinhAnh, fit: BoxFit.cover)),
-                                      title: Text(tenSP, style: const TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.black
-                                      ),),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.network(hinhAnh,
+                                              fit: BoxFit.cover)),
+                                      title: Text(
+                                        tenSP,
+                                        style: SafeGoogleFont('Quicksand',
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.black),
+                                      ),
                                       subtitle: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text("Kích thước : " + Size),
                                           Text(donGia.toString() + " VND"),
                                         ],
                                       ),
                                       trailing: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                         children: [
                                           GestureDetector(
                                             onTap: () {
-                                              Navigator.push(context,
+                                              Navigator.push(
+                                                context,
                                                 CupertinoPageRoute(
-                                                  builder: (context) =>
-                                                      CapNhatSanPham(
-                                                          tensp: documentSnapshotSP['tenSP'],
-                                                          soluong: documentSnapshotSP['donVitinh'],
-                                                          masp: documentSnapshotSP['idCate'],
-                                                          kichthuoc: documentSnapshotSP['kichThuoc'],
-                                                          mota: documentSnapshotSP['moTa'],
-                                                          dongia: documentSnapshotSP['donGia'].toString(),
-                                                          hinhanh: documentSnapshotSP['hinhAnh'],
-                                                          id: documentSnapshotSP.id),
+                                                  builder: (context) => CapNhatSanPham(
+                                                      tensp: documentSnapshotSP[
+                                                          'tenSP'],
+                                                      soluong:
+                                                          documentSnapshotSP[
+                                                              'donVitinh'],
+                                                      masp: documentSnapshotSP[
+                                                          'idCate'],
+                                                      kichthuoc:
+                                                          documentSnapshotSP[
+                                                              'kichThuoc'],
+                                                      mota: documentSnapshotSP[
+                                                          'moTa'],
+                                                      dongia:
+                                                          documentSnapshotSP[
+                                                                  'donGia']
+                                                              .toString(),
+                                                      hinhanh:
+                                                          documentSnapshotSP[
+                                                              'hinhAnh'],
+                                                      id: documentSnapshotSP
+                                                          .id),
                                                 ),
                                               );
                                             },
                                             child: Container(
                                               // bteditbTw (5:459)
-                                              margin: EdgeInsets
-                                                  .fromLTRB(0 * fem, 0 *
-                                                  fem, 0 * fem, 8 *
-                                                  fem),
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  0 * fem,
+                                                  8 * fem),
                                               width: 18 * fem,
                                               height: 20 * fem,
                                               child: Image.asset(
                                                 'assets/page-1/images/btedit-XD3.png',
-                                                width:  22 * fem,
+                                                width: 22 * fem,
                                                 height: 22 * fem,
                                               ),
                                             ),
                                           ),
                                           Container(
                                             // btxoaWL1 (5:462)
-                                            margin: EdgeInsets.fromLTRB(
-                                                0 * fem, 0 * fem,
-                                                0 * fem, 0 * fem),
-                                            width: 40*fem,
-                                            height: 35*fem,
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 0 * fem),
+                                            width: 40 * fem,
+                                            height: 35 * fem,
                                             child: TextButton(
                                               onPressed: () {
-                                                confirmDeleteDialog(
-                                                    updata.doc(
-                                                        documentSnapshotSP
-                                                            .id));
+                                                confirmDeleteDialog(updata.doc(
+                                                    documentSnapshotSP.id));
                                               },
                                               child: Image.asset(
                                                 'assets/page-1/images/btxoa.png',
-                                                width: 17*fem,
-                                                height: 20*fem,
+                                                width: 17 * fem,
+                                                height: 20 * fem,
                                               ),
                                             ),
                                           ),
@@ -460,22 +509,21 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
                                 );
                               }).toList(),
                             );
-                          }
-                      );
-                    }
-                ),
+                          });
+                    }),
               )
             ],
           ),
         ),
       ),
     );
-
   }
+
   Future confirmDeleteDialog(DocumentReference dele) async {
     return showDialog<void>(
       context: context,
-      barrierDismissible: false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
+      barrierDismissible:
+          false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Xác nhận xóa sản phẩm'),
@@ -490,19 +538,22 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
             TextButton(
               child: const Text('Hủy'),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const DanhMucSanPham()));
               },
             ),
             TextButton(
               child: const Text('Xóa'),
-              onPressed: () async{
-                try{
+              onPressed: () async {
+                try {
                   await dele.delete();
                   Fluttertoast.showToast(msg: 'Xóa   thành công!');
-                }catch(e){
-                  Fluttertoast.showToast(msg: 'Xóa thất bại', backgroundColor: Colors.red);
+                } catch (e) {
+                  Fluttertoast.showToast(
+                      msg: 'Xóa thất bại', backgroundColor: Colors.red);
                 }
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const DanhMucSanPham()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const DanhMucSanPham()));
               },
             ),
           ],
@@ -510,6 +561,4 @@ class _DanhMucSanPhamState extends State<DanhMucSanPham> {
       },
     );
   }
-
-
 }

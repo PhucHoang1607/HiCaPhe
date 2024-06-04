@@ -115,8 +115,8 @@ class _ChiTietNhanVienState extends State<ChiTietNhanVien> {
                 textAlign: TextAlign.center,
                 style: SafeGoogleFont(
                   'Quicksand',
-                  fontSize: 12 * ffem,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 14 * ffem,
+                  fontWeight: FontWeight.w700,
                   height: 1.25 * ffem / fem,
                   color: Color(0xff993300),
                 ),
