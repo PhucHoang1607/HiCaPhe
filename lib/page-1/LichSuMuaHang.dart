@@ -18,7 +18,6 @@ class _DanhMucDonHangKHState extends State<DanhMucDonHangKH> {
       FirebaseFirestore.instance.collection('Bill');
   bool sapXepdonhang = true;
   late Stream<QuerySnapshot> productStreamdonhang;
-  
 
   @override
   void initState() {
@@ -156,7 +155,10 @@ class _DanhMucDonHangKHState extends State<DanhMucDonHangKH> {
                     child: StreamBuilder<QuerySnapshot>(
                         stream: sapXepdonhang
                             ? productStreamdonhang
-                            : updatadonHang.where('uid',isEqualTo: user!.uid)//user?.uid could be null
+                            : updatadonHang
+                                .where('uid',
+                                    isEqualTo:
+                                        user!.uid) //user?.uid could be null
                                 .orderBy('ngayDH', descending: true)
                                 .snapshots(),
                         builder: (context, snapshot) {
@@ -212,10 +214,9 @@ class _DanhMucDonHangKHState extends State<DanhMucDonHangKH> {
                                             ),
                                             title: Text(
                                               ngayDH,
-                                              style: const TextStyle(
-                                                  fontFamily: 'Quicksand',
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 12,
+                                              style: SafeGoogleFont('Quicksand',
+                                                  fontWeight: FontWeight.w700,
+                                                  fontSize: 14,
                                                   color: Colors.black),
                                             ),
                                             subtitle: Column(

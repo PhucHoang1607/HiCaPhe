@@ -11,19 +11,19 @@ class GioiThieu3 extends StatelessWidget {
     // double baseWidth = 360;
     // double fem = MediaQuery.of(context).size.width / baseWidth;
     // double ffem = fem * 0.97;
-    return SafeArea(child: Scaffold(
+    return SafeArea(
+        child: Scaffold(
       body: SizedBox(
-
         width: double.infinity,
         child: Container(
           // gioithieu3XtD (39:831)
           padding: const EdgeInsets.fromLTRB(32, 8, 29, 23),
           width: double.infinity,
-          decoration: const BoxDecoration (
+          decoration: const BoxDecoration(
             color: Color(0xffffffff),
-            image: DecorationImage (
+            image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage (
+              image: AssetImage(
                 'assets/page-1/images/hinhnen2-bg.png',
               ),
             ),
@@ -46,7 +46,7 @@ class GioiThieu3 extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(4, 0, 0, 47),
                 child: Text(
                   'Liên tục',
-                  style: SafeGoogleFont (
+                  style: SafeGoogleFont(
                     'Quicksand',
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -69,12 +69,12 @@ class GioiThieu3 extends StatelessWidget {
               Container(
                 // txdegioithieu3J3j (44:481)
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 34),
-                constraints: const BoxConstraints (
+                constraints: const BoxConstraints(
                   maxWidth: 299,
                 ),
                 child: Text(
                   'Tại Hi cà phê, cánh cửa luôn luôn mở để chào đón khách hàng đến trải nghiệm dịch vụ',
-                  style: SafeGoogleFont (
+                  style: SafeGoogleFont(
                     'Quicksand',
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -95,7 +95,7 @@ class GioiThieu3 extends StatelessWidget {
                       // oval33mbX (44:482)
                       width: 13,
                       height: 13,
-                      decoration: BoxDecoration (
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.5),
                         color: const Color(0x7fffffff),
                       ),
@@ -107,7 +107,7 @@ class GioiThieu3 extends StatelessWidget {
                       // oval23FFo (44:483)
                       width: 13,
                       height: 13,
-                      decoration: BoxDecoration (
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.5),
                         color: const Color(0x7fffffff),
                       ),
@@ -119,7 +119,7 @@ class GioiThieu3 extends StatelessWidget {
                       // oval13gM7 (44:484)
                       width: 13,
                       height: 13,
-                      decoration: BoxDecoration (
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6.5),
                         color: const Color(0xffffffff),
                       ),
@@ -132,7 +132,7 @@ class GioiThieu3 extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(0, 0, 2, 0),
                 width: 297,
                 height: 42,
-                decoration: BoxDecoration (
+                decoration: BoxDecoration(
                   color: const Color(0xffffffff),
                   borderRadius: BorderRadius.circular(30),
                   boxShadow: const [
@@ -144,13 +144,16 @@ class GioiThieu3 extends StatelessWidget {
                   ],
                 ),
                 child: TextButton(
-
                   onPressed: () {
-                    Navigator.push(context, PageTransition(type: PageTransitionType.rightToLeft, child: const GioiThieu4()));
+                    Navigator.push(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: const GioiThieu4()));
                   },
                   child: Text(
                     'Tiếp theo',
-                    style: SafeGoogleFont (
+                    style: SafeGoogleFont(
                       'Quicksand',
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -160,7 +163,6 @@ class GioiThieu3 extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ),
             ],
           ),
