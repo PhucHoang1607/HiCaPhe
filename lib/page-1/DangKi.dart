@@ -145,7 +145,8 @@ class _DangKi extends State<DangKi> {
                                   children: [
                                     Container(
                                       margin: const EdgeInsets.fromLTRB(
-                                          0, 2, 46, 0),
+                                          0, 0, 35.5, 0),
+                                      width: 87.9,
                                       child: TextButton(
                                         onPressed: () {
                                           Navigator.pushReplacement(
@@ -171,7 +172,7 @@ class _DangKi extends State<DangKi> {
                                       ),
                                     ),
                                     Container(
-                                      width: 129,
+                                      width: 160,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
                                         color: const Color(0xff007373),
@@ -284,7 +285,7 @@ class _DangKi extends State<DangKi> {
                                 onTap: _signUp,
                                 child: Container(
                                   margin:
-                                      const EdgeInsets.fromLTRB(43, 40, 59, 0),
+                                      const EdgeInsets.fromLTRB(50, 40, 59, 0),
                                   width: double.infinity,
                                   height: 40,
                                   decoration: BoxDecoration(
@@ -297,8 +298,8 @@ class _DangKi extends State<DangKi> {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
                                         height: 1.25 / fem,
                                         color: const Color(0xfffcf2d9),
                                       ),
@@ -316,8 +317,8 @@ class _DangKi extends State<DangKi> {
                                   style: ElevatedButton.styleFrom(
                                     textStyle: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
                                       color: Colors.white,
                                     ),
                                   ),

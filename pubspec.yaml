@@ -33,12 +33,6 @@ dependencies:
   pie_chart: ^5.4.0
   fl_chart: ^0.64.0
 
-  get: ^4.6.5
-  http: any
-  geolocator: ^9.0.2
-  geocoding: ^2.1.0
-  google_maps_flutter: ^2.4.0
-  flutter_typeahead: ^4.6.2
 
 dev_dependencies:
   flutter_test:

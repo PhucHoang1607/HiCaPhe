@@ -50,8 +50,8 @@ class GioiThieu4 extends StatelessWidget {
                   'Đa dạng',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
                     height: 1.25,
                     letterSpacing: 1,
                     color: const Color(0xff993300),
@@ -78,7 +78,7 @@ class GioiThieu4 extends StatelessWidget {
                   'Với phần mềm kiểm soát bán hàng và đặt hàng trực tuyến đa tiện lợi giúp cho khách hàng, quản lí và nhân viên đều có thể dễ sử dụng',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.w400,
                     height: 1.25,
                     letterSpacing: 1,
@@ -102,8 +102,8 @@ class GioiThieu4 extends StatelessWidget {
                         'Hãy cùng Hi cà phê\nThưởng thức vị ngon trọn vẹn nhé!',
                         style: SafeGoogleFont (
                           'Dancing Script',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                           height: 1,
                           letterSpacing: 1,
                           color: const Color(0xff993300),
@@ -130,8 +130,8 @@ class GioiThieu4 extends StatelessWidget {
                         'Bắt đầu',
                         style: SafeGoogleFont (
                           'Quicksand',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                           height: 1.25,
                           letterSpacing: 1,
                           color: const Color(0xffffffff),

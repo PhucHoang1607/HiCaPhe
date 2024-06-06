@@ -145,7 +145,7 @@ class _DangNhap extends State<DangNhap> {
                                     Container(
                                       margin: const EdgeInsets.fromLTRB(
                                           0, 0, 35.5, 0),
-                                      width: 133,
+                                      width: 155,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
                                         color: const Color(0xff007373),
