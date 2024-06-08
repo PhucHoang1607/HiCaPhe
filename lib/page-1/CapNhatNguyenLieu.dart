@@ -299,6 +299,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             height: 30,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
+                              textInputAction: TextInputAction.next,
                               controller: donGia,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
@@ -314,6 +315,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             height: 30,
                             child: TextFormField(
                               controller: donViTinh,
+                              textInputAction: TextInputAction.next,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
                                   hintStyle:
@@ -329,6 +331,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             child: TextFormField(
                               maxLines: 2,
                               controller: moTa,
+                              textInputAction: TextInputAction.next,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
                                   isDense: true,
@@ -344,7 +347,11 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                           height: 50,
                           child: TextFormField(
                             controller: ngayNhap,
+                            textInputAction: TextInputAction.next,
                             style: const TextStyle(fontSize: 12),
+                            onTap: (){
+                              _selectDateupdate(context);
+                            },
                             decoration: InputDecoration(
                               hintText: "Ngày nhập",
                               hintStyle: TextStyle(color: Color(0xff007373)),
@@ -366,6 +373,7 @@ class _SuaNguyenLieuState extends State<SuaNguyenLieu> {
                             height: 30,
                             child: TextFormField(
                               keyboardType: TextInputType.number,
+                              textInputAction: TextInputAction.next,
                               controller: slTonKho,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(

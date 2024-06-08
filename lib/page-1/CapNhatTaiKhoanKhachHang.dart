@@ -293,6 +293,7 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                             height: 30,
                             child: TextFormField(
                               controller: displayName,
+                              textInputAction: TextInputAction.next,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
@@ -309,6 +310,8 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                             child: TextFormField(
                               controller: sdt,
                               style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
+                              keyboardType: TextInputType.number,
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Số điện thoại",
@@ -323,6 +326,8 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                             height: 30,
                             child: TextFormField(
                               controller: email,
+                              textInputAction: TextInputAction.next,
+                              keyboardType: TextInputType.emailAddress,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
@@ -338,6 +343,7 @@ class _CapNhatTaiKhoanKhachHangState extends State<CapNhatTaiKhoanKhachHang> {
                             height: 70,
                             child: TextFormField(
                               controller: diaChi,
+                              textInputAction: TextInputAction.done,
                               style: const TextStyle(fontSize: 12),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),

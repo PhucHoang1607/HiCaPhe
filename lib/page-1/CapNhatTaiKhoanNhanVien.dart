@@ -473,6 +473,9 @@ class _CapNhatTaiKhoanNhanVienState extends State<CapNhatTaiKhoanNhanVien> {
                               style: const TextStyle(
                                   fontSize: 12, fontWeight: FontWeight.w400),
                               textInputAction: TextInputAction.next,
+                              onTap: (){
+                                _selectDateupdate(context);
+                              },
                               decoration: InputDecoration(
                                 hintText: "Ngày sinh",
                                 hintStyle:
