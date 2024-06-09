@@ -105,8 +105,8 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'Dancing Script',
-                                  fontSize: 24 * ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13 * ffem,
+                                  fontWeight: FontWeight.bold,
                                   height: 1.2 * ffem / fem,
                                   letterSpacing: 1 * fem,
                                   color: Color(0xff993300),
@@ -144,7 +144,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                       'Tổng hóa đơn đã xuất:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12 * ffem,
+                        fontSize: 14 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -168,8 +168,8 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                                   '${snapshot.data}',
                                   style: TextStyle(
                                     fontFamily: 'Quicksand',
-                                    fontSize: 12 * ffem,
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14 * ffem,
+                                    fontWeight: FontWeight.w700,
                                     height: 1.25 * ffem / fem,
                                     letterSpacing: 1 * fem,
                                     color: Color(0xff993300),
@@ -201,7 +201,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                       'Doanh thu đạt được:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12 * ffem,
+                        fontSize: 14 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -249,7 +249,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                       'Thuế phải trả:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12 * ffem,
+                        fontSize: 14 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,
@@ -300,7 +300,7 @@ class _ThongKeDoanhThuState extends State<ThongKeDoanhThu> {
                       'Biểu đồ doanh thu theo loại:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12 * ffem,
+                        fontSize: 14 * ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.25 * ffem / fem,
                         letterSpacing: 1 * fem,

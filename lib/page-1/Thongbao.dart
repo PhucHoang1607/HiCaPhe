@@ -73,8 +73,8 @@ class ThongBao extends StatelessWidget {
                                   'Thông báo',
                                   style: TextStyle (
                                     fontFamily: 'Quicksand',
-                                    fontSize: 12*ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14*ffem,
+                                    fontWeight: FontWeight.w700,
                                     height: 1.25*ffem/fem,
                                     letterSpacing: 1*fem,
                                     color: Color(0xff993300),

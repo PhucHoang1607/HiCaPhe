@@ -140,8 +140,8 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
                                   'Dancing Script',
-                                  fontSize: 24*ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13*ffem,
+                                  fontWeight: FontWeight.bold,
                                   height: 1.2*ffem/fem,
                                   letterSpacing: 1*fem,
                                   color: const Color(0xff993300),
@@ -418,7 +418,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Quicksand',
-                                      fontSize: 16*ffem,
+                                      fontSize: 14*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2000000477*ffem/fem,
                                       color: const Color(0xfffcf2d9),)

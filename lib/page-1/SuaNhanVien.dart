@@ -60,8 +60,8 @@ class SuaNhanVien extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'Dancing Script',
-                                fontSize: 24*ffem,
-                                fontWeight: FontWeight.w700,
+                                fontSize: 13*ffem,
+                                fontWeight: FontWeight.bold,
                                 height: 1.2*ffem/fem,
                                 letterSpacing: 1*fem,
                                 color: Color(0xff993300),
@@ -113,8 +113,8 @@ class SuaNhanVien extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Quicksand',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
                               height: 1.25*ffem/fem,
                               color: Color(0xfffcf2d9),
                             ),
@@ -127,7 +127,7 @@ class SuaNhanVien extends StatelessWidget {
                           'Tải ảnh lên',
                           style: TextStyle(
                             fontFamily: 'Quicksand',
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.w700,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
@@ -152,8 +152,8 @@ class SuaNhanVien extends StatelessWidget {
                           'Tên nhân viên',
                           style: TextStyle(
                             fontFamily: 'Quicksand',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
                           ),
@@ -167,8 +167,8 @@ class SuaNhanVien extends StatelessWidget {
                           'Chức vụ',
                           style: TextStyle(
                             fontFamily: 'Quicksand',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
                             height: 1.25*ffem/fem,
                             color: Color(0xff007373),
                           ),
@@ -190,7 +190,7 @@ class SuaNhanVien extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Quicksand',
                                 fontSize: 12,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w400,
                                 height: 1.2*ffem/fem,
                                 color: Color(0xfffcf2d9),
                               ),

@@ -165,8 +165,8 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle (
                                       fontFamily: 'Dancing Script',
-                                      fontSize: 24*ffem,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 13*ffem,
+                                      fontWeight: FontWeight.bold,
                                       height: 1.2*ffem/fem,
                                       letterSpacing: 1*fem,
                                       color: const Color(0xff993300),
@@ -222,7 +222,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                   style: TextStyle (
                                     fontFamily: 'Quicksand',
                                     fontSize: 12*ffem,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w400,
                                     height: 1.25*ffem/fem,
                                     color: const Color(0xfffcf2d9),
                                   ),
@@ -237,7 +237,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                 style: TextStyle (
                                   fontFamily: 'Quicksand',
                                   fontSize: 12*ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontWeight: FontWeight.w400,
                                   height: 1.25*ffem/fem,
                                   color: const Color(0xff007373),
                                 ),
@@ -448,7 +448,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                         style: TextStyle (
                                           fontFamily: 'Quicksand',
                                           fontSize: 12*ffem,
-                                          fontWeight: FontWeight.w700,
+                                          fontWeight: FontWeight.w400,
                                           height: 1.2000000477*ffem/fem,
                                           color: const Color(0xfffcf2d9),)
 

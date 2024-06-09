@@ -12,7 +12,6 @@ class TaiKhoanKH extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -61,8 +60,7 @@ class TaiKhoanKH extends StatelessWidget {
                       child: SizedBox(
                         width: 123*fem,
                         height: 123*fem,
-                        child:
-                        ClipRRect(
+                        child: ClipRRect(
                           borderRadius: BorderRadius.circular(100*fem),
                           child: khachhang?.hinhanh != null && khachhang!.hinhanh.isNotEmpty
                               ? Image.network(
@@ -85,7 +83,7 @@ class TaiKhoanKH extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
+                        fontSize: 14,
                         fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff993300),
@@ -93,22 +91,19 @@ class TaiKhoanKH extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 36*fem),
-                    width: 330,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    margin: EdgeInsets.fromLTRB(6*fem, 0*fem, 0*fem, 36*fem),
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 8*fem, 0*fem),
-                          child: Text(
-                            'Số điện thoại:',
-                            style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              height: 1.25*ffem/fem,
-                              color: Color(0xff007373),
-                            ),
+                        Text(
+                          'Số điện thoại:',
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            height: 1.25*ffem/fem,
+                            color: Color(0xff007373),
                           ),
                         ),
                         Text(
@@ -116,7 +111,7 @@ class TaiKhoanKH extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Quicksand',
                             fontSize: 12,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             height: 1.25*ffem/fem,
                             color: Color(0xff993300),
                           ),
@@ -136,8 +131,8 @@ class TaiKhoanKH extends StatelessWidget {
                             'Email:',
                             style: TextStyle(
                               fontFamily: 'Quicksand',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
                               height: 1.25*ffem/fem,
                               color: Color(0xff007373),
                             ),
@@ -148,7 +143,7 @@ class TaiKhoanKH extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Quicksand',
                             fontSize: 12,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             height: 1.25*ffem/fem,
                             color: Color(0xff993300),
                           ),
@@ -168,8 +163,8 @@ class TaiKhoanKH extends StatelessWidget {
                             'Địa chỉ:',
                             style: TextStyle(
                               fontFamily: 'Quicksand',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
                               height: 1.25*ffem/fem,
                               color: Color(0xff007373),
                             ),
@@ -184,7 +179,7 @@ class TaiKhoanKH extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 12,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w400,
                               height: 1.25*ffem/fem,
                               color: Color(0xff993300),
                             ),
@@ -211,8 +206,8 @@ class TaiKhoanKH extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Quicksand',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
                             height: 1.25*ffem/fem,
                             color: Color(0xfffcf2d9),
                           ),

@@ -170,8 +170,8 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                           textAlign: TextAlign.center,
                                           style: SafeGoogleFont (
                                             'Dancing Script',
-                                            fontSize: 24*ffem,
-                                            fontWeight: FontWeight.w700,
+                                            fontSize: 13*ffem,
+                                            fontWeight: FontWeight.bold,
                                             height: 1.2*ffem/fem,
                                             letterSpacing: 1*fem,
                                             color: const Color(0xff993300),

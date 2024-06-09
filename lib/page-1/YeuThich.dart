@@ -134,7 +134,7 @@ class _YeuThichState extends State<YeuThich> {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 15 * ffem,
+                                fontSize: 14 * ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.3333333333 * ffem / fem,
                                 color: Color(0xfffcf2d9),
@@ -228,8 +228,8 @@ class _YeuThichState extends State<YeuThich> {
                                     title: Text(tenSP,
                                       style: const TextStyle(
                                           fontFamily: 'Quicksand',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 14,
                                           color: Colors.black
 
                                       ),),

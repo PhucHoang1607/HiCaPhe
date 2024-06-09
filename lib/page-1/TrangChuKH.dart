@@ -350,8 +350,8 @@ class TrangChuKHState extends State<TrangChuKH> {
                                         'Sản phẩm bán chạy',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w700,
                                           height: 1.25,
                                           color: Color(0xfffcf2d9),
                                         ),
@@ -364,7 +364,7 @@ class TrangChuKHState extends State<TrangChuKH> {
                                         'Sữa lắc Hi',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 12,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.w700,
                                           height: 1.25,
                                           color: Color(0xfffcf2d9),
@@ -439,8 +439,8 @@ class TrangChuKHState extends State<TrangChuKH> {
                             'Điều đặc biệt tại quán',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
                               height: 1.2,
                               color: Color(0xff993300),
                             ),
@@ -490,8 +490,8 @@ class TrangChuKHState extends State<TrangChuKH> {
                         'Hi ní!',
                         style: SafeGoogleFont(
                           'Quicksand',
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
                           height: 1.2,
                           color: Color(0xff007373),
                         ),

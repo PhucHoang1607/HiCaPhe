@@ -79,7 +79,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Quicksand',
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.w700,
                   height: 1.25*ffem/fem,
                   color: Color(0xff993300),
@@ -98,8 +98,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       'Giới tính',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff007373),
                       ),
@@ -111,7 +111,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Quicksand',
                       fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       height: 1.25*ffem/fem,
                       color: Color(0xff993300),
                     ),
@@ -131,8 +131,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       'Ngày sinh:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff007373),
                       ),
@@ -143,7 +143,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Quicksand',
                       fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       height: 1.25*ffem/fem,
                       color: Color(0xff993300),
                     ),
@@ -163,8 +163,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       'Số điện thoại:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff007373),
                       ),
@@ -175,7 +175,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Quicksand',
                       fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       height: 1.25*ffem/fem,
                       color: Color(0xff993300),
                     ),
@@ -195,8 +195,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       'Lương:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff007373),
                       ),
@@ -207,7 +207,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Quicksand',
                       fontSize: 12,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       height: 1.25*ffem/fem,
                       color: Color(0xff993300),
                     ),
@@ -227,8 +227,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       'Ca làm:',
                       style: TextStyle(
                         fontFamily: 'Quicksand',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
                         height: 1.25*ffem/fem,
                         color: Color(0xff007373),
                       ),
@@ -241,7 +241,7 @@ class TaiKhoanQuanLy extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Quicksand',
                         fontSize: 12,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                         height: 1.25*ffem/fem,
                         color: Color(0xff993300),
                       ),
@@ -278,8 +278,8 @@ class TaiKhoanQuanLy extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Quicksand',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
                       height: 1.25*ffem/fem,
                       color: Color(0xfffcf2d9),
                     ),

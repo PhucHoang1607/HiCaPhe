@@ -312,8 +312,8 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
                                   'Dancing Script',
-                                  fontSize: 24*ffem,
-                                  fontWeight: FontWeight.w700,
+                                  fontSize: 13*ffem,
+                                  fontWeight: FontWeight.bold,
                                   height: 1.2*ffem/fem,
                                   letterSpacing: 1*fem,
                                   color: Color(0xff993300),
@@ -362,7 +362,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                               softWrap:false,
                               style: SafeGoogleFont (
                                 'Quicksand',
-                                fontSize: 12*ffem,
+                                fontSize: 14*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.25*ffem/fem,
                                 color: Color(0xff000000),
@@ -406,7 +406,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                             softWrap:false,
                             style: SafeGoogleFont (
                               'Quicksand',
-                              fontSize: 12*ffem,
+                              fontSize: 14*ffem,
                               fontWeight: FontWeight.w700,
                               height: 1.25*ffem/fem,
                               color: Color(0xff000000),
@@ -460,7 +460,7 @@ class TrangChuNVNewState extends State<TrangChuNVNew> {
                               softWrap:false,
                               style: SafeGoogleFont (
                                 'Quicksand',
-                                fontSize: 12*ffem,
+                                fontSize: 14*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.25*ffem/fem,
                                 color: Color(0xff000000),
