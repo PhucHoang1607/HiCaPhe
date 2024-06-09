@@ -269,7 +269,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 keyboardType: TextInputType.number,
                                 controller: masp,
-                                style: const TextStyle(fontSize: 14),
+                                style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                 textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
@@ -282,8 +282,9 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                             child: SizedBox(height: 30,
                               child: TextFormField(
                                 keyboardType: TextInputType.text,
+                                textInputAction: TextInputAction.next,
                                 controller: tensp,
-                                style: const TextStyle(fontSize: 14),
+                                style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Tên sản phẩm",
@@ -326,7 +327,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 keyboardType: TextInputType.text,
                                 controller: soluong,
-                                style: const TextStyle(fontSize: 14),
+                                style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                 textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
@@ -348,7 +349,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 keyboardType: TextInputType.number,
                                 controller: dongia,
-                                style: const TextStyle(fontSize: 14),
+                                style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                 textInputAction: TextInputAction.next,
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
@@ -373,7 +374,7 @@ class _ThemSanPhamState extends State<ThemSanPham> {
                                 },
                                 keyboardType: TextInputType.text,
                                 controller: mota,
-                                style: const TextStyle(fontSize: 14),
+                                style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                 decoration: const InputDecoration(
                                     hintStyle: TextStyle(color: Color(0xff007373)),
                                     hintText: "Mô tả",

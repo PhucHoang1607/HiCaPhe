@@ -307,7 +307,9 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                   height: 30,
                                   child: TextFormField(
                                     controller: tenNV,
-                                    style: const TextStyle(fontSize: 12),
+                                    style: SafeGoogleFont('Quicksand',fontSize: 12,),
+                                    textInputAction: TextInputAction.next,
+
                                     decoration: const InputDecoration(
                                         hintStyle:
                                             TextStyle(color: Color(0xff007373)),
@@ -358,8 +360,9 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                   height: 30,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
+                                    textInputAction: TextInputAction.next,
                                     controller: sodienthoai,
-                                    style: const TextStyle(fontSize: 12),
+                                    style: SafeGoogleFont('Quicksand',fontSize: 12,),
                                     decoration: const InputDecoration(
                                         hintStyle:
                                             TextStyle(color: Color(0xff007373)),
@@ -407,8 +410,9 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                   height: 30,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
+                                    textInputAction: TextInputAction.next,
                                     controller: luong,
-                                    style: const TextStyle(fontSize: 12),
+                                    style: SafeGoogleFont('Quicksand',fontSize: 12,),
                                     decoration: const InputDecoration(
                                         hintStyle:
                                             TextStyle(color: Color(0xff007373)),
@@ -422,7 +426,10 @@ class _SuaNhanVienState extends State<SuaNhanVien> {
                                 height: 50 * fem,
                                 child: TextFormField(
                                   controller: ngaySinh,
-                                  style: const TextStyle(fontSize: 12),
+                                  style: SafeGoogleFont('Quicksand',fontSize: 12,),
+                                  onTap: (){
+                                    _selectDateupdate(context);
+                                  },
                                   decoration: InputDecoration(
                                     hintText: "Ngày sinh",
                                     hintStyle:

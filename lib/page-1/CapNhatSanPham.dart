@@ -290,7 +290,9 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                             height: 30,
                             child: TextFormField(
                               controller: idCate,
-                              style: const TextStyle(fontSize: 12),
+                              style: SafeGoogleFont('Quicksand',fontSize: 12,),
+                              textInputAction: TextInputAction.next,
+                              keyboardType: TextInputType.number,
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Mã sản phẩm",
@@ -305,7 +307,9 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                             height: 30,
                             child: TextFormField(
                               controller: name,
-                              style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
+                              keyboardType: TextInputType.text,
+                              style: SafeGoogleFont('Quicksand',fontSize: 12,),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Tên sản phẩm",
@@ -342,6 +346,7 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                                   size = newValue!;
                                 });
                               },
+                              
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Kích thước",
@@ -357,7 +362,8 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                             child: TextFormField(
                               controller: quantity,
                               keyboardType: TextInputType.number,
-                              style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.next,
+                              style: SafeGoogleFont('Quicksand',fontSize: 12,),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Số lượng",
@@ -380,8 +386,9 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                                 return null;
                               },
                               keyboardType: TextInputType.number,
+                              textInputAction: TextInputAction.next,
                               controller: price,
-                              style: const TextStyle(fontSize: 12),
+                              style: SafeGoogleFont('Quicksand',fontSize: 12,),
                               decoration: const InputDecoration(
                                 hintStyle: TextStyle(color: Color(0xff007373)),
                                 hintText: "Giá sản phẩm",
@@ -397,7 +404,8 @@ class _CapNhatSanPhamState extends State<CapNhatSanPham> {
                             child: TextFormField(
                               maxLines: 2,
                               controller: descrip,
-                              style: const TextStyle(fontSize: 12),
+                              textInputAction: TextInputAction.done,
+                              style: SafeGoogleFont('Quicksand',fontSize: 12,),
                               decoration: const InputDecoration(
                                 isDense: true,
                                 hintStyle: TextStyle(color: Color(0xff007373)),
