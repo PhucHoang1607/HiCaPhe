@@ -308,6 +308,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     controller: donVitinhNL,
+                                    textInputAction: TextInputAction.next,
                                     style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
@@ -328,6 +329,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                       }
                                     },
                                     controller: motaNL,
+                                    textInputAction: TextInputAction.next,
                                     style: const TextStyle(fontSize: 12),
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
@@ -349,7 +351,11 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     }
                                   },
                                   controller: ngaynhapNL,
+                                  textInputAction: TextInputAction.next,
                                   style: const TextStyle(fontSize: 12),
+                                  onTap: (){
+                                     _selectDateupAdd(context);
+                                  },
                                   decoration: InputDecoration(
 
                                     hintText: defaultNgaySinh,
@@ -380,6 +386,7 @@ class _ThemNguyenLieuState extends State<ThemNguyenLieu> {
                                     },
                                     controller: tenNL,
                                     style: const TextStyle(fontSize: 12),
+                                    textInputAction: TextInputAction.next,
                                     decoration: const InputDecoration(
                                         hintStyle: TextStyle(color: Color(0xff007373)),
                                         hintText: "Tên nguyên liệu",

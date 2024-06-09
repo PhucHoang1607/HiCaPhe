@@ -207,6 +207,8 @@ class _DangNhap extends State<DangNhap> {
                                     }
                                   },
                                   controller: _emailController,
+                                  textInputAction: TextInputAction.next,
+                                  keyboardType: TextInputType.emailAddress,
                                   style: SafeGoogleFont('Quicksand',
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400),

@@ -297,8 +297,9 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                             }
                                           },
                                           keyboardType: TextInputType.text,
+                                          textInputAction: TextInputAction.next,
                                           controller: tenNV,
-                                          style: const TextStyle(fontSize: 14),
+                                          style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                           decoration: const InputDecoration(
                                               hintStyle: TextStyle(color: Color(0xff007373)),
                                               hintText: "Tên nhân viên",
@@ -310,6 +311,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 10.0), // Thêm khoảng trống ở đầu
                                       child: DropdownButtonFormField<String>(
+                                        style: SafeGoogleFont('Quicksand',fontSize: 14,color: Colors.black),
                                         isExpanded: true,
                                         value: gioitinh,
                                         items: ["Khác","Nam","Nữ"].map((String value) {
@@ -344,8 +346,9 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                             }
                                           },
                                           keyboardType: TextInputType.number,
+                                          textInputAction: TextInputAction.next,
                                           controller: sodienthoai,
-                                          style: const TextStyle(fontSize: 14),
+                                          style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                           decoration: const InputDecoration(
                                               hintStyle: TextStyle(color: Color(0xff007373)),
                                               hintText: "Số điện thoại",
@@ -357,6 +360,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                     child: Padding(
                                       padding: const EdgeInsets.only(top: 10.0), // Thêm khoảng trống ở đầu
                                       child: DropdownButtonFormField<String>(
+                                        style: SafeGoogleFont('Quicksand',fontSize: 14,color: Colors.black),
                                         isExpanded: true,
                                         value: Calam,
                                         items: ["Sáng","Chiều", "Tối","Khuya"].map((String value) {
@@ -392,7 +396,7 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                           },
                                           keyboardType: TextInputType.number,
                                           controller: luong,
-                                          style: const TextStyle(fontSize: 14),
+                                          style: SafeGoogleFont('Quicksand',fontSize: 14,),
                                           textInputAction: TextInputAction.next,
                                           decoration: const InputDecoration(
                                               hintStyle: TextStyle(color: Color(0xff007373)),
@@ -414,8 +418,12 @@ class _ThemNhanVienState extends State<ThemNhanVien> {
                                           }
                                         },
                                         keyboardType: TextInputType.number,
+                                        textInputAction: TextInputAction.done,
                                         controller: ngaysinh,
-                                        style: const TextStyle(fontSize: 14),
+                                        style: SafeGoogleFont('Quicksand',fontSize: 14,),
+                                        onTap: (){
+                                          _selectDateupAdd(context);
+                                        },
                                         decoration: InputDecoration(
                                           hintText: defaultNgaySinh,
                                           hintStyle: TextStyle(color: Color(0xff007373)),
