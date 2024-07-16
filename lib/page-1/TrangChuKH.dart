@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'dart:ui';
 import 'package:myapp/model/Admin.dart';
 import 'package:myapp/page-1/QuanLyKH.dart';
 import 'package:myapp/page-1/LichSuMuaHang.dart';
@@ -24,15 +22,14 @@ class TrangChuKH extends StatefulWidget {
 class TrangChuKHState extends State<TrangChuKH> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final CollectionReference usersCollection =
-      FirebaseFirestore.instance.collection('Users');
+  FirebaseFirestore.instance.collection('Users');
 
   Future<Admin?> getUserDataByUid(String uid) async {
     try {
       QuerySnapshot userQuery =
-          await usersCollection.where('uid', isEqualTo: uid).get();
+      await usersCollection.where('uid', isEqualTo: uid).get();
 
       if (userQuery.docs.isNotEmpty) {
-        // Chỉ lấy dữ liệu của user đầu tiên vì uid nên là duy nhất
         return Admin.fromFirestore(userQuery.docs.first);
       } else {
         print('User document does not exist for uid: $uid');
@@ -50,7 +47,6 @@ class TrangChuKHState extends State<TrangChuKH> {
     String? currentUserUid = FirebaseAuth.instance.currentUser?.uid;
     khachhang = await getUserDataByUid(currentUserUid!);
 
-    // Now you can use the userData
     if (khachhang != null) {
       print('User data: $khachhang');
       setState(() {});
@@ -76,13 +72,13 @@ class TrangChuKHState extends State<TrangChuKH> {
             TextButton(
               child: const Text('Không'),
               onPressed: () {
-                Navigator.of(context).pop(false); // Người dùng không đồng ý thoát
+                Navigator.of(context).pop(false);
               },
             ),
             TextButton(
               child: const Text('Có'),
               onPressed: () {
-                Navigator.of(context).pop(true); // Người dùng đồng ý thoát
+                Navigator.of(context).pop(true);
               },
             ),
           ],
@@ -102,7 +98,6 @@ class TrangChuKHState extends State<TrangChuKH> {
       Image.asset('assets/page-1/images/banner2.png', width: 800, scale: 0.85),
       Image.asset('assets/page-1/images/banner3.png', width: 800, scale: 0.85)
     ];
-    int currentIndex = 0;
 
     return WillPopScope(
       onWillPop: () async {
@@ -110,7 +105,7 @@ class TrangChuKHState extends State<TrangChuKH> {
         if (shouldExit == true) {
           SystemNavigator.pop();
         }
-        return false; // Ngăn chặn xử lý "Back" mặc định khác
+        return false;
       },
       child: Scaffold(
         key: _scaffoldKey,
@@ -144,15 +139,15 @@ class TrangChuKHState extends State<TrangChuKH> {
                                 shape: BoxShape.circle,
                               ),
                               child: khachhang?.hinhanh != null &&
-                                      khachhang!.hinhanh.isNotEmpty
+                                  khachhang!.hinhanh.isNotEmpty
                                   ? Image.network(
-                                      khachhang!.hinhanh,
-                                      fit: BoxFit.cover,
-                                    )
+                                khachhang!.hinhanh,
+                                fit: BoxFit.cover,
+                              )
                                   : Image.asset(
-                                      "assets/page-1/images/image-16.png",
-                                      fit: BoxFit.cover,
-                                    ),
+                                "assets/page-1/images/image-16.png",
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Padding(
@@ -161,18 +156,17 @@ class TrangChuKHState extends State<TrangChuKH> {
                               '${khachhang?.displayName}',
                               style: TextStyle(
                                   fontFamily: 'Quicksand',
-                                  fontSize: 12,
+                                  fontSize: 14,
                                   color: Colors.white),
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: Text(
                               '${khachhang?.email}',
                               style: TextStyle(
                                   fontFamily: 'Quicksand',
-                                  fontSize: 8.8,
+                                  fontSize: 12,
                                   color: Colors.white),
                             ),
                           ),
@@ -188,8 +182,8 @@ class TrangChuKHState extends State<TrangChuKH> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  TaiKhoanKH(khachhang: khachhang, id: khachhang!.id)));
+                              builder: (context) => TaiKhoanKH(
+                                  khachhang: khachhang, id: khachhang!.id)));
                     },
                   ),
                   ListTile(
@@ -243,7 +237,6 @@ class TrangChuKHState extends State<TrangChuKH> {
         body: Container(
           width: double.infinity,
           child: Container(
-            // trangchukhe5o (385:1231)
             width: double.infinity,
             height: 800 * fem,
             decoration: BoxDecoration(
@@ -252,32 +245,34 @@ class TrangChuKHState extends State<TrangChuKH> {
             child: Stack(
               children: [
                 Positioned(
-                  // autogroupr6xs7X7 (JzUcbg71G5dZUoWWbaR6Xs)
                   left: 0 * fem,
                   top: 0 * fem,
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(19 * fem, 32 * fem, 14 * fem, 0 * fem),
+                    padding: EdgeInsets.fromLTRB(
+                        19 * fem, 32 * fem, 14 * fem, 0 * fem),
                     width: 360 * fem,
                     height: 736 * fem,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // group42oeq (385:1247)
-                          margin: EdgeInsets.fromLTRB(250 * fem, 0 * fem, 0 * fem, 15 * fem),
-                          padding: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 1.88 * fem, 0 * fem),
-
+                          margin: EdgeInsets.fromLTRB(
+                              250 * fem, 0 * fem, 0 * fem, 15 * fem),
+                          padding: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 1.88 * fem, 0 * fem),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) => ThongBao()));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ThongBao()));
                                 },
                                 child: Container(
-                                  // vectorthongbao7fX (385:1248)
-                                  margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0.1 * fem, 1 * fem),
+                                  margin: EdgeInsets.fromLTRB(
+                                      0 * fem, 0 * fem, 0.1 * fem, 1 * fem),
                                   width: 30 * fem,
                                   height: 30 * fem,
                                   child: Image.asset(
@@ -288,13 +283,13 @@ class TrangChuKHState extends State<TrangChuKH> {
                                 ),
                               ),
                               Container(
-                                // frameCcH (301:109)
                                 child: IconButton(
                                   onPressed: () =>
                                       _scaffoldKey.currentState?.openEndDrawer(),
                                   padding: EdgeInsets.zero,
                                   icon: Container(
-                                    margin: EdgeInsets.fromLTRB(0 * fem, 1 * fem, 0 * fem, 0 * fem),
+                                    margin: EdgeInsets.fromLTRB(
+                                        0 * fem, 1 * fem, 0 * fem, 0 * fem),
                                     width: 26.25 * fem,
                                     height: 20.63 * fem,
                                     child: Image.asset(
@@ -318,9 +313,10 @@ class TrangChuKHState extends State<TrangChuKH> {
                               autoPlayCurve: Curves.fastOutSlowIn,
                             )),
                         Container(
-                          // topitemVT7 (385:1237)
-                          margin: EdgeInsets.fromLTRB(0 * fem, 20 * fem, 6 * fem, 22 * fem),
-                          padding: EdgeInsets.fromLTRB(26 * fem, 17 * fem, 31.4 * fem, 23 * fem),
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 20 * fem, 6 * fem, 22 * fem),
+                          padding: EdgeInsets.fromLTRB(26 * fem, 17 * fem,
+                              31.4 * fem, 23 * fem),
                           width: double.infinity,
                           decoration: BoxDecoration(
                             color: Color(0xff993300),
@@ -337,20 +333,20 @@ class TrangChuKHState extends State<TrangChuKH> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                // autogroup49ffZhs (JzUcr5rfMU4f8E3TJi49FF)
-                                margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 32 * fem, 11 * fem),
+                                margin: EdgeInsets.fromLTRB(
+                                    0 * fem, 0 * fem, 32 * fem, 11 * fem),
                                 width: 150 * fem,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      // textspbanchayHtm (385:1240)
-                                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 4 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 4 * fem),
                                       child: Text(
                                         'Sản phẩm bán chạy',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 14,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w700,
                                           height: 1.25,
                                           color: Color(0xfffcf2d9),
@@ -358,13 +354,13 @@ class TrangChuKHState extends State<TrangChuKH> {
                                       ),
                                     ),
                                     Container(
-                                      // textbacxiuzHP (385:1239)
-                                      margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 47 * fem),
+                                      margin: EdgeInsets.fromLTRB(
+                                          0 * fem, 0 * fem, 0 * fem, 47 * fem),
                                       child: Text(
                                         'Sữa lắc Hi',
                                         style: SafeGoogleFont(
                                           'Quicksand',
-                                          fontSize: 14,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w700,
                                           height: 1.25,
                                           color: Color(0xfffcf2d9),
@@ -379,15 +375,16 @@ class TrangChuKHState extends State<TrangChuKH> {
                                         );
                                       },
                                       child: Container(
-                                        // autogroupfhcmhhb (JzUcwLCvENpfWEbWTzFHcM)
-                                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 68.83 * fem, 0 * fem),
+                                        margin: EdgeInsets.fromLTRB(0 * fem,
+                                            0 * fem, 68.83 * fem, 0 * fem),
                                         width: double.infinity,
                                         child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Container(
-                                              // textxemthemthongtinsp3Ff (385:1241)
-                                              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7.5 * fem, 0 * fem),
+                                              margin: EdgeInsets.fromLTRB(0 * fem,
+                                                  0 * fem, 7.5 * fem, 0 * fem),
                                               child: Text(
                                                 'Xem thêm',
                                                 style: SafeGoogleFont(
@@ -400,8 +397,8 @@ class TrangChuKHState extends State<TrangChuKH> {
                                               ),
                                             ),
                                             Container(
-                                              // akariconsarrowrightmBf (385:1243)
-                                              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 1 * fem),
+                                              margin: EdgeInsets.fromLTRB(
+                                                  0 * fem, 0 * fem, 0 * fem, 1 * fem),
                                               width: 11.33 * fem,
                                               height: 9.33 * fem,
                                               child: Image.asset(
@@ -418,11 +415,11 @@ class TrangChuKHState extends State<TrangChuKH> {
                                 ),
                               ),
                               Container(
-                                // image224Am (385:1242)
                                 width: 81.6 * fem,
                                 height: 122 * fem,
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10 * fem),
+                                  borderRadius:
+                                  BorderRadius.circular(10 * fem),
                                   child: Image.asset(
                                     'assets/page-1/images/image-22.png',
                                     fit: BoxFit.cover,
@@ -433,13 +430,13 @@ class TrangChuKHState extends State<TrangChuKH> {
                           ),
                         ),
                         Container(
-                          // iucbittiqunnsT (385:1266)
-                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 155 * fem, 18 * fem),
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 155 * fem, 18 * fem),
                           child: Text(
                             'Điều đặc biệt tại quán',
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 14,
+                              fontSize: 16,
                               fontWeight: FontWeight.w700,
                               height: 1.2,
                               color: Color(0xff993300),
@@ -447,31 +444,16 @@ class TrangChuKHState extends State<TrangChuKH> {
                           ),
                         ),
                         Container(
-                          // frame88VWy (385:1267)
-                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 6 * fem, 0 * fem),
+                          margin: EdgeInsets.fromLTRB(
+                              0 * fem, 0 * fem, 6 * fem, 0 * fem),
                           width: 321 * fem,
                           height: 162 * fem,
-                          child: Stack(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(20 * fem),
-                                child: Positioned(
-                                  // image23mjP (385:1268)
-                                  left: 0 * fem,
-                                  top: -9 * fem,
-                                  child: Align(
-                                    child: SizedBox(
-                                      width: 316 * fem,
-                                      height: 180.81 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/KhongGian.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20 * fem),
+                            child: Image.asset(
+                              'assets/page-1/images/KhongGian.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ],
@@ -479,18 +461,17 @@ class TrangChuKHState extends State<TrangChuKH> {
                   ),
                 ),
                 Positioned(
-                  // textchaomungjQd (385:1273)
                   left: 27 * fem,
                   top: 34 * fem,
                   child: Align(
                     child: SizedBox(
-                      width: 55 * fem,
+                      width: 80 * fem,
                       height: 24 * fem,
                       child: Text(
                         'Hi ní!',
                         style: SafeGoogleFont(
                           'Quicksand',
-                          fontSize: 14,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                           height: 1.2,
                           color: Color(0xff007373),

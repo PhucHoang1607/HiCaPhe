@@ -396,7 +396,7 @@ class _DatHangState extends State<DatHang> {
                                     // eurosj36 (180:463)
                                     margin: EdgeInsets.fromLTRB(
                                         5 * fem, 8 * fem, 9 * fem, 3 * fem),
-                                    width: 20 * fem,
+                                    width: 30 * fem,
                                     height: 20 * fem,
                                     child: Image.asset(
                                       'assets/page-1/images/euros.png',
@@ -446,7 +446,7 @@ class _DatHangState extends State<DatHang> {
                                   10 * fem, 0 * fem, 1 * fem, 6.5 * fem),
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 0 * fem),
-                              height: 70,
+                              height: 80,
                               width: 150, // Điều chỉnh kích thước theo nhu cầu
 
                               child: Column(

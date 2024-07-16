@@ -97,11 +97,11 @@ class DangNhapSDT extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 50),
               Container(
-                margin:
-                    EdgeInsets.fromLTRB(10 * fem, 0 * fem, 8 * fem, 0 * fem),
-                padding:
-                    EdgeInsets.fromLTRB(25 * fem, 36 * fem, 25 * fem, 45 * fem),
+                margin: EdgeInsets.fromLTRB(10 * fem, 0 * fem, 8 * fem, 0 * fem),
+                padding: EdgeInsets.fromLTRB(25 * fem, 16 * fem, 25 * fem, 20 * fem),
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: const Color(0xb2f5dab1),
                   borderRadius: BorderRadius.circular(30 * fem),
@@ -112,12 +112,11 @@ class DangNhapSDT extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(
-                            3 * fem, 0 * fem, 0 * fem, 49 * fem),
-                        width: 255 * fem,
+                        margin: EdgeInsets.fromLTRB(3 * fem, 0 * fem, 0 * fem, 30 * fem),
+                        width: 300 * fem,
                         height: 45 * fem,
                         decoration: BoxDecoration(
-                          color: const Color(0xff007373),
+                          color: const Color(0xff993300),
                           borderRadius: BorderRadius.circular(90 * fem),
                         ),
                         child: Center(
@@ -126,30 +125,28 @@ class DangNhapSDT extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: SafeGoogleFont(
                               'Quicksand',
-                              fontSize: 12 * ffem,
+                              fontSize: 16 * ffem,
                               fontWeight: FontWeight.w400,
                               height: 1.25 * ffem / fem,
-                              color: const Color(0xfffcf2d9),
+                              color: const Color(0xffffffff),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 30),
                       buildTextFormField(
                         controller: nameController,
                         hintText: "Nhập Tên",
                         icon: Icons.account_circle,
-                        validator: (value) =>
-                            value!.isEmpty ? 'Vui lòng nhập tên của bạn' : null,
+                        hintFontSize: 14 * ffem,
+                        validator: (value) => value!.isEmpty ? 'Vui lòng nhập tên của bạn' : null,
                       ),
                       SizedBox(height: 10),
                       buildTextFormField(
                         controller: phoneController,
                         hintText: "Nhập số điện thoại",
                         icon: Icons.phone,
-                        validator: (value) => value!.isEmpty
-                            ? 'Vui lòng nhập số điện thoại của bạn'
-                            : null,
+                        hintFontSize: 14 * ffem,
+                        validator: (value) => value!.isEmpty ? 'Vui lòng nhập số điện thoại của bạn' : null,
                       ),
                       SizedBox(height: 10),
                       Container(
@@ -157,24 +154,23 @@ class DangNhapSDT extends StatelessWidget {
                         width: double.infinity,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: const Color(0xff007373),
+                          color: const Color(0xff993300),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Center(
                           child: TextButton(
                             onPressed: () {
-                              validateAndSendOTP(
-                                  context, phoneController.text.trim());
+                              validateAndSendOTP(context, phoneController.text.trim());
                             },
                             child: Text(
                               'Đăng Nhập',
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont(
                                 'Quicksand',
-                                fontSize: 12 * ffem,
+                                fontSize: 16 * ffem,
                                 fontWeight: FontWeight.w400,
                                 height: 1.2,
-                                color: const Color(0xfffcf2d9),
+                                color: const Color(0xffffffff),
                               ),
                             ),
                           ),
@@ -191,27 +187,39 @@ class DangNhapSDT extends StatelessWidget {
     );
   }
 
-  Widget buildTextFormField(
-      {required TextEditingController controller,
-      required String hintText,
-      required IconData icon,
-      required String? Function(String?)? validator}) {
+  Widget buildTextFormField({
+    required TextEditingController controller,
+    required String hintText,
+    required IconData icon,
+    required String? Function(String?)? validator,
+    required double hintFontSize,
+  }) {
     return TextFormField(
       controller: controller,
-      style: SafeGoogleFont('Quicksand',
-          fontSize: 12, fontWeight: FontWeight.w400),
+      style: SafeGoogleFont(
+        'Quicksand',
+        fontSize: 14,
+        fontWeight: FontWeight.w500, // Changed font weight to w500
+        color: Color(0xff993300), // Màu chữ text
+      ),
       decoration: InputDecoration(
-        prefixIcon: Icon(icon),
-        hintStyle: const TextStyle(color: Color(0xff007373)),
+        prefixIcon: Icon(
+          icon,
+          color: Color(0xff993300), // Màu biểu tượng
+        ),
+        hintStyle: TextStyle(
+          color: Color(0xff993300), // Màu chữ hint
+          fontSize: hintFontSize,
+        ),
         hintText: hintText,
         fillColor: Colors.white,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30.0),
-          borderSide: const BorderSide(color: Color(0xff007373), width: 1.0),
+          borderSide: const BorderSide(color: Color(0xff993300), width: 1.0), // Màu viền khi enabled
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
-          borderSide: const BorderSide(color: Color(0xff007373)),
+          borderRadius: BorderRadius.circular(30.0),
+          borderSide: const BorderSide(color: Color(0xff993300), width: 1.0), // Màu viền khi focused
         ),
       ),
       validator: validator,
@@ -258,16 +266,13 @@ class DangNhapSDT extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () async {
                           try {
-                            PhoneAuthCredential credential =
-                                PhoneAuthProvider.credential(
+                            PhoneAuthCredential credential = PhoneAuthProvider.credential(
                               verificationId: verificationID,
                               smsCode: otpController.text,
                             );
-                            await FirebaseAuth.instance
-                                .signInWithCredential(credential);
+                            await FirebaseAuth.instance.signInWithCredential(credential);
                             // Successfully signed in
-                            await registerUser(emailController.text.trim(),
-                                nameController.text.trim(), mobile);
+                            await registerUser(emailController.text.trim(), nameController.text.trim(), mobile);
                           } catch (e) {
                             print("Error: $e");
                             // Handle sign in error
@@ -291,14 +296,11 @@ class DangNhapSDT extends StatelessWidget {
   }
 }
 
-Future<void> registerUser(
-    String email, String displayName, String phoneNumber) async {
+Future<void> registerUser(String email, String displayName, String phoneNumber) async {
   try {
-    UserCredential userCredential =
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: email,
-      password:
-          'randompassword', // Password is required, but not used since we're signing in via phone
+      password: 'randompassword', // Password is required, but not used since we're signing in via phone
     );
 
     // Update display name

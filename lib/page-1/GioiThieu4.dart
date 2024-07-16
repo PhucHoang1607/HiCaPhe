@@ -50,7 +50,7 @@ class GioiThieu4 extends StatelessWidget {
                   'Đa dạng',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 14,
+                    fontSize: 24, // Increased font size
                     fontWeight: FontWeight.w700,
                     height: 1.25,
                     letterSpacing: 1,
@@ -78,8 +78,8 @@ class GioiThieu4 extends StatelessWidget {
                   'Với phần mềm kiểm soát bán hàng và đặt hàng trực tuyến đa tiện lợi giúp cho khách hàng, quản lí và nhân viên đều có thể dễ sử dụng',
                   style: SafeGoogleFont (
                     'Quicksand',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
+                    fontSize: 16, // Increased font size
+                    fontWeight: FontWeight.w500,
                     height: 1.25,
                     letterSpacing: 1,
                     color: const Color(0xff000000),
@@ -102,9 +102,9 @@ class GioiThieu4 extends StatelessWidget {
                         'Hãy cùng Hi cà phê\nThưởng thức vị ngon trọn vẹn nhé!',
                         style: SafeGoogleFont (
                           'Dancing Script',
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          height: 1,
+                          fontSize: 16, // Increased font size
+                          fontWeight: FontWeight.w500,
+                          height: 1.25,
                           letterSpacing: 1,
                           color: const Color(0xff993300),
                         ),
@@ -122,7 +122,7 @@ class GioiThieu4 extends StatelessWidget {
                     width: 297,
                     height: 42,
                     decoration: BoxDecoration (
-                      color: const Color(0xff007373),
+                      color: const Color(0xff993300),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Center(
@@ -130,7 +130,7 @@ class GioiThieu4 extends StatelessWidget {
                         'Bắt đầu',
                         style: SafeGoogleFont (
                           'Quicksand',
-                          fontSize: 14,
+                          fontSize: 20, // Increased font size
                           fontWeight: FontWeight.w700,
                           height: 1.25,
                           letterSpacing: 1,

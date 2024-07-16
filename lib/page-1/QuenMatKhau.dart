@@ -114,16 +114,18 @@ class QuenMatKhau extends StatelessWidget {
                         child: SizedBox(
                           width: 322*fem,
                           height: 29*fem,
-                          child: Text(
-                            'Thưởng thức vị ngon trọn vẹn',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Dancing Script',
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold, // Font weight bold
-                              height: 1.2*ffem/fem,
-                              letterSpacing: 1*fem,
-                              color: Color(0xff993300),
+                          child: Center(
+                            child: Text(
+                              'Thưởng thức vị ngon trọn vẹn',
+                              textAlign: TextAlign.center,
+                              style: SafeGoogleFont(
+                                'Dancing Script',
+                                fontSize: 24,
+                                fontWeight: FontWeight.w700,
+                                height: 1.2,
+                                letterSpacing: 1,
+                                color: const Color(0xff993300),
+                              ),
                             ),
                           ),
                         ),
@@ -165,10 +167,10 @@ class QuenMatKhau extends StatelessWidget {
                   children: [
                     Container(
                       margin: EdgeInsets.fromLTRB(3*fem, 0*fem, 0*fem, 49*fem),
-                      width: 255*fem,
+                      width: 235*fem,
                       height: 45*fem,
                       decoration: BoxDecoration (
-                        color: Color(0xff007373),
+                        color: Color(0xff993300),
                         borderRadius: BorderRadius.circular(90*fem),
                       ),
                       child: Center(
@@ -177,8 +179,8 @@ class QuenMatKhau extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Quicksand',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 15 * ffem,
+                            fontWeight: FontWeight.w800,
                             height: 1.25*ffem/fem,
                             color: Color(0xfffcf2d9),
                           ),
@@ -190,10 +192,10 @@ class QuenMatKhau extends StatelessWidget {
                       child: SizedBox(height: 30,
                         child: TextField(
                           controller: emailController,
-                          style: TextStyle(fontSize: 12, fontFamily: 'Quicksand'),
+                          style: TextStyle(fontSize: 14, fontFamily: 'Quicksand', fontWeight: FontWeight.w600),
                           decoration: InputDecoration(
                               hintStyle: TextStyle(
-                                  color: Color(0xff007373)),
+                                  color: Color(0xff993300)),
                               hintText: "Nhập email",
                               fillColor: Colors.white),
                         ),
@@ -204,7 +206,7 @@ class QuenMatKhau extends StatelessWidget {
                       width: double.infinity,
                       height: 40,
                       decoration: BoxDecoration (
-                        color: const Color(0xff007373),
+                        color: const Color(0xff993300),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
@@ -217,7 +219,7 @@ class QuenMatKhau extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 14,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w800,
                               height: 1.2*ffem/fem,
                               color: const Color(0xfffcf2d9),
                             ),

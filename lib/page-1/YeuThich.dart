@@ -35,7 +35,7 @@ class _YeuThichState extends State<YeuThich> {
   // Nhưng biến phục vụ chức năng search
 
   final CollectionReference updataYeuThich =
-      FirebaseFirestore.instance.collection('FavoriteProduct');
+  FirebaseFirestore.instance.collection('FavoriteProduct');
   bool sapXepYeuThich = true;
   late Stream<QuerySnapshot> productStreamYeuThich;
 
@@ -144,7 +144,7 @@ class _YeuThichState extends State<YeuThich> {
                         ),
                       ),
                       Container(
-                          // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
+                        // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
                           margin: EdgeInsets.fromLTRB(12 * fem, 0 * fem, 23 * fem, 0 * fem),
                           width: double.infinity,
                           height: 25 * fem,

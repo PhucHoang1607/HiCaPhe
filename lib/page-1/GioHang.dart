@@ -15,15 +15,15 @@ class GioHang extends StatefulWidget {
 }
 
 final CollectionReference updataGioHang =
-    FirebaseFirestore.instance.collection('Cart');
+FirebaseFirestore.instance.collection('Cart');
 late Stream<QuerySnapshot> productStreamgiohang;
 Future<double> calculateTotalAmount(String uid) async {
   double total = 0.0;
   final QuerySnapshot snapshot =
-      await updataGioHang.where('uid', isEqualTo: uid).get();
+  await updataGioHang.where('uid', isEqualTo: uid).get();
   for (final QueryDocumentSnapshot doc in snapshot.docs) {
     final Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
-    final thanhTien = data['thanhTien'];
+    final double thanhTien = data['thanhTien'].toDouble();
     total += thanhTien;
   }
   return total;
@@ -31,9 +31,6 @@ Future<double> calculateTotalAmount(String uid) async {
 
 class _GioHangState extends State<GioHang> {
   double tonghoadon = 0.0;
-
-  // Gọi hàm để lấy ID của Cart
-  bool sapXepNguyenLieu = true;
 
   @override
   void initState() {
@@ -188,7 +185,8 @@ class _GioHangState extends State<GioHang> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => const DatHang()));
+                                              builder: (context) =>
+                                              const DatHang()));
                                     },
                                     child: Text(
                                       'Đặt hàng ',
@@ -215,32 +213,39 @@ class _GioHangState extends State<GioHang> {
                   child: StreamBuilder<QuerySnapshot>(
                       stream: productStreamgiohang,
                       builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return const Center(child: CircularProgressIndicator());
+                        }
+                        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                          return const Center(child: Text('Không có dữ liệu'));
+                        }
                         final giohang = snapshot.data!.docs;
                         // Tính tổng tiền từ dữ liệu Firebase
                         return ListView.builder(
-                            // đưa dữ liệu hiển thị lên màn hình
+                          // đưa dữ liệu hiển thị lên màn hình
                             itemCount: giohang.length,
-                            itemBuilder: (context, document) {
+                            itemBuilder: (context, index) {
                               final DocumentSnapshot documentSnapshotGioHang =
-                                  giohang[document];
-                              final dongia = documentSnapshotGioHang['donGia'];
+                              giohang[index];
+                              final double dongia = documentSnapshotGioHang['donGia'].toDouble();
                               final id = documentSnapshotGioHang.id;
                               final idSP = documentSnapshotGioHang['id'];
-                              final soluong =
-                                  documentSnapshotGioHang['soluong'];
+                              final int soluong =
+                              documentSnapshotGioHang['soluong'];
                               return StreamBuilder<DocumentSnapshot>(
                                   stream: FirebaseFirestore.instance
                                       .collection('Product')
                                       .doc(idSP)
                                       .snapshots(),
-                                  builder: (context, index) {
-                                    if (!index.hasData || index.data == null) {
+                                  builder: (context, productSnapshot) {
+                                    if (!productSnapshot.hasData ||
+                                        productSnapshot.data == null) {
                                       // Handle the case where no data is available for the given idSP
                                       return Text(
                                           'Không có dữ liệu cho idSP: $idSP');
                                     }
-                                    final productData = index.data?.data()
-                                            as Map<String, dynamic>? ??
+                                    final productData = productSnapshot.data?.data()
+                                    as Map<String, dynamic>? ??
                                         {};
                                     if (productData.isEmpty) {
                                       // Handle the case where the product data is empty
@@ -256,7 +261,7 @@ class _GioHangState extends State<GioHang> {
                                         child: ListTile(
                                           tileColor: Color(0xfff5dab2),
                                           visualDensity:
-                                              VisualDensity(vertical: 4),
+                                          VisualDensity(vertical: 4),
                                           onTap: () {
                                             Navigator.of(context).push(
                                               MaterialPageRoute(
@@ -275,7 +280,7 @@ class _GioHangState extends State<GioHang> {
                                             ),
                                             child: ClipRRect(
                                                 borderRadius:
-                                                    BorderRadius.circular(10),
+                                                BorderRadius.circular(10),
                                                 child: Image.network(hinhanh,
                                                     fit: BoxFit.cover)),
                                           ),
@@ -289,7 +294,7 @@ class _GioHangState extends State<GioHang> {
                                           ),
                                           subtitle: Column(
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                             children: [
                                               Text("Kích thước : " + kichthuoc),
                                               Text(dongia.toString() + ' VND'),
@@ -302,7 +307,7 @@ class _GioHangState extends State<GioHang> {
                                                 _tanggiamsoluong(
                                                     id, soluong, dongia,
                                                     documentSnapshotGioHang[
-                                                        'uid']),
+                                                    'uid']),
                                                 Container(
                                                   // btxoaWL1 (5:462)
                                                   margin: EdgeInsets.only(
@@ -342,7 +347,8 @@ class _GioHangState extends State<GioHang> {
     );
   }
 
-  Widget _tanggiamsoluong(String documentId, int quantity, int dongia, String uid) {
+  Widget _tanggiamsoluong(
+      String documentId, int quantity, double dongia, String uid) {
     return FittedBox(
       child: Row(
         children: [
@@ -389,7 +395,7 @@ class _GioHangState extends State<GioHang> {
     return showDialog<void>(
       context: context,
       barrierDismissible:
-          false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
+      false, // Ngăn người dùng đóng hộp thoại bằng cách bấm ngoài
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Xác nhận xóa sản phẩm'),

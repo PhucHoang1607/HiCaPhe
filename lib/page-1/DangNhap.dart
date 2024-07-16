@@ -64,7 +64,7 @@ class _DangNhap extends State<DangNhap> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image:
-                            AssetImage('assets/page-1/images/hinhnen1-bg.png'),
+                        AssetImage('assets/page-1/images/hinhnen1-bg.png'),
                       ),
                     ),
                     child: Column(
@@ -130,12 +130,12 @@ class _DangNhap extends State<DangNhap> {
                               Container(
                                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 49),
                                 padding:
-                                    const EdgeInsets.fromLTRB(0, 0, 36.5, 0),
+                                const EdgeInsets.fromLTRB(0, 0, 36.5, 0),
                                 width: double.infinity,
                                 height: 36,
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                      color: const Color(0xff007373)),
+                                      color: const Color(0xff993300)),
                                   color: const Color(0xfffcf2d9),
                                   borderRadius: BorderRadius.circular(15),
                                 ),
@@ -148,7 +148,7 @@ class _DangNhap extends State<DangNhap> {
                                       width: 155,
                                       height: double.infinity,
                                       decoration: BoxDecoration(
-                                        color: const Color(0xff007373),
+                                        color: const Color(0xff993300),
                                         borderRadius: BorderRadius.circular(15),
                                       ),
                                       child: Center(
@@ -157,24 +157,24 @@ class _DangNhap extends State<DangNhap> {
                                           textAlign: TextAlign.center,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
                                             height: 1.25,
-                                            color: const Color(0xfffcf2d9),
+                                            color: const Color(0xffffffff),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Container(
                                       margin:
-                                          const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                                      const EdgeInsets.fromLTRB(0, 2, 0, 0),
                                       child: TextButton(
                                         onPressed: () {
                                           Navigator.pushReplacement(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const DangKi()),
+                                                const DangKi()),
                                           );
                                         },
                                         style: TextButton.styleFrom(
@@ -184,10 +184,10 @@ class _DangNhap extends State<DangNhap> {
                                           textAlign: TextAlign.center,
                                           style: SafeGoogleFont(
                                             'Quicksand',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
                                             height: 1.25,
-                                            color: const Color(0xff007373),
+                                            color: const Color(0xff993300),
                                           ),
                                         ),
                                       ),
@@ -209,25 +209,27 @@ class _DangNhap extends State<DangNhap> {
                                   controller: _emailController,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.emailAddress,
-                                  style: SafeGoogleFont('Quicksand',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400),
+                                  style: SafeGoogleFont(
+                                    'Quicksand',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500, // Changed font weight
+                                  ),
                                   decoration: InputDecoration(
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(30.0)),
                                       borderSide: const BorderSide(
-                                          color: Color(0xff007373), width: 1.0),
+                                          color: Color(0xff993300), width: 1.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.0),
                                       borderSide: const BorderSide(
-                                          color: Color(0xff007373)),
+                                          color: Color(0xff993300)),
                                     ),
                                     suffixIcon: const Icon(Icons.email),
-                                    suffixIconColor: const Color(0xff007373),
+                                    suffixIconColor: const Color(0xff993300),
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff007373)),
+                                        color: Color(0xff993300)),
                                     hintText: "Nhập thư điện tử",
                                     fillColor: Colors.white,
                                   ),
@@ -247,27 +249,29 @@ class _DangNhap extends State<DangNhap> {
                                   },
                                   obscureText: !_passwordVisible,
                                   controller: _passwordController,
-                                  style: SafeGoogleFont('Quicksand',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400),
+                                  style: SafeGoogleFont(
+                                    'Quicksand',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500, // Changed font weight
+                                  ),
                                   decoration: InputDecoration(
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(30.0)),
                                       borderSide: const BorderSide(
-                                          color: Color(0xff007373), width: 1.0),
+                                          color: Color(0xff993300), width: 1.0),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10.0),
                                       borderSide: const BorderSide(
-                                          color: Color(0xff007373)),
+                                          color: Color(0xff993300)),
                                     ),
                                     suffixIcon: IconButton(
                                       icon: Icon(
                                         _passwordVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
-                                        color: const Color(0xff007373),
+                                        color: const Color(0xff993300),
                                       ),
                                       onPressed: () {
                                         setState(() {
@@ -277,7 +281,7 @@ class _DangNhap extends State<DangNhap> {
                                     ),
                                     suffixIconColor: const Color(0xff007373),
                                     hintStyle: const TextStyle(
-                                        color: Color(0xff007373)),
+                                        color: Color(0xff993300)),
                                     hintText: "Nhập mật khẩu",
                                     fillColor: Colors.white,
                                   ),
@@ -285,7 +289,7 @@ class _DangNhap extends State<DangNhap> {
                               ),
                               Container(
                                 margin:
-                                    const EdgeInsets.fromLTRB(154, 0, 0, 10),
+                                const EdgeInsets.fromLTRB(154, 0, 0, 10),
                                 child: TextButton(
                                   onPressed: () {
                                     Navigator.push(
@@ -300,10 +304,10 @@ class _DangNhap extends State<DangNhap> {
                                     'Quên mật khẩu',
                                     style: SafeGoogleFont(
                                       'Quicksand',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
                                       height: 1.25,
-                                      color: const Color(0xff007373),
+                                      color: const Color(0xff993300),
                                     ),
                                   ),
                                 ),
@@ -312,11 +316,11 @@ class _DangNhap extends State<DangNhap> {
                                 onTap: _signIn,
                                 child: Container(
                                   margin:
-                                      const EdgeInsets.fromLTRB(50, 0, 39, 0),
+                                  const EdgeInsets.fromLTRB(50, 0, 39, 0),
                                   width: double.infinity,
                                   height: 40,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xff007373),
+                                    color: const Color(0xff993300),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
@@ -325,10 +329,10 @@ class _DangNhap extends State<DangNhap> {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
                                         height: 1.2,
-                                        color: const Color(0xfffcf2d9),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),
@@ -344,11 +348,11 @@ class _DangNhap extends State<DangNhap> {
                                 },
                                 child: Container(
                                   margin:
-                                      const EdgeInsets.fromLTRB(50, 10, 39, 0),
+                                  const EdgeInsets.fromLTRB(50, 10, 39, 0),
                                   width: double.infinity,
                                   height: 40,
                                   decoration: BoxDecoration(
-                                    color: const Color(0xff007373),
+                                    color: const Color(0xff993300),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
@@ -357,10 +361,10 @@ class _DangNhap extends State<DangNhap> {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont(
                                         'Quicksand',
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
                                         height: 1.2,
-                                        color: const Color(0xfffcf2d9),
+                                        color: const Color(0xffffffff),
                                       ),
                                     ),
                                   ),
@@ -386,13 +390,13 @@ class _DangNhap extends State<DangNhap> {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
       if (googleUser != null) {
         final GoogleSignInAuthentication googleAuth =
-            await googleUser.authentication;
+        await googleUser.authentication;
         final AuthCredential credential = GoogleAuthProvider.credential(
           accessToken: googleAuth.accessToken,
           idToken: googleAuth.idToken,
         );
         UserCredential userCredential =
-            await FirebaseAuth.instance.signInWithCredential(credential);
+        await FirebaseAuth.instance.signInWithCredential(credential);
         final User? user = userCredential.user;
 
         if (user != null) {

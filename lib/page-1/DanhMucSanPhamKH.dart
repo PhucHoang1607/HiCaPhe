@@ -63,7 +63,6 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
 
     if (cartProducts.docs.isNotEmpty) {
       // Nếu sản phẩm đã tồn tại, cập nhật số lượng
-      // Nếu sản phẩm đã tồn tại, cập nhật số lượng
       final DocumentSnapshot existingProduct = cartProducts.docs[0];
       final currentQuantity = existingProduct.get("soluong");
       final currentTotal = existingProduct.get("thanhTien");
@@ -125,12 +124,12 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
           .snapshots();
     });
   }
-// Nhưng biến phục vụ chức năng search
+// Những biến phục vụ chức năng search
 
   final CollectionReference updataKH =
-      FirebaseFirestore.instance.collection('Product');
+  FirebaseFirestore.instance.collection('Product');
   final CollectionReference upCateKH =
-      FirebaseFirestore.instance.collection('Category');
+  FirebaseFirestore.instance.collection('Category');
   bool sapXepKH = true;
   late Stream<QuerySnapshot> productStreamKH;
   void updateProductStream() {
@@ -156,7 +155,6 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
       child: SizedBox(
         width: double.infinity,
         child: Container(
-          // danhmucsanphamtB3 (5:376)
           width: double.infinity,
           decoration: const BoxDecoration(
             color: Color(0xfff5dab1),
@@ -165,7 +163,6 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                // autogroupd25pQv5 (Nuf1G9zcm6EPhD28Yvd25P)
                 padding: EdgeInsets.fromLTRB(
                     13 * fem, 48 * fem, 0 * fem, 12.5 * fem),
                 width: double.infinity,
@@ -174,7 +171,6 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        // group71jBf (5:499)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 13 * fem, 31 * fem),
                         width: double.infinity,
@@ -183,10 +179,8 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              // timkiemyLu (5:501)
                               padding: EdgeInsets.fromLTRB(
                                   15 * fem, 10 * fem, 0 * fem, 0 * fem),
-                              //padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                               height: double.infinity,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -200,19 +194,14 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                             color: const Color(0xff993300)),
                                         color: const Color(0xffffffff),
                                         borderRadius:
-                                            BorderRadius.circular(30 * fem),
+                                        BorderRadius.circular(30 * fem),
                                       ),
                                       placeholder: 'Tìm kiếm',
-                                      //thay đổi trạng thái listview lọc sản phẩm khi search
                                       onChanged: (value) {
                                         setState(() {
                                           searchKeyKH = value;
                                         });
                                       },
-                                      // chuyển kiểu chữ để nhận dạng sản phẩm
-                                      // onSubmitted: (value){
-                                      //   searchValue();
-                                      // },
                                       controller: searchKH,
                                     ),
                                   ),
@@ -223,121 +212,92 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                         ),
                       ),
                       Container(
-                        // frame36Q4q (5:388)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 0 * fem, 17.5 * fem),
-                        width: 613 * fem,
-                        height: 32 * fem,
-                        decoration: BoxDecoration(
-                          color: const Color(0xfffcf2d9),
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                          child: Container(
-                              decoration: BoxDecoration(
-                                color: const Color(0xfff5dab1),
-                                borderRadius: BorderRadius.circular(30.0),
-                              ),
-                              child: Expanded(
-                                child: StreamBuilder<QuerySnapshot>(
-                                    stream: upCateKH.snapshots(),
-                                    builder: (context, snapshot) {
-                                      final loc = snapshot.data!.docs;
-                                      return ListView.builder(
-                                          scrollDirection: Axis.horizontal,
-                                          itemCount: loc.length,
-                                          itemBuilder: (context, index) {
-                                            final DocumentSnapshot
-                                                documentSnapshot = loc[index];
-                                            final id = documentSnapshot.id;
-                                            return Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 10.0),
-                                              child: GestureDetector(
-                                                onTap: () {
-                                                  setState(() {
-                                                    selectedIdCateKH = id;
-                                                  });
-                                                  filterProductsByCate(id);
-                                                },
-                                                child: Container(
-                                                  // width: 135,
-                                                  decoration: BoxDecoration(
-                                                      color: const Color(
-                                                          0xff993300),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              30)),
-                                                  child: Padding(
-                                                    padding: const EdgeInsets
-                                                        .symmetric(
-                                                        horizontal: 15.0),
-                                                    child: Center(
-                                                      child: Text(
-                                                        documentSnapshot[
-                                                            'Name'],
-                                                        style: const TextStyle(
-                                                          color:
-                                                              Color(0xfffcf2d9),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            );
+                        width: double.infinity,
+                        height: 50 * fem,
+                        child: StreamBuilder<QuerySnapshot>(
+                            stream: upCateKH.snapshots(),
+                            builder: (context, snapshot) {
+                              final loc = snapshot.data!.docs;
+                              return ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: loc.length,
+                                  itemBuilder: (context, index) {
+                                    final DocumentSnapshot documentSnapshot = loc[index];
+                                    final id = documentSnapshot.id;
+                                    return Padding(
+                                      padding: const EdgeInsets.only(right: 10.0),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            selectedIdCateKH = id;
                                           });
-                                    }),
-                              )),
-                        ),
+                                          filterProductsByCate(id);
+                                        },
+                                        child: Chip(
+                                          backgroundColor: selectedIdCateKH == id
+                                              ? const Color(0xffa03404)
+                                              : const Color(0xffFF8C00),
+                                          label: Text(
+                                            documentSnapshot['Name'],
+                                            style: const TextStyle(
+                                              color: Color(0xfffcf2d9),
+                                              fontSize: 16.0,
+                                            ),
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(30),
+                                          ),
+                                        ),
+                                      ),
+                                    );
+                                  });
+                            }),
                       ),
                       Container(
-                          // autogrouptybbNDw (NuevXdDPScUQ6TNmmXTYBb)
-                          margin: EdgeInsets.fromLTRB(
-                              12 * fem, 0 * fem, 23 * fem, 0 * fem),
-                          width: double.infinity,
-                          height: 25 * fem,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    sapXepKH =
-                                        false; // Đảo ngược trạng thái sắp xếp
-                                  });
-                                },
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      // btsapxep4FB (5:377)
-                                      margin: EdgeInsets.fromLTRB(
-                                          210 * fem, 0 * fem, 8 * fem, 4 * fem),
+                        margin: EdgeInsets.fromLTRB(
+                            12 * fem, 0 * fem, 23 * fem, 0 * fem),
+                        width: double.infinity,
+                        height: 25 * fem,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  sapXepKH = !sapXepKH;
+                                });
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(
+                                        210 * fem, 0 * fem, 8 * fem, 4 * fem),
+                                    width: 20 * fem,
+                                    height: 20 * fem,
+                                    child: Image.asset(
+                                      'assets/page-1/images/btsapxep.png',
                                       width: 20 * fem,
                                       height: 20 * fem,
-                                      child: Image.asset(
-                                        'assets/page-1/images/btsapxep.png',
-                                        width: 20 * fem,
-                                        height: 20 * fem,
-                                      ),
                                     ),
-                                    Text(
-                                      // txspxpmvH (5:402)
-                                      'Sắp xếp',
-                                      style: SafeGoogleFont(
-                                        'Quicksand',
-                                        fontSize: 12 * ffem,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.25 * ffem / fem,
-                                        color: const Color(0xff993300),
-                                      ),
+                                  ),
+                                  Text(
+                                    'Sắp xếp',
+                                    style: SafeGoogleFont(
+                                      'Quicksand',
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.25 * ffem / fem,
+                                      color: const Color(0xff993300),
                                     ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          )),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -349,7 +309,7 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                         : updataKH.orderBy('tenSP').snapshots(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const CircularProgressIndicator();
+                        return const Center(child: CircularProgressIndicator());
                       }
                       if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
                         return const Center(
@@ -357,12 +317,8 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                         );
                       }
                       final nuoc = snapshot.data!.docs;
-                      // điều kiện lọc sản phẩm từ Category
-                      // Sử dụng Set để lưu trữ sản phẩm mà không loại bỏ bản ghi trùng lặp
                       Set<String> productNames = {};
-                      // Điều kiện lọc sản phẩm từ Category
                       if (selectedIdCateKH.isNotEmpty) {
-                        // Duyệt qua tất cả sản phẩm và thêm tên sản phẩm vào Set
                         for (var sanpham in nuoc) {
                           if (sanpham['idCate'] == selectedIdCateKH &&
                               sanpham['tenSP']
@@ -373,7 +329,6 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                           }
                         }
                       } else {
-                        // Duyệt qua tất cả sản phẩm và thêm tên sản phẩm vào Set
                         for (var sanpham in nuoc) {
                           if (sanpham['tenSP']
                               .toString()
@@ -383,25 +338,21 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                           }
                         }
                       }
-                      // Chuyển danh sách Set thành danh sách danh sách
                       List<String> uniqueProductNames = productNames.toList();
-                      //thêm dữ liệu vào chuỗi rỗng để lọc sản phẩm phục vụ chức năng tìm kiếm
                       filteredSearchKH = nuoc
                           .where((sanpham) => sanpham['tenSP']
-                              .toString()
-                              .toLowerCase()
-                              .contains(searchKeyKH.toLowerCase()))
+                          .toString()
+                          .toLowerCase()
+                          .contains(searchKeyKH.toLowerCase()))
                           .toList();
 
                       return ListView.builder(
-                          // đưa dữ liệu hiển thị lên màn hình
                           itemCount: uniqueProductNames.length,
                           itemBuilder: (context, document) {
-                            // Tìm tất cả các sản phẩm có cùng tên và hiển thị chúng
                             List<DocumentSnapshot> productsWithSameName = nuoc
                                 .where((sanpham) =>
-                                    sanpham['tenSP'] ==
-                                    uniqueProductNames[document])
+                            sanpham['tenSP'] ==
+                                uniqueProductNames[document])
                                 .toList();
 
                             return Column(
@@ -413,125 +364,104 @@ class _DanhMucSanPhamKHState extends State<DanhMucSanPhamKH> {
                                 final donGia = documentSnapshotSP['donGia'];
                                 final idCate = documentSnapshotSP['idCate'];
                                 final id = documentSnapshotSP.id;
-                                return SizedBox(
-                                  height: 130,
-                                  child: Card(
-                                    child: ListTile(
-                                      visualDensity: VisualDensity(vertical: 4),
-                                      tileColor: Color(0xfff5dab2),
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                ChiTietSanPhamKH(idspKH: id),
-                                          ),
-                                        );
-                                      },
-                                      leading: ConstrainedBox(
-                                        constraints: const BoxConstraints(
-                                          minWidth: 60,
-                                          minHeight: 55,
-                                          maxWidth: 64,
-                                          maxHeight: 64,
+                                return Card(
+                                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  elevation: 3,
+                                  child: ListTile(
+                                    contentPadding: const EdgeInsets.all(10),
+                                    visualDensity: VisualDensity(vertical: 4),
+                                    tileColor: const Color(0xfff5dab2),
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              ChiTietSanPhamKH(idspKH: id),
                                         ),
-                                        child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            child: Image.network(
-                                              hinhAnh,
-                                              fit: BoxFit.cover,
-                                            )),
+                                      );
+                                    },
+                                    leading: ClipRRect(
+                                      borderRadius: BorderRadius.circular(10),
+                                      child: Image.network(
+                                        hinhAnh,
+                                        fit: BoxFit.cover,
+                                        width: 64,
+                                        height: 64,
                                       ),
-                                      title: Text(
-                                        tenSP,
-                                        style: SafeGoogleFont('Quicksand',
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.black),
-                                      ),
-                                      subtitle: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text("Kích thước : " + Size),
-                                          Text(donGia.toString()),
-                                        ],
-                                      ),
-                                      trailing: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () async {
-                                              {
-                                                final String newId = DateTime
-                                                        .now()
-                                                    .millisecondsSinceEpoch
-                                                    .toString(); // Ham lien ket vao cloud firebase
-                                                final FirebaseFirestore
-                                                    firestore =
-                                                    FirebaseFirestore.instance;
-                                                QuerySnapshot favoriteProducts =
-                                                    await firestore
-                                                        .collection(
-                                                            "FavoriteProduct")
-                                                        .where("id",
-                                                            isEqualTo: id)
-                                                        .get();
-                                                print(
-                                                    'In ID product ${favoriteProducts}');
-
-                                                if (favoriteProducts
-                                                    .docs.isEmpty) {
-                                                  CaPheYeuThich yeuthich =
-                                                      CaPheYeuThich(id, idCate);
-                                                  // Nếu sản phẩm chưa tồn tại, thêm vào danh sách yêu thích
-                                                  addnewFavorite(yeuthich);
-                                                } else {
-                                                  // Nếu sản phẩm đã tồn tại, hiển thị thông báo
-                                                  Fluttertoast.showToast(
-                                                      msg:
-                                                          'Sản phẩm đã tồn tại trong danh sách yêu thích',
-                                                      backgroundColor:
-                                                          Colors.red);
-                                                }
-                                              }
-                                            },
-                                            child: Container(
-                                              // bteditbTw (5:459)
-                                              margin: EdgeInsets.fromLTRB(
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  0 * fem,
-                                                  8 * fem),
-                                              width: 18 * fem,
+                                    ),
+                                    title: Text(
+                                      tenSP,
+                                      style: SafeGoogleFont('Quicksand',
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.black),
+                                    ),
+                                    subtitle: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Kích thước : " + Size),
+                                        Text(donGia.toString()),
+                                      ],
+                                    ),
+                                    trailing: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () async {
+                                            final String newId = DateTime
+                                                .now()
+                                                .millisecondsSinceEpoch
+                                                .toString();
+                                            final FirebaseFirestore
+                                            firestore =
+                                                FirebaseFirestore.instance;
+                                            QuerySnapshot favoriteProducts =
+                                            await firestore
+                                                .collection(
+                                                "FavoriteProduct")
+                                                .where("id",
+                                                isEqualTo: id)
+                                                .get();
+                                            if (favoriteProducts
+                                                .docs.isEmpty) {
+                                              CaPheYeuThich yeuthich =
+                                              CaPheYeuThich(id, idCate);
+                                              addnewFavorite(yeuthich);
+                                            } else {
+                                              Fluttertoast.showToast(
+                                                  msg:
+                                                  'Sản phẩm đã tồn tại trong danh sách yêu thích',
+                                                  backgroundColor: Colors.red);
+                                            }
+                                          },
+                                          child: Container(
+                                            margin: EdgeInsets.only(bottom: 8 * fem),
+                                            width: 22,
+                                            height: 22,
+                                            child: Image.asset(
+                                              'assets/page-1/images/btLike.png',
+                                              width: 22,
+                                              height: 22,
+                                            ),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            addToCart(documentSnapshotSP);
+                                          },
+                                          child: Container(
+                                            width: 40,
+                                            height: 35,
+                                            child: Image.asset(
+                                              'assets/page-1/images/btAddCart.png',
+                                              width: 17 * fem,
                                               height: 20 * fem,
-                                              child: Image.asset(
-                                                'assets/page-1/images/btLike.png',
-                                                width: 22 * fem,
-                                                height: 22 * fem,
-                                              ),
                                             ),
                                           ),
-                                          Container(
-                                            // btxoaWL1 (5:462)
-                                            margin: EdgeInsets.fromLTRB(0 * fem,
-                                                0 * fem, 0 * fem, 0 * fem),
-                                            width: 40 * fem,
-                                            height: 35 * fem,
-                                            child: TextButton(
-                                              onPressed: () {
-                                                addToCart(documentSnapshotSP);
-                                              },
-                                              child: Image.asset(
-                                                'assets/page-1/images/btAddCart.png',
-                                                width: 17 * fem,
-                                                height: 20 * fem,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 );
