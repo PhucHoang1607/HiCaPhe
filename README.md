@@ -1,6 +1,6 @@
 # hicaphe
 
-Phần mềm đa nền nảng kiểm soát hệ thống quản lí bán hàng tại Hi cà phê.
+Phần mềm đa nền nảng kiểm soát hệ thống quản lí bán hàng tại Hi cà phê
 
 ## Getting Started
 
@@ -14,3 +14,8 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## Information Test:
+username: abc@gmail.com
+password: 123ABC456F
