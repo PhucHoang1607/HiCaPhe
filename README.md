@@ -1,6 +1,19 @@
 # hicaphe
+This is the project i used to participated as a Tester, FontEnd Developer
+With my Tester role:
+ - When the project get stated, I have made a list of functions runable and capable.
+ - Go with the timeline, I make a test scenario, prepare datas test for the functions.
+ - When ever the project got to the deadline point, I had tested and done  many tasks to ensure it similar to the description.
+ - Sometimes make a quick notices to dev if it need to fix urgently.
+ - In this project, I nearly ensured the original process to the user, make a last test with my lecturer and my leader.
+   
+With my Fontend developer role:
+ - I continue working with this project and become a Fontend Developer.
+ - Updating the UI projects base on the figma and make some new screen for the application.
+ - Learning and updating the old screens for the suitable and newable user process.
 
-Phần mềm đa nền nảng kiểm soát hệ thống quản lí bán hàng tại Hi cà phê
+This is my report about the app:
+https://docs.google.com/document/d/1CQ9-Hw31nj5ZMgovuClZ_c4cH14Asl08/edit?usp=sharing&ouid=103994272148944669228&rtpof=true&sd=true
 
 ## Getting Started
 
